@@ -2,11 +2,29 @@
 
 
 
+
+Les "sécurités" effectuées:
+    si nom de scrutin sur plusieurs lignes, on verifie que le suivant a la couleur mais pas "nombre de votant", raise erreur sinon.
+    raise erreur si une variable vide (automatique).
+    raise erreur si un membre a qu'une donnée (nom/prénom).
+    à chaque nouveau parti, on reset le "vote" courant.
+    à chaque nouveau scrutin on réinitialise toute les variables.
+
+
+
+
+TO DO:
+-essayer vérification par nombre de votant (pour/contre etc, pas par groupe)
+-recuperer touts les html de scrutins 11/12/13
+-s'occuper de la 14em legislature
+
+
+
+
+
+
 Notes perso:
 
 Améliorations:
 organiser en fichier?
-plus d'exception? 
-verification avec le nombre de votant (p-ê bon finalement).
-
-MANQUE SI TITRE DU SCRUTIN SUR PLUSIEURS PARAGRAPHES.
+plus d'exception?

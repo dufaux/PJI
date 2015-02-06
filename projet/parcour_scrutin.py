@@ -13,6 +13,9 @@ import csv
 class MembreQueUnNomError(Exception) :
     pass
 
+class NomDeScrutinError(Exception) :
+    pass
+
 
 #reçois : tableau de string découpé ["MM","Prenom","Nom1", "Nom2", ...]
 #supprime les MM, Mme, Mmes, M
@@ -65,7 +68,32 @@ def parcours_paragraphe_membre(paragraphe) :
     liste_membres = parcours_membres(liste_membres)
 
 
+def reset_currents_all() :
+    current_legislature = None
+    current_date = None
+    current_num_scrutin = None
+    current_nom_scrutin = None
+    current_groupe_politique = None
+    current_vote = None
+    current_legislature = 11
 
+
+
+def reset_currents_groupe_vote() :
+    current_groupe_politique = None
+    current_vote = None
+
+
+
+
+#######################################################################
+###############__######__#######__#######__####___####__###############
+###############___####___#####______###########____###__###############
+###############____##____####___##___####__####__#__##__###############
+###############__#____#__####________####__####__##__#__###############
+###############__######__####__####__####__####__###____###############
+###############__######__####__####__####__####__####___###############
+#######################################################################
 
 
 current_legislature = None
@@ -76,11 +104,10 @@ current_groupe_politique = None
 current_vote = None
 current_legislature = 11
 
-
-
 nom_fichier = 'votes.csv'
 fichier = open(nom_fichier, 'a', newline='')
-spamwriter = csv.writer(fichier, delimiter=' ', quotechar='|', quoting=csv.QUOTE_MINIMAL)
+spamwriter = csv.writer(fichier, delimiter=',')
+#spamwriter = csv.writer(fichier, delimiter=',', quotechar='|', quoting=csv.QUOTE_MINIMAL)
 
 
 #html = urlopen('http://www.assemblee-nationale.fr/12/scrutins/jo0437.asp').read()
@@ -96,6 +123,7 @@ paragraphes = soup.find_all("p")
 
 
 #Parcour des "<p>"
+#Normalement, chaque groupe de votant est précédé de son vote (pour/contre..) et de son partie.
 nb_paragraphe = len(paragraphes)
 for p in range(nb_paragraphe) :
 
@@ -119,25 +147,34 @@ for p in range(nb_paragraphe) :
         current_date = re_groupe_date.group(2)
         print("DATE DU SCRUTIN = "+current_date)
 
+
     if (re_groupe_nom_scrutin) :
         current_nom_scrutin = paragraphes[p+1].text
-        print("NOM DE SCRUTIN = "+current_nom_scrutin)
+        i = 2
+        while (paragraphes[p+i].find("font",{"color" : "#000066"})) != None :
+            if (paragraphes[p+i].text.find("Nombre de votants") !=-1) :
+                raise NomDeScrutinError("ERREUR DU PARAGRAPHE NBR DE VOTANT SUR SCRUTIN: "+current_nom_scrutin)
+            current_nom_scrutin +=" "+paragraphes[p+i].text
+            i += 1
+        current_nom_scrutin = current_nom_scrutin.replace('\n','')
+        current_nom_scrutin = current_nom_scrutin.replace('\r','')
+        print("NOM DU SCRUTIN = "+current_nom_scrutin)
 
 
     re_groupe_parti = re.match('(GROUPE)\s*(([^\s]+\s?)*[^\s])\s*(\(.*\))', paragraphes[p].text.replace("\n", ""), re.DOTALL)
+    re_groupe_no_parti = re.match('(DEPUTES\s*NON\s*INSCRITS)\s*(\(.*\))', paragraphes[p].text.replace("É","E").replace("-"," "), re.DOTALL)
+    re_groupe_vote = re.match('(POUR|CONTRE|NON-VOTANT|ABSTENTION)', paragraphes[p].text, re.DOTALL)
+
+
     if(re_groupe_parti) :
+        reset_currents_groupe_vote()
         current_groupe_politique = re_groupe_parti.group(2)
         print("--"+re_groupe_parti.group(2)+"--"+re_groupe_parti.group(4))
 
-
-    re_groupe_no_parti = re.match('(DEPUTES\s*NON\s*INSCRITS)\s*(\(.*\))', paragraphes[p].text.replace("É","E").replace("-"," "), re.DOTALL)
     if(re_groupe_no_parti) :
+        reset_currents_groupe_vote()
         current_groupe_politique = re_groupe_no_parti.group(1)
         print("--"+re_groupe_no_parti.group(1)+"--"+re_groupe_no_parti.group(2))
-
-
-
-    re_groupe_vote = re.match('(POUR|CONTRE|NON-VOTANT|ABSTENTION)', paragraphes[p].text, re.DOTALL)
 
     if(re_groupe_vote) :
         current_vote = re_groupe_vote.group(1)
