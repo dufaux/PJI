@@ -18,6 +18,13 @@ TO DO:
 -recuperer touts les html de scrutins 11/12/13
 -s'occuper de la 14em legislature
 
+PROBLEME:
+Avant-dernier votant:
+Jean-jacques guillet 2.
+Le 2 provient du nombre de votant qui est reporté sur la ligne du dessous... WHYY?!
+ça pose deux poblemes:
+  si c'est souvent, probleme sur le calcul du nombre de votant (mais ça me permettrait de vérifier si d'autres fichiers ont ce probleme).
+  un chiffre ça va, si d'autres choses sautent de ligne.. plus dur pour configurer l'algo.
 
 
 
