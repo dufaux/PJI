@@ -18,14 +18,23 @@ TO DO:
 -recuperer touts les html de scrutins 11/12/13
 -s'occuper de la 14em legislature
 
-PROBLEME:
-Avant-dernier votant:
-Jean-jacques guillet 2.
-Le 2 provient du nombre de votant qui est reporté sur la ligne du dessous... WHYY?!
-ça pose deux poblemes:
-  si c'est souvent, probleme sur le calcul du nombre de votant (mais ça me permettrait de vérifier si d'autres fichiers ont ce probleme).
-  un chiffre ça va, si d'autres choses sautent de ligne.. plus dur pour configurer l'algo.
+#############
+# PROBLEMES #
+#############
+Les données ont parfois des erreurs "difficiles" à déceler, plusieurs exemple: 
+-  des "...." (ex: Pour:.....40 au lieu de Pour: 40)
+-  le nombre est décallé et s'intercalle dans le prénom du premier votant.
+-  "Seance du : 28 Juin 2000" au lieu de "Séance du 28 Juin 2000"
+-  les votant sont sur le même paragraphe que "Vote: XX"
+-  plusieurs liste de vote (pour et non-votant par exemple) sont dans le même paragrahes.
+-  des paragraphes mal fermé.
 
+-fichier 348, error nbr de votant total (1 téléporté?!) changé manuellement 564 -> 563
+
+==> Solution: Certains ont pus être géré automatiquement mais je raise une exception et corrige manuellement l'erreur (présente sur peu de fichier). 
+
+
+Des données peuvent encore etre incorrect... 
 
 
 
