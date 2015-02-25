@@ -1,40 +1,78 @@
+Johan Dufaux
+PJI 
+
+Algo compatible 11 et 12:
+python3 parcour_scrutin.py X Y
+X = legislature (11 ou 12)
+Y = 1 pour enregistrer dans les csv. autre pour parcourir sans enregistrer (genere quand meme les logs).
+
+
+
+
+==================================================
+Question par mail:
+Les "congrés" (faisant voté député et sénateur?), pas de numéro (l'url?)
+http://www.assemblee-nationale.fr/12/scrutins/jo1091.asp
+http://www.assemblee-nationale.fr/12/scrutins/jo1093.asp
+http://www.assemblee-nationale.fr/12/scrutins/jo1094.asp
+
+J'ai pas le nombre de "contre" :
+http://www.assemblee-nationale.fr/12/scrutins/jo0124.asp
+http://www.assemblee-nationale.fr/12/scrutins/jo0305.asp
+http://www.assemblee-nationale.fr/12/scrutins/jo0448.asp
+http://www.assemblee-nationale.fr/12/scrutins/jo0652.asp
+http://www.assemblee-nationale.fr/12/scrutins/jo0803.asp
+http://www.assemblee-nationale.fr/12/scrutins/jo0934.asp
+http://www.assemblee-nationale.fr/12/scrutins/jo0978.asp
+
+
+pour la 13em:
+Où est la date?
+http://www.assemblee-nationale.fr/13/cri/2006-2007-extra/cahiers/c20071015.asp
+dois-je la récupéré ici: http://www.assemblee-nationale.fr/13/scrutins/table-2006-2007.asp ? (quel format? jj.mm.aaaa ok?)
+
+
+==================================================
+INTERROGATION SUR LA PROGRAMMATION:
+(je lis les membres votant si ils suivent le "POUR : XXX " dans le même paragraphe ou si ils sont dans le paragraphe suivant).
+
+-Comment detecté quand on doit dire "anonymous" ?
+(ex : http://www.assemblee-nationale.fr/12/scrutins/jo1021.asp )
+
+    1) peut-être utiliser la phrase en elle même "membres du groupe..." mais risque de faute de frappe/orthographe.
+
+    2) j'ai pensé à regarder quand un paragraphe "POUR/CONTRE... : XX" est suivi d'un autre, mais la situation est possible quand les noms sont dans le même paragraphe que le premier POUR ...
+
+    3) j'ai pensé recuperer l'exception CalculNombreVotantError généré si on ne trouve pas le bon nombre de membre dans le paragraphe (généré avant quelconque enregistrement). et ensuite verifier le point 1). Mais peut se produire dans de rare cas quand même (une erreur du nombre de votant dans le même paragraphe). (generer un log et verifier manuellement qu'ils sont bien anonyme?)
+
+    4) si on a en anonyme par exemple "POUR : 2 membres du groupe, présents ou ayant délégué leur droit de vote." Alors passera au travers les mailles du filets. 
 
 
 
 
 
-Les "sécurités" effectuées:
-    si nom de scrutin sur plusieurs lignes, on verifie que le suivant a la couleur mais pas "nombre de votant", raise erreur sinon.
-    raise erreur si une variable vide (automatique).
-    raise erreur si un membre a qu'une donnée (nom/prénom).
-    à chaque nouveau parti, on reset le "vote" courant.
-    à chaque nouveau scrutin on réinitialise toute les variables.
+
+==================================================
+Remarques:
+j'ai modifié manuellement quelques données (résumé dans corrections_manuelles.txt).
+La plupart évitent juste des erreurs de vérification (vérifie le nombre de votant à partir des chiffres). Mais reste plus sur :).
+
+
+Après reflexion, l'algorithme de parcours paragraphe par paragraphe peut présenter quelques problèmes (d'où les modifications manuelles) que n'auraient pas présenté un autre type de parcours (textuel). 
+L'idée aurait pu être de parcourir le texte, et de compter les membres jusqu'à trouver un autre vote, mais comment parcourir le texte (mot par mot? les regex ne passeraient plus).
 
 
 
 
-TO DO:
--essayer vérification par nombre de votant (pour/contre etc, pas par groupe)
--recuperer touts les html de scrutins 11/12/13
--s'occuper de la 14em legislature
-
-#############
-# PROBLEMES #
-#############
-Les données ont parfois des erreurs "difficiles" à déceler, plusieurs exemple: 
--  des "...." (ex: Pour:.....40 au lieu de Pour: 40)
--  le nombre est décallé et s'intercalle dans le prénom du premier votant.
--  "Seance du : 28 Juin 2000" au lieu de "Séance du 28 Juin 2000"
--  les votant sont sur le même paragraphe que "Vote: XX"
--  plusieurs liste de vote (pour et non-votant par exemple) sont dans le même paragrahes.
--  des paragraphes mal fermé.
-
--fichier 348, error nbr de votant total (1 téléporté?!) changé manuellement 564 -> 563
-
-==> Solution: Certains ont pus être géré automatiquement mais je raise une exception et corrige manuellement l'erreur (présente sur peu de fichier). 
+==================================================
+PERSO:
+-pas encore tenu compte des congrès et des motions de censures en attendant une réponse.
 
 
-Des données peuvent encore etre incorrect... 
+
+
+
+
 
 
 
@@ -44,3 +82,8 @@ Notes perso:
 Améliorations:
 organiser en fichier?
 plus d'exception?
+
+
+
+AIDES:
+https://regex101.com/

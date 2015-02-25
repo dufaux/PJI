@@ -1,2 +1,4 @@
-2015-02-10 16:48:04,200 ERROR Nombre de votant incohérent pour fichier ./scrutins/11-106.html
-2015-02-10 16:48:14,404 ERROR Nombre de votant incohérent pour fichier ./scrutins/11-167.html
+2015-02-25 23:48:59,343 ERROR THROW ERROR parcours_scrutin_html : Donnees par remplie à temps : legislature= 12, date = 29 avril 1998, num=106, nom=la motion de censure déposée en application de l'article 49, alinéa 2, de la Constitution par MM. Bayrou, Debré, Séguin, Léotard et 138 de leurs collègues, nombre_votant=None
+2015-02-25 23:48:59,343 ERROR ----./scrutins11/11-106.html
+2015-02-25 23:49:03,171 ERROR THROW ERROR parcours_scrutin_html : Donnees par remplie à temps : legislature= 12, date = 25 mai 1999, num=167, nom=la motion de censure, déposée en application de l'article 49, alinéa 2, de la Constitution  par MM. Douste-Blazy, Debré, Rossi et 83 de leurs collègues, nombre_votant=None
+2015-02-25 23:49:03,171 ERROR ----./scrutins11/11-167.html
