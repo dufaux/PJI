@@ -62,6 +62,9 @@ Après reflexion, l'algorithme de parcours paragraphe par paragraphe peut prése
 L'idée aurait pu être de parcourir le texte, et de compter les membres jusqu'à trouver un autre vote, mais comment parcourir le texte (mot par mot? les regex ne passeraient plus).
 
 
+SCRUTINS 13:
+6 fichiers avaient le format des scrutins 11 et 12. mis dans un dossier à part et parcouru avec le 1er parcours.
+(tout reste réunis dans le dossier votes13.csv quand même).
 
 
 ==================================================

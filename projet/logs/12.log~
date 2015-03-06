@@ -1,28 +1,20 @@
-2015-02-25 23:49:32,731 ERROR THROW ERROR : Le nombre de votant ne correspond pas: 2 -- Attendu: 49 !
-2015-02-25 23:49:32,731 ERROR ----./scrutins12/12-1021.html
-2015-02-25 23:49:32,733 ERROR THROW ERROR : Le nombre de votant ne correspond pas: 2 -- Attendu: 40 !
-2015-02-25 23:49:32,733 ERROR ----./scrutins12/12-1021.html
-2015-02-25 23:49:32,733 ERROR THROW ERROR : Le nombre de votant ne correspond pas: 2 -- Attendu: 7 !
-2015-02-25 23:49:32,734 ERROR ----./scrutins12/12-1021.html
-2015-02-25 23:49:32,734 ERROR THROW ERROR : Le nombre de votant ne correspond pas: 2 -- Attendu: 6 !
-2015-02-25 23:49:32,734 ERROR ----./scrutins12/12-1021.html
-2015-02-25 23:49:34,654 ERROR THROW ERROR parcours_scrutin_html : Donnees par remplie à temps : legislature= 12, date = 19 février 2007, num=None, nom= le projet de loi constitutionnelle modifiant l'article 77 de la Constitution, nombre_votant=870
-2015-02-25 23:49:34,654 ERROR ----./scrutins12/12-1091.html
-2015-02-25 23:49:34,937 ERROR THROW ERROR parcours_scrutin_html : Donnees par remplie à temps : legislature= 12, date = 19 février 2007, num=None, nom=le projet de loi constitutionnelle portant modification du titre IX de la Constitution, nombre_votant=869
-2015-02-25 23:49:34,937 ERROR ----./scrutins12/12-1093.html
-2015-02-25 23:49:35,240 ERROR THROW ERROR parcours_scrutin_html : Donnees par remplie à temps : legislature= 12, date = 19 février 2007, num=None, nom= le projet de loi constitutionnelle relatif à l'interdiction de la peine de mort, nombre_votant=876
-2015-02-25 23:49:35,241 ERROR ----./scrutins12/12-1094.html
-2015-02-25 23:49:35,787 ERROR THROW ERROR parcours_scrutin_html : Donnees par remplie à temps : legislature= 12, date = 15 février 2003, num=124, nom=la motion de censure déposée par MM. Ayrault, Bocquet et 161 de leurs collègues en application de l'article 49, alinéa 3 de la Constitution, le Premier ministre ayant engagé la responsabilité du Gouvernement pour l'adoption du projet de loi relatif à l'élection des conseillers régionaux et des représentants au Parlement européen ainsi qu'à l'aide publique aux partis politiques (dans le texte dont il a donné connaissance au cours de la séance du mercredi 12 février 2003), nombre_votant=None
-2015-02-25 23:49:35,787 ERROR ----./scrutins12/12-124.html
-2015-02-25 23:49:36,909 ERROR THROW ERROR parcours_scrutin_html : Donnees par remplie à temps : legislature= 12, date = 2 juillet 2003, num=305, nom=  la motion de censure déposée par MM. Ayrault, Hollande  et 113 de leurs collègues en application de l'article 49, alinéa 2 de la Constitution, nombre_votant=None
-2015-02-25 23:49:36,909 ERROR ----./scrutins12/12-305.html
-2015-02-25 23:49:39,645 ERROR THROW ERROR parcours_scrutin_html : Donnees par remplie à temps : legislature= 12, date = 2 mars 2004, num=448, nom= sur la motion de censure, déposée en application de l'article 49, alinéa 2, de la Constitution, par MM. Ayrault, Hollande et 129 de leurs collègues, nombre_votant=None
-2015-02-25 23:49:39,645 ERROR ----./scrutins12/12-448.html
-2015-02-25 23:49:41,821 ERROR THROW ERROR parcours_scrutin_html : Donnees par remplie à temps : legislature= 12, date = None, num=652, nom= la motion de censure déposée par M. Ayrault et 124 députés en application de l'article 49, alinéa 3 de la Constitution,  le Premier ministre ayant engagé la responsabilité du Gouvernement pour l'adoption, en 2ème lecture, du projet de loi relatif aux libertés et responsabilités locales, dans le texte dont il a donné connaissance au cours de la 2ème séance du vendredi 23 juillet 2004, nombre_votant=None
-2015-02-25 23:49:41,821 ERROR ----./scrutins12/12-652.html
-2015-02-25 23:49:45,570 ERROR THROW ERROR parcours_scrutin_html : Donnees par remplie à temps : legislature= 12, date = 5 juillet 2005, num=803, nom= la motion de censure, déposée en application de l'article 49, alinéa 2, de la Constitution, par MM. Ayrault, Hollande et 142 de leurs collègues., nombre_votant=None
-2015-02-25 23:49:45,570 ERROR ----./scrutins12/12-803.html
-2015-02-25 23:49:47,981 ERROR THROW ERROR parcours_scrutin_html : Donnees par remplie à temps : legislature= 12, date = 21 février 2006, num=934, nom=la motion de censure,déposée en application de l'article 49, alinéa 2, de la Constitutionpar M.M Ayrault, Hollande et 143 de leurs collègues., nombre_votant=None
-2015-02-25 23:49:47,981 ERROR ----./scrutins12/12-934.html
-2015-02-25 23:49:48,725 ERROR THROW ERROR parcours_scrutin_html : Donnees par remplie à temps : legislature= 12, date = 16 mai 2006, num=978, nom=la motion de censure déposée en application de l'article 49, alinéa 2, de la Constitutionpar MM. Jean-Marc Ayrault, François Hollande, Roger-Gérard Schwartzenberg et 140 membres de l'Assemblée, nombre_votant=None
-2015-02-25 23:49:48,725 ERROR ----./scrutins12/12-978.html
+2015-03-05 19:32:51,834 ERROR THROW ERROR parcours_scrutin_html : Donnees par remplie à temps : legislature= 12, date = 19 février 2007, num=None, nom=  le projet de loi constitutionnelle modifiant l'article 77 de la Constitution, nombre_votant=870
+2015-03-05 19:32:51,835 ERROR ----./scrutins12/12-1091.html
+2015-03-05 19:32:52,139 ERROR THROW ERROR parcours_scrutin_html : Donnees par remplie à temps : legislature= 12, date = 19 février 2007, num=None, nom= le projet de loi constitutionnelle portant modification du titre IX de la Constitution, nombre_votant=869
+2015-03-05 19:32:52,139 ERROR ----./scrutins12/12-1093.html
+2015-03-05 19:32:52,452 ERROR THROW ERROR parcours_scrutin_html : ERREUR PARAGRAPHE NBR DE VOTANT PAS APRES NOM: i=1-
+2015-03-05 19:32:52,452 ERROR ----./scrutins12/12-1094.html
+2015-03-05 19:32:52,998 ERROR THROW ERROR parcours_scrutin_html : ERREUR PARAGRAPHE NBR DE VOTANT PAS APRES NOM: i=2- la motion de censure déposée par MM. Ayrault, Bocquet et 161 de leurs collègues en application de l'article 49, alinéa 3 de la Constitution, le Premier ministre ayant engagé la responsabilité du Gouvernement pour l'adoption du projet de loi relatif à l'élection des conseillers régionaux et des représentants au Parlement européen ainsi qu'à l'aide publique aux partis politiques (dans le texte dont il a donné connaissance au cours de la séance du mercredi 12 février 2003)
+2015-03-05 19:32:52,998 ERROR ----./scrutins12/12-124.html
+2015-03-05 19:32:54,133 ERROR THROW ERROR parcours_scrutin_html : ERREUR PARAGRAPHE NBR DE VOTANT PAS APRES NOM: i=1-
+2015-03-05 19:32:54,133 ERROR ----./scrutins12/12-305.html
+2015-03-05 19:32:56,937 ERROR THROW ERROR parcours_scrutin_html : Donnees par remplie à temps : legislature= 12, date = 2 mars 2004, num=448, nom=None, nombre_votant=None
+2015-03-05 19:32:56,938 ERROR ----./scrutins12/12-448.html
+2015-03-05 19:32:59,170 ERROR THROW ERROR parcours_scrutin_html : ERREUR PARAGRAPHE NBR DE VOTANT PAS APRES NOM: i=4-   la motion de censure déposée par M. Ayrault et 124 députés en application de l'article 49, alinéa 3 de la Constitution,  le Premier ministre ayant engagé la responsabilité du Gouvernement pour l'adoption, en 2ème lecture, du projet de loi relatif aux libertés et responsabilités locales, dans le texte dont il a donné connaissance au cours de la 2ème séance du vendredi 23 juillet 2004  
+2015-03-05 19:32:59,170 ERROR ----./scrutins12/12-652.html
+2015-03-05 19:33:02,984 ERROR THROW ERROR parcours_scrutin_html : ERREUR PARAGRAPHE NBR DE VOTANT PAS APRES NOM: i=2-   la motion de censure, déposée en application de l'article 49, alinéa 2, de la Constitution, par MM. Ayrault, Hollande et 142 de leurs collègues.
+2015-03-05 19:33:02,984 ERROR ----./scrutins12/12-803.html
+2015-03-05 19:33:05,459 ERROR THROW ERROR parcours_scrutin_html : ERREUR PARAGRAPHE NBR DE VOTANT PAS APRES NOM: i=2- la motion de censure,déposée en application de l'article 49, alinéa 2, de la Constitutionpar M.M Ayrault, Hollande et 143 de leurs collègues.
+2015-03-05 19:33:05,459 ERROR ----./scrutins12/12-934.html
+2015-03-05 19:33:06,217 ERROR THROW ERROR parcours_scrutin_html : ERREUR PARAGRAPHE NBR DE VOTANT PAS APRES NOM: i=2- la motion de censure déposée en application de l'article 49, alinéa 2, de la Constitutionpar MM. Jean-Marc Ayrault, François Hollande, Roger-Gérard Schwartzenberg et 140 membres de l'Assemblée
+2015-03-05 19:33:06,217 ERROR ----./scrutins12/12-978.html

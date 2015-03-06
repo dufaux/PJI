@@ -17,14 +17,13 @@ quelques oublis;
 - 461  : UMP Pour, deux virgule ==> Alain Gest,, Jean-Marie Geveaux...    -.-'.
 - 466  : les contre socialiste étaient dans 2 paragraphe <p>. reuni dans 1.
 - 675  : "novembre/2004" devient novembre 2004
+- 900  : titre du scrutin et nombre de votant dans même paragraphe.
+- 817  : couleur différente pour nom de scrutin (333399 au lieu de 000066)
 
 
-- 652  : suppression du mot mardi dans la date.
-- 675  : "novembre/2004" devient novembre 2004
-- 848  : groupe contre socialiste et contre communiste séparé dans un paragraphe dédié.
-- 867  : pareil pour 3 groupes.
-- 848  : pareil
-- 979  : pareil
-
-
-
+13em législature:
+## probleme d'url dans http://www.assemblee-nationale.fr/13/scrutins/table-2010-2011.asp pour le 642 (url envoie vers 06421).
+- 89   : BernardAccoyer collé. 
+- 240  : groupe ump, "Pour n: 47". (virer le n)
+- 254  : groupe gauche repu : "Pou : 3" (ajout du r)
+- 32/44/49 : couleur différente. 

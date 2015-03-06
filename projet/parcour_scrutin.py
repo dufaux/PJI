@@ -137,13 +137,31 @@ def parcours_membres(liste_membres, nbr) :  ## throw CalculNombreVotantError, Do
 
 
 ################################################################################################
+def parcours_membres_anonymes(nbr) :
+   
+    # boucle d'enregistrement!
+    for membre in range(nbr) :
+        if(current_legislature == None or current_date == None or current_num_scrutin == None or current_nom_scrutin == None or current_groupe_politique == None or current_vote == None) :
+            raise DonneesMembreVideError("Donnee vide Error", current_legislature, current_date, current_num_scrutin, current_nom_scrutin, current_groupe_politique, current_vote,"Anonyme","Anonyme")
+
+        #ecrit dans le fichier.
+        if(enregistrement == "1") :
+            spamwriter.writerow([str(current_legislature), current_date, current_num_scrutin, current_nom_scrutin,current_groupe_politique,"Anonyme","Anonyme", current_vote]); 
+
+
+################################################################################################
 def parcours_paragraphe_membre(paragraphe_texte, nbr) : ## throw CalculNombreVotantError, DonneesMembreVideError
-    liste_membres = paragraphe_texte.split(",");
-    if(liste_membres[-1].find(" et ") != -1) :
-        avant_dernier,dernier = liste_membres[-1].split(" et ")
-        liste_membres[-1] = avant_dernier
-        liste_membres.append(dernier)
-    liste_membres = parcours_membres(liste_membres, nbr)
+
+    if(re.match("\s*membres du groupe, présents ou ayant délégué leur droit de vote\.\s*",paragraphe_texte)) :
+        parcours_membres_anonymes(nbr)
+    else :   
+        liste_membres = paragraphe_texte.split(",");
+        if(liste_membres[-1].find(" et ") != -1) :
+            avant_dernier,dernier = liste_membres[-1].split(" et ")
+            liste_membres[-1] = avant_dernier
+            liste_membres.append(dernier)
+        liste_membres = parcours_membres(liste_membres, nbr)
+
 
 
 ################################################################################################
@@ -176,7 +194,7 @@ def reset_currents_groupe_vote() :
 
 ################################################################################################
 ################################################################################################
-def cherche_date(texte) :
+"""def cherche_date(texte) :
     global current_date
 
     re_groupe_date = re.match('.*(séance du)[\s\:]*([0-9]{1,2}(er)? [0-9A-Za-zéû]* (19|20)\d\d)',texte, re.DOTALL)
@@ -184,7 +202,18 @@ def cherche_date(texte) :
         if(current_date != None) :
             raise DonneeChangeeAnormalementError("Date déjà présente!") 
         current_date = re_groupe_date.group(2)
+        print("DATE DU SCRUTIN = "+current_date)"""
+
+def cherche_date(texte) :
+    global current_date
+
+    re_groupe_date = re.match('.*(séance du)[\s\:]*(()[0-9]{1,2}(er)? [0-9A-Za-zéû]* (19|20)\d\d|[0-9]{1,2}\/[0-9]{1,2}\/(19|20)\d\d)',texte, re.DOTALL)
+    if (re_groupe_date) :
+        if(current_date != None) :
+            raise DonneeChangeeAnormalementError("Date déjà présente!") 
+        current_date = re_groupe_date.group(2)
         print("DATE DU SCRUTIN = "+current_date)
+        
 
 ####################
 def cherche_num_scrutin(texte) :
@@ -261,50 +290,33 @@ def parcours_scrutin_html(url) :  ## throw DonneeChangeeAnormalementError, NomDe
 
 
         cherche_nb_votant(paragraphes[p].text.lower())
-        """        
-        re_groupe_nb_votant = re.match(".*Nombre de votants\s*:?\s*([0-9]*).*", paragraphes[p].text)
-        if (re_groupe_nb_votant) :
-            if(current_nb_votant != None) :
-                raise DonneeChangeeAnormalementError("Nbr de votant déjà présent!")
-            current_nb_votant = int(re_groupe_nb_votant.group(1))
-        """
-
 
         cherche_num_scrutin(paragraphes[p].text.lower())
-        """
-        re_groupe_num_scrutin = re.match('\s*(analyse du scrutin) n° ([0-9]+)', paragraphes[p].text.lower(), re.DOTALL)
-        if (re_groupe_num_scrutin) :
-            if(current_num_scrutin != None) :
-                raise DonneeChangeeAnormalementError("Numéro de scrutin déjà présent!")
-            current_num_scrutin = str(re_groupe_num_scrutin.group(2))
 
-            print("NUMERO DE SCRUTIN = "+current_num_scrutin)"""
-
-        
         cherche_date(paragraphes[p].text.lower())
-        """
-        re_groupe_date = re.match('.*(séance du)\s*([0-9]{1,2}(er)? [0-9A-Za-zéû]* (19|20)\d\d)', paragraphes[p].text.lower(), re.DOTALL)
-        if (re_groupe_date) :
-            if(current_date != None) :
-                raise DonneeChangeeAnormalementError("Date déjà présente!")            
-            
-            current_date = re_groupe_date.group(2)
-            print("DATE DU SCRUTIN = "+current_date)"""
 
 
 
-        re_groupe_nom_scrutin = re.match(".*scrutin public.*", paragraphes[p].text.lower(), re.DOTALL)
+        re_groupe_nom_scrutin = re.match(".*scrutin public.* sur(.*)", paragraphes[p].text.lower(), re.DOTALL)
         if (re_groupe_nom_scrutin) :
             if(current_nom_scrutin != None) :
                 raise DonneeChangeeAnormalementError("Nom de scrutin déjà présent!")            
+
             
-            current_nom_scrutin = paragraphes[p+1].text
-            i = 2
-            while (paragraphes[p+i].find("font",{"color" : "#000066"})) != None :
+            current_nom_scrutin = re_groupe_nom_scrutin.group(1)
+            i = 1
+            
+            while (paragraphes[p+i].find("font",{"color" : "#000066"})) != None or paragraphes[p+i].text.isspace() :
                 if (paragraphes[p+i].text.find("Nombre de votants") !=-1) :
-                    raise NomDeScrutinError("ERREUR DU PARAGRAPHE NBR DE VOTANT SUR SCRUTIN: "+current_nom_scrutin)
+                    raise NomDeScrutinError("ERREUR DU PARAGRAPHE NBR DE VOTANT DANS NOM SCRUTIN: "+current_nom_scrutin)
                 current_nom_scrutin +=" "+paragraphes[p+i].text
                 i += 1
+            
+            #verifie que le prochain paragraphe est bien le nbr de votant
+            if (paragraphes[p+i].text.find("Nombre de votants") == -1) :
+                raise NomDeScrutinError("ERREUR PARAGRAPHE NBR DE VOTANT PAS APRES NOM: i="+str(i)+"-"+current_nom_scrutin)
+                
+                
             """current_nom_scrutin = current_nom_scrutin.replace('\n','')
             current_nom_scrutin = current_nom_scrutin.replace('\r','')"""
             print("NOM DU SCRUTIN = "+current_nom_scrutin)
