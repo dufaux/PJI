@@ -1,92 +1,52 @@
 Johan Dufaux
 PJI 
 
-Algo compatible 11 et 12:
-python3 parcour_scrutin.py X Y
-X = legislature (11 ou 12)
-Y = 1 pour enregistrer dans les csv. autre pour parcourir sans enregistrer (genere quand meme les logs).
+
+==================================================
+# DEPUTES
+
+Normalement fini.
+En attente de retours eventuels sur le format, les possibles erreures restante malgré les vérifications.
 
 
+### Manière de faire :
+Generer beaucoup d'exception dès qu'une chose "clochait". (nombre de votant, absence d'info, double d'info (ex: date), regex pas réussit)
+Analyser les logs et améliorer le code (utilisation de beaucoup de regex)
+Quelques modifications manuelles pour la 11/12 et 13em legislature. (nécessaire)
+
+
+Les quelques difficultées rencontrées:
+- Les retours à la ligne windows. 
+- L'absence total d'html pour la 11e et 12e.
+- Les differents formats de données. 
+- Les regex pour inclure le maximum d'erreur humaine (refaits de nombreuses fois). 
+- Multiplier les vérifications pour essayer d'attraper toute les erreurs et ne rien oublier.
+
+
+### Remarques :
+- Le code étant utilisé une seule fois, il n'est pas optimisé au maximum.
+- Il reste quelques doublons et la méthode de programmation est très procédurales.
+- les fichiers locaux ne sont pas sur github (les fichiers html). les "sommaires" dans un dossier ressources, les autres dans un dossier scrutinsXX (XX=11/12/13/14)
+
+### Fichiers :
+- save_local.py = parcourir les sommaires locaux (11/12/13) et enregistre les scrutins dans les dossier scrutinsXX
+- save_local_13.py = parcourir le sommaire local 14 et enregistre les scrutins dans le dossier scrutins14
+
+- parcour_scrutin.py =  parcourir les scrutins de la 11e et 12e en local
+- parcour_scrutin_13.py = parcourir les scrutins de la 13e en local
+- parcour_scrutin_14.py = parcourir les scrutins de la 14e en local
+
+- corrections_manuelles.txt = comprend les modifications effectuées sur les fichiers locaux.
+
+-votesXX.csv = les fichiers finaux
+
+
+
+
+# Notes perso:
 
 
 ==================================================
-Question par mail:
-Les "congrés" (faisant voté député et sénateur?), pas de numéro (l'url?)
-http://www.assemblee-nationale.fr/12/scrutins/jo1091.asp
-http://www.assemblee-nationale.fr/12/scrutins/jo1093.asp
-http://www.assemblee-nationale.fr/12/scrutins/jo1094.asp
+# AIDES
 
-J'ai pas le nombre de "contre" :
-http://www.assemblee-nationale.fr/12/scrutins/jo0124.asp
-http://www.assemblee-nationale.fr/12/scrutins/jo0305.asp
-http://www.assemblee-nationale.fr/12/scrutins/jo0448.asp
-http://www.assemblee-nationale.fr/12/scrutins/jo0652.asp
-http://www.assemblee-nationale.fr/12/scrutins/jo0803.asp
-http://www.assemblee-nationale.fr/12/scrutins/jo0934.asp
-http://www.assemblee-nationale.fr/12/scrutins/jo0978.asp
-
-
-pour la 13em:
-Où est la date?
-http://www.assemblee-nationale.fr/13/cri/2006-2007-extra/cahiers/c20071015.asp
-dois-je la récupéré ici: http://www.assemblee-nationale.fr/13/scrutins/table-2006-2007.asp ? (quel format? jj.mm.aaaa ok?)
-
-
-==================================================
-INTERROGATION SUR LA PROGRAMMATION:
-(je lis les membres votant si ils suivent le "POUR : XXX " dans le même paragraphe ou si ils sont dans le paragraphe suivant).
-
--Comment detecté quand on doit dire "anonymous" ?
-(ex : http://www.assemblee-nationale.fr/12/scrutins/jo1021.asp )
-
-    1) peut-être utiliser la phrase en elle même "membres du groupe..." mais risque de faute de frappe/orthographe.
-
-    2) j'ai pensé à regarder quand un paragraphe "POUR/CONTRE... : XX" est suivi d'un autre, mais la situation est possible quand les noms sont dans le même paragraphe que le premier POUR ...
-
-    3) j'ai pensé recuperer l'exception CalculNombreVotantError généré si on ne trouve pas le bon nombre de membre dans le paragraphe (généré avant quelconque enregistrement). et ensuite verifier le point 1). Mais peut se produire dans de rare cas quand même (une erreur du nombre de votant dans le même paragraphe). (generer un log et verifier manuellement qu'ils sont bien anonyme?)
-
-    4) si on a en anonyme par exemple "POUR : 2 membres du groupe, présents ou ayant délégué leur droit de vote." Alors passera au travers les mailles du filets. 
-
-
-
-
-
-
-==================================================
-Remarques:
-j'ai modifié manuellement quelques données (résumé dans corrections_manuelles.txt).
-La plupart évitent juste des erreurs de vérification (vérifie le nombre de votant à partir des chiffres). Mais reste plus sur :).
-
-
-Après reflexion, l'algorithme de parcours paragraphe par paragraphe peut présenter quelques problèmes (d'où les modifications manuelles) que n'auraient pas présenté un autre type de parcours (textuel). 
-L'idée aurait pu être de parcourir le texte, et de compter les membres jusqu'à trouver un autre vote, mais comment parcourir le texte (mot par mot? les regex ne passeraient plus).
-
-
-SCRUTINS 13:
-6 fichiers avaient le format des scrutins 11 et 12. mis dans un dossier à part et parcouru avec le 1er parcours.
-(tout reste réunis dans le dossier votes13.csv quand même).
-
-
-==================================================
-PERSO:
--pas encore tenu compte des congrès et des motions de censures en attendant une réponse.
-
-
-
-
-
-
-
-
-
-
-Notes perso:
-
-Améliorations:
-organiser en fichier?
-plus d'exception?
-
-
-
-AIDES:
 https://regex101.com/
