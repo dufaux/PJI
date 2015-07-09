@@ -10,6 +10,7 @@ import csv
 import glob
 import logging
 from operator import itemgetter
+from Levenshtein import distance
 
 import copy
 
@@ -51,12 +52,18 @@ class InfosDePage:
 ####################################################
 #################### FONCTIONS #####################
 ####################################################
-def nettoie_page(text_page) :
-    #tentative retirer les points. (remplace par espace). pourquoi?!
-    #return text_page.replace('.',' ');
+
+
+
+#################### NETTOYAGE #####################
+def nettoie_page(num_page, text_page) :
+    text_page = supprime_premiere_ligne_ecrite(num_page, text_page)
+    text_page = supprime_ligne_annexe_au_proces(num_page, text_page)
+    text_page = supprime_phrase_parenthesees(num_page, text_page)
+    text_page = supprime_infos_bas_de_document(num_page, text_page)
     return text_page
 
-def supprime_premiere_ligne_ecrite(text_page) :
+def supprime_premiere_ligne_ecrite(num_page, text_page) :
     lignes = text_page.split('\n')
     supprime = False
     i = 0
@@ -67,6 +74,103 @@ def supprime_premiere_ligne_ecrite(text_page) :
             del lignes[i]
             break
     return '\n'.join(lignes)
+
+#a effectuer après supprime_premiere_ligne_ecrite
+# supprime les deux ligne "annexe au proces verbal de la..."
+# appelé que sur la premiere page
+def supprime_ligne_annexe_au_proces(num_page, text_page) :
+    lignes = text_page.split('\n')
+    supprime = False
+    i = 0
+    while(not supprime and i < len(lignes)):
+        if(not lignes[i] or lignes[i].isspace()):
+            i=i+1
+        else: #premiere ligne
+
+            if valide_mot_cle("ANNEXE AU PROCÈS-VERBAL",lignes[i],0.5)[0] : #ratio bcp + large car on ne test que la premiere ligne de chaque page.
+                del lignes[i+1]
+                del lignes[i]
+                logger_info.info("["+str(filename)+"]["+str(num_page)+"] SUPPRESSION DE ANNEXE PROCES")
+            break
+    return '\n'.join(lignes)
+
+
+
+#si phrase trop longue (mot ou ligne), alors pas comptés.
+def supprime_phrase_parenthesees(num_page, text_page) :
+    global logger_info
+    global filename
+
+    nombre_de_mot_minimum = 5   #peut comprendre les parentheses
+    nombre_de_mot_autorise = 32 #peut comprendre les parentheses
+    nombre_de_ligne_autorise = 1
+
+    pos_debut = 0
+    pos_fin =  0
+    
+    en_parenthese = False
+    
+    for i in range (len(text_page)) :
+
+        if i >= len(text_page) : #utile car len(text_page) change si on supprime. donc check à chaque tour
+            break
+        
+        if text_page[i] == "(" :
+            pos_debut = i
+            en_parenthese = True
+
+        if text_page[i] == ")" and en_parenthese :
+            pos_fin = i+1
+            phrase_supposee = text_page[pos_debut:pos_fin]
+            
+            if len(phrase_supposee.split("\n")) <= nombre_de_ligne_autorise :
+                if len(phrase_supposee.split()) <= nombre_de_mot_autorise :
+                    if len(phrase_supposee.split()) >= nombre_de_mot_minimum :
+                        logger_info.info("["+str(filename)+"]["+str(num_page)+"] SUPPRESSION PARENTHESES ")
+                        text_page = text_page.replace(phrase_supposee," " * (pos_fin-pos_debut))
+
+            en_parenthese = False
+
+    return text_page
+
+
+
+def supprime_infos_bas_de_document(num_page, text_page) :
+    
+    lignes = text_page.split('\n');
+    for i in range(0,len(lignes)) :
+        if valide_mot_cle("Ce numéro comporte le compte rendu intégral des deux séances",lignes[i],0.2)[0] :
+            logger_info.info("["+str(filename)+"]["+str(num_page)+"] SUPPRESSION BAS DE DOC (num) i="+str(i))
+            return "\n".join(lignes[0:i])
+        elif valide_mot_cle("Ce numéro comporte le compte rendu intégral des trois séances",lignes[i],0.2)[0] :
+            logger_info.info("["+str(filename)+"]["+str(num_page)+"] SUPPRESSION BAS DE DOC (num) i="+str(i))
+            return "\n".join(lignes[0:i])
+        elif valide_mot_cle("Ce numéro comporte le compte rendu intégral des quatre séances",lignes[i],0.2)[0] :
+            logger_info.info("["+str(filename)+"]["+str(num_page)+"] SUPPRESSION BAS DE DOC (num) i="+str(i))
+            return "\n".join(lignes[0:i])
+        elif valide_mot_cle("Paris . — Imprimerie des Journaux officiels, 26, rue Desaix.",lignes[i],0.2)[0] :
+            logger_info.info("["+str(filename)+"]["+str(num_page)+"] SUPPRESSION BAS DE DOC (impr) i="+str(i))
+            return "\n".join(lignes[0:i])
+            
+    return text_page
+
+
+def nettoie_mot_cle_a_chercher(text):
+    return " ".join(text.split()) #remove multiple space
+
+#Return tuple of bool,dist
+# return : (Boolean,Int)
+#marge_erreur : pourcentage d'erreur autorisé entre 0 et 1(distance leven < len*marge)
+def valide_mot_cle(mot_cle,text,marge_erreur) :
+    text = nettoie_mot_cle_a_chercher(text)
+    dist_max = max(len(mot_cle),len(text))
+    dist = distance(mot_cle,text)
+    if(dist < dist_max*marge_erreur) :
+        return (True,dist)
+    return (False,dist)
+
+
+#################### PARCOURS #####################
 
 def parcours_fichier(fichier) :
     global logger
@@ -94,7 +198,7 @@ def parcours_fichier(fichier) :
                 logger_info.info("["+str(filename)+"]["+str(i)+"]EXCEPT: SixColonnePasDistinctesError ")
                 logger.info("["+str(filename)+"]["+str(i)+"]EXCEPT: SixColonnePasDistinctesError ")
                 cherche_colonne_centrale_vide(i,pages[i])
-                
+    
             reconstitue_page(i,pages[i])
 
 
@@ -169,7 +273,7 @@ def cherche_six_colonnes_page(numpage,text_page):
     difference_entre_six_et_sept = 2.5 #sixieme colonne > diff*7emcolonne. (pour 3, 6>7*3)
     print("Cherche six colonnes pour page ="+str(numpage))
     
-    text_page = nettoie_page(text_page);
+    #text_page = nettoie_page(text_page);
     lignes = text_page.split('\n');
     for y in range(0,len(lignes)) :
         for x in range(0,len(lignes[y])-1) :
@@ -245,7 +349,7 @@ def cherche_colonne_centrale_vide(numpage,text_page):
     trouve = False
     #print(text_page)
     
-    text_page = nettoie_page(text_page);
+    #text_page = nettoie_page(text_page);
     lignes = text_page.split('\n');
 
     #cherche la ligne la plus longue
@@ -315,12 +419,16 @@ def cherche_colonne_centrale_vide(numpage,text_page):
 
 
 
+
+
+
+#####################################################
 def reconstitue_page(i,text_page) :
     global pages_reconstituees
     milieu = dico_infos_pages[i].get_milieu()
     text = ""
 
-    text_page = supprime_premiere_ligne_ecrite(text_page);
+    text_page = nettoie_page(i,text_page);
     lignes = text_page.split('\n');
     #print(text_page)
     print("milieu = "+str(milieu));
@@ -336,6 +444,8 @@ def reconstitue_page(i,text_page) :
         fin = len(lignes[y])
         if(milieu < fin):
             text += lignes[y][milieu:fin]+"\n";
+        else :
+            text += "\n"
 
     text += "\x0c";
 
@@ -422,8 +532,8 @@ for root, subdirs, files in os.walk("4-layout"):
         try :
             parcours_fichier(fichierlayout)
             
-            dest = newpath+"/"+".".join(nomfichier.split(".")[:-1])
-            #dest = "all_in_one"
+            #dest = newpath+"/"+".".join(nomfichier.split(".")[:-1])
+            dest = "all_in_one"
             fichiertxt = open(dest+".txt","a") # a pour ecrire à la fin, w pour remplacer
             fichiertxt.write(pages_reconstituees)
             fichiertxt.close()
