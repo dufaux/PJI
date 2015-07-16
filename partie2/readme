@@ -1,0 +1,54 @@
+
+Johan Dufaux
+
+
+
+Peut-être plusieurs fichiers de logs:
+- pour les erreurs "totales" (le fichier ne sera pas traité, ou un scrutin dans un fichier n'est pas traité)
+- pour les erreurs "graves" (des noms/groupes ne sont pas traités)
+- pour les infos, et erreurs "moyennes"
+
+Algo en cours:
+
+Commencer par traiter que les "pour" "contre" et "abstentions" :
+- Pour chaque page: Recherche de 3 colonnes majoritaire. Si on en trouve, on les enregistre.
+
+-Rechercher les "mots clés" correspondant aux votes.
+  -> Chaque ligne est soumise à levenstein pour chaque mot clé. Si suffisament proche (suivant un ratio) on prend le plus proche.
+
+	### faire attention aux singuliers (ex: s'est abstenu)
+
+On cherche le mot clé suivant puis on traite ce qui ce trouve entre ces deux mots clés.
+  (si sur deux pages, on traite les 2 blocs (fin de page et début de page suivante) séparément, mais enregistré ensemble.)
+
+  -Nettoyer les "MM." et compagnie.
+  -Cherche 3 colonnes, et compare avec ceux de la page. (moyennant peut-être un écart de 1? Comme dans la reconstitution).
+    -Si 3 colonnes, alors on reconstitue "l'ordre" de lecture (la string) a partir de ces trois colonnes. 
+
+  -Après on split la string sur "." et "," (et sur "et" si pas 3 colonnes)
+	### Comment régler le probleme des "." non lu par le logiciel? 
+		-> On peut gérer ceux ac parentheses (si présente = prénom donc obligatoirement un . après).
+		-> Tous les noms sont sensé passé levenstein. Si un qui passe pas on peut tenter le split et passer chaque élement à levenstein.
+			-> pour le split, on sait que c'est ordonné alphabetiquement. Si on doit split un nom qui ne passe pas (et qui a plusieurs mots ofc), on peut
+			   chercher les mots qui sont entre le premier mot et le nom suivant alphabetiquement, et spliter dessus. 
+		
+		-> certaines parentheses peuvent mal passer, proposition: le levenstein va comparer le mot trouvé dans le document, donc soit "nom", ou "nom (prenom)" avec les eventuelles fautes, à deux mots, le vrai nom suivi du vrai prénom entre parenthese "nom (prénom)" et le vrai nom "nom".
+		   Un troisieme mot est rajouté pour les noms commençant par "du" ou "de" => "nom (du/de)"
+
+		
+		-> quand on cherche un nom dans levenstein, on prend celui ayant la plus faible distance (si ex-aequo le plus petit nom).
+		   cependant si le nom trouvé est déjà occupé ou est inferieur à celui trouvé juste avant (alphabetiquement), alors EXCEPTION générée. (peut-être amélioré apres?)		   On ne traite plus la liste donnée. (à voir comment améliorer ça).
+		
+		-> Si un nom ne passe toujours pas levenstein après les différents splits, générer une erreur, ne pas enregistrer le nom mais continuer les autres noms.
+
+
+
+
+
+
+
+
+
+
+info:
+http://www.developpez.net/forums/d628646/autres-langages/python-zope/general-python/trier-dictionnaire/
