@@ -7,8 +7,6 @@
 
 
 
-                                  ANNEXES AU                                          
-                                                                                    DE
 
 
 
@@ -111,8 +109,24 @@
     Bordage.                  Cornet (Pierre).              Frys.                     
 
 
-PROCES-VERBAL
- LA
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   Gardeil-               Le Theule.               Richoux.
   Garets (des).          Liogier.                 Rickert.
   Gastines (de).         Lucas . (Pierre) .       Bitter.
@@ -204,6 +218,7 @@ PROCES-VERBAL
  Lepage.                Riblère (René) .         Weinman.
  Leroy-Beaulieu.        Richard (Jacques) .      Westphal.
  Le Tac .               Richard (Lucien).        Zimmermann.
+
  
 
 
@@ -275,7 +290,7 @@ PROCES-VERBAL
                                                                               
                    Excusés ou absents par congé (2):
                                                                               
-        (Application de l'article 162, alinéas 2 et 3, du règlement .)
+                                                                      
                                                                               
       MM. Chédru, Hoguet et Sanford.                                          
                                                                               
@@ -291,7 +306,7 @@ PROCES-VERBAL
                                                                               
                                                                               
                        A délégué son droit de vote :                          
-        (Application de l ' ordonnance n°-58 . 1066 du 7 novembre 1958.)      
+                                                                              
                                                                               
                                                                               
       M . Glon à M. Charles (Arthur) (maladie).                               
@@ -299,7 +314,7 @@ PROCES-VERBAL
                                                                               
                             Motifs des excuses :                              
                                                                               
-          (Application de l ' article 162, alinéa 3, du règlement .)          
+                                                                              
                                                                               
                                                                               
       MM . Chédru (maladie).                                                  
@@ -314,21 +329,41 @@ PROCES-VERBAL
                                                                               
 
 
+
+
+
+
+
                               .2                                         5269
+
+
+
                         .   SCRUTIN-    (N°   342)
   Sur l 'amendement n° 89 de M . Brugnon au titre VI de l ' état C
+
    annexé à l'article 23 du projet de loi de finances pour 1973.
    (Budget de l'agriculture : subventions d'investissement accordées
    par l'Etat .) (Suppression de la subvention à L ' institut national
+
     de la recherche agronomique qui est affectée au C . E. R .T .I . A.
    de Lille.)
+
            Nombre des votants                            '. . . . 474
+
          , Nombre des suffrages exprimés                           474
            Majorité absolue                                        238
+
                   Pour l 'adoption                      96
+
                   Contre                               378
+
+
+
     L' Assemblée nationale n'a pas adopté.
+
+
                              Ont voté pour (1) :
+
        MM.                  Duroméa.                 Nilès.
   Alduy.                    Fabre (Robert).          Notebart.
   Andrieux.                 Fajon.                   Odru.
@@ -359,10 +394,13 @@ PROCES-VERBAL
   Delorme.                  Masse (Jean).            Vanealster.
   Denvers.                  Massot.                  Védrines.
   Ducoloné.                 Michel.                  Ver (Antonin).
+
   Dumortier.                Mitterrand.              Vignaux.
   Dupuy.                    Mollet (Guy).            Villon (Pierre).
   Duraffour (Paul).         Musmeaux.                Vinatier.
+
                             Ont voté contre (1) :
+
        MM.                  Beylot.                  Brugerolle.
   Abdeikader Moussa         Bichat.                  Buffet.
     Ali.                    Bignon (Albert).         Buot.
@@ -399,4 +437,5 @@ PROCES-VERBAL
   Bernard-Reymond.          Briot.                   Colibeau.
   Bernasconi.               Brocard.                 Collette.
   Beucler.                  Broglie (de) .           Collière.
+
 

@@ -375,7 +375,7 @@ def cherche_colonne_centrale_vide(numpage,text_page):
                     if(compteur == 0 or ( y > len(lignes)*marge_bas_haut_de_page and y < len(lignes)-(len(lignes)*marge_bas_haut_de_page))) : #trop de caractere comptee. Ou caractere trouvé au milieu de page
                         colonne_blanche = False
                         break
-                    print(str(lignes[y][milieu+difference_centrale]))
+                    #print(str(lignes[y][milieu+difference_centrale]))
                     compteur-= 1
 
                     
@@ -532,8 +532,8 @@ for root, subdirs, files in os.walk("4-layout"):
         try :
             parcours_fichier(fichierlayout)
             
-            #dest = newpath+"/"+".".join(nomfichier.split(".")[:-1])
-            dest = "all_in_one"
+            dest = newpath+"/"+".".join(nomfichier.split(".")[:-1])
+            #dest = "all_in_one"
             fichiertxt = open(dest+".txt","a") # a pour ecrire à la fin, w pour remplacer
             fichiertxt.write(pages_reconstituees)
             fichiertxt.close()

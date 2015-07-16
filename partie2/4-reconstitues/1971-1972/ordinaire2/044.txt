@@ -7,8 +7,6 @@
 
 
 
-                                ANNEXES AU PROCÈS-VERBAL
-                                                                             DE LA
 
 
 
@@ -93,6 +91,20 @@
      Canin-Bazin .             Feix (Léon) .             Marie.                   
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  Martin (Hubert).       Philibert.               Spénale.
  Masse (Jean).          Pianta.                  Stasi.
  Massot.                Pidjot.                  Stehlin.
@@ -107,6 +119,7 @@
  Morison.               Roger.                   Vancalster.
  Murat.                 Rossi .                  Védrines.
  Musmeaux .             Roucaute .               Ver (Antonin).
+
  Nass.                  Rousset (David).         Verpillière (de la).
  Nilès .                Royer .                  Vignaux:
  Notebart.              Sablé.                   Villon (Pierre).
@@ -117,7 +130,10 @@
  Péronnet.              Schnebelen.              Voilquin.
  Petit (Jean-Claude).   Servun-Schreiber.        Weber.
  Peugnet.               Soisson.
+
+
                           Ont voté contre :
+
       MM .              Brial.                   Duboscq.
  Abdoulkader Moussa     Bricout.                 Dupont-Fauville.
    Ali .                Briot .                  Dusseaulx.
@@ -156,6 +172,7 @@
                                                     (de).
  Bob.o                  Dassault.
  Bonhomme.              Degraeve.                Helène.
+
  Bordage.               Dehen .                  Herman.
  Borocco.               Delahaye .               Herzog.
  Boscher.               Delatre .                Hinsberger.
@@ -165,6 +182,7 @@
   Bousseau .            Delong (Jacques) .
   Bozzi.                Desanlis .               Jacquinot.
   Bressolier.            Donnadieu .             Jacson .
+
  
 
 
@@ -246,7 +264,7 @@
                                                                             
                                                                             
                   Excusés ou absents par congé (1):                         
-         (Application de l'article 162, alinéas 2 et 3, du règlement .)     
+                                                                            
                                                                             
      MM . Chédru, Clavel, Dumas et Lafon.                                   
                                                                             
@@ -261,7 +279,7 @@
                                                                             
                                                                             
                             Motifs des excuses :                            
-             (Application de l 'article 162, alinéa 3, du règlement .)      
+                                                                            
                                                                             
       MM. Chédru (maladie).                                                 
                                                                             
@@ -276,26 +294,47 @@
                                                                             
 
 
+
+
+
+
+
+
+
                            SCRUTIN (N° 321)
+
  Sur l'amendement n° 13 de la commission des lois à l'article 7 du
   projet de loi portant diverses dispositions d' ordre économique et
+
   financier . (Deuxième lecture .) (Procédure simplifiée de recouvre-
    ment des amendes : notification de l ' opposition au redevable, qui
    dispose d'un délai de huit jours pour faire connaître son refus
+
    de prélèvement .)
+
          Nombre des votants                                477
+
          Nombre des suffrages exprimés                     382
+
          Majorité absolue                                   192
+
                  Pour l' adoption                    93
+
                  Contre                            289
+
    L'Assemblée nationale n ' a pas adopté.
+
+
+
                              Ont voté pour :
+
      MM.                   Dassié.                Lebas.
  Ahelin.                   Delachenal.            Leroy-Beaulleu.
  Aillières (d' ).          Deliaune.              Marie.
  Arnould.                  Denis (Bertrand).      Martin (Hubert).
  Barillon.                 Deprez.                Mathieu.
  Baudis.                   Destremau.             Maujoüan du Gasset.
+
  Beauguitte (André).       Dijoud.                Morellon.
  Beucler.                  Dominati.              Morison.
  Bichat.                   Ducray.                Murat.
@@ -304,6 +343,7 @@
  Boisdé (Raymond).         Feït (René).           Paquet.
  Bonnet (Pierre).          Fouchet.               Petit (Jean-Claude).
  Bonnet (Christian).       Frys.                  Pianta.
+
  Boyer.                    Gardeil.               Poniatowski.
  Briane (Jean).            Carets (des).          Renouard.
                                                   Rochet (Hubert).
@@ -323,6 +363,8 @@
  Couderc.                  Jeanne.                Voisin (Alban),
  C ressa rd.               I,abbé.                Weber.
  Damette .                 Lainé .
+
+
                              Ont voté contra :
                            Bolo.                  Chaumont.
      MM.
@@ -361,6 +403,7 @@
  Bizet.                    Charié.                Durafour (Michel).
  Blary.                    Charret (Edouard).     Dusseaulx.
  Boinvilliers .            Chassagne (Jean).      Eh . (Albert) .
+
  
 
 
@@ -443,18 +486,14 @@
 
 
 
-                                          Ce numéro comporte le compte rendu in
-                                                          du mercredi 14 juin 1
-
-
-                                                     1 séance : page 2 4 4 3 ; 
-
-
-
-
-                                              Paris . — Imprimerie des Journaux
-
 
+
+
+
+
+
+
+
                   se sont abstenus volontairement :
       MM.                Duroméa.              Notebart.
                          Fabre (Robert).       Odru.
@@ -484,6 +523,7 @@
  Mme Chonavel.           L'Huillier (Waldeck). Mme Vaillant . .
  Dardé.                  Longequeue.             Couturier.
  Harras.                 Lucas (Henri).        Vallon (Louis).
+
  Defferre.               Madrelle.             Vals (Francis).
  Delelis.                Masse (Jean).         Vancalster.
                          Massot.               Védrines.
@@ -493,27 +533,40 @@
  Dumortier.              Mollet (Guy).         Villon (Pierre).
  Dupuy.                  Musmeaux.             Vinatier.
  Duraffour (Paul) .      Nilès.
+
                      N ' ont pas pris part au vote :
+
     MM . Bérard et Ilerman.
+
+
                      N' a pas pris part au vote :
+
           (Application de l'article  de l'ordonnance n° 58-1099
                           du 17 novembre 1958 .)
     M . Lecat .
+
                 Excusés ou absents par congé (1) :
-       (Application de l 'article 162, alinéas 2 et 3, du règlement .)
+                                                                      
     MM. Chédru, Clavel, Dumas et Lafon.
+
                      N'ont pas pris part au vote :
+
    M . Achille Peretti, président de l 'Assemblée nationale, et
   M. Le Douarec, qui présidait la séance.
+
+
                          Motifs des excuses :
-         (Application de l ' article 162. alinéa 3, du règlement .)
+
+                                                                   
+
     MM . Chédru (maladie).
          Clavel (maladie).
          Dumas (mission).
          Lafon (maladie).
+
     (1) Se reporter à la liste ci-après des motifs des excuses.
-tégral des deux séances
-972.
-2' séance : page 2 4 6 9.
- officiels . 26, rue Desaix
+
+
+
+
 

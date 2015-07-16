@@ -17,13 +17,7 @@ import copy
 ####################################################
 #################### EXCEPTIONS ####################
 ####################################################
-class PasDePageScrutinTrouvee(Exception) :
-    pass
-
-class SixColonnePasDistinctesError(Exception) :
-    pass
-
-class ImpossibleDeTrouverColonneCentraleError(Exception) :
+class TroisColonnePasDistinctesError(Exception) :
     pass
 
 
@@ -33,42 +27,35 @@ class ImpossibleDeTrouverColonneCentraleError(Exception) :
 
 class InfosDePage:
 
-    def __init__(self,p_numero,p_milieu,p_colonnes):
+    def __init__(self,p_numero,p_colonnes):
         self.numero = p_numero
-        self.milieu = p_milieu
         self.colonnes = p_colonnes
 
     def get_numero(self) :
         return self.numero
 
-    def get_milieu(self) :
-        return self.milieu
-
     def get_colonnes(self) :
         return self.colonnes
 
 
+class InfoMotCle :
+
+    def __init__(self,param_page,param_ligne,param_mot) :
+        self.page = param_page
+        self.ligne = param_ligne
+        self.mot = param_mot
 
 ####################################################
 #################### FONCTIONS #####################
 ####################################################
-def nettoie_page(text_page) :
-    #tentative retirer les points. (remplace par espace). pourquoi?!
-    #return text_page.replace('.',' ');
-    return text_page
-
-def supprime_premiere_ligne_ecrite(text_page) :
-    lignes = text_page.split('\n')
-    supprime = False
-    i = 0
-    while(not supprime and i < len(lignes)):
-        if(not lignes[i] or lignes[i].isspace()):
-            i=i+1
-        else:
-            del lignes[i]
-            break
-    return '\n'.join(lignes)
-
+def nettoie_text(text) :
+    text = text.replace("MM.","   ")
+    text = text.replace("M.","  ")
+    text = text.replace("MM .","    ")
+    text = text.replace("M.","  ")
+    text = text.replace("Mme ","    ")
+    return text
+    
 def parcours_fichier(fichier) :
     global logger
     global filename
@@ -76,19 +63,20 @@ def parcours_fichier(fichier) :
     fichier = fichier.replace('\r','');
     fichier = fichier.replace('\t',' '); #replace tab par un espace!
     pages = fichier.split("\x0c");
+
+    liste_mot_cle = []
     
-    """debut = None
-    for i in range(0,len(pages)) : #recherche de la premiere page comprenant un scrutin
-        if page_comprend_scrutin(pages[i]):
-            debut = i
-            break
-
-    if (debut == None):
-        raise PasDePageScrutinTrouvee(filename)"""
-
     #parcours page par page
     for i in range(0,len(pages)) :
         if(pages[i]) :
+
+            
+            try :
+                troiscolonnes = cherche_trois_colonnes_text(i,pages[i],10,2.5)
+                add_infos_page(i,troiscolonnes)
+            except TroisColonnePasDistinctesError :
+                add_infos_page(i,None)
+            
             lignes = pages[i].split('\n');
             #parcours ligne par ligne
             for y in range(0,len(lignes)) :
@@ -98,11 +86,40 @@ def parcours_fichier(fichier) :
                     new_vote = cherche_vote(lignes[y])
                     
                     if(new_vote) :
+                        mot = InfoMotCle(i,y,current_vote)
+                        liste_mot_cle.append(mot)
                         print("Nouveau vote page =  "+str(i)+", y = "+str(y)+"et vote = "+str(current_vote))
 
                     #si on a un vote courant et pas de new vote alors c'est un nom.
                     #if(current_vote and not new_vote) :
                         #print("lit nom page =  "+str(i)+", y = "+str(y))
+
+    for i in range(len(liste_mot_cle)-1) :
+        #print("Mot clé "+liste_mot_cle[i].mot+" et page = "+str(liste_mot_cle[i].page)+" et ligne = "+str(liste_mot_cle[i].ligne))
+
+        print("Traitement du mot clé : "+liste_mot_cle[i].mot)
+
+        current_page = liste_mot_cle[i].page
+        current_ligne = liste_mot_cle[i].ligne+1
+        
+        while(current_page < liste_mot_cle[i+1].page) :
+            parcours_partie_de_page(current_page,pages[current_page],current_ligne,(len(pages[current_page].split('\n'))-1))
+            #print("Traitement d'un paragraphe page "+str(current_page)+" de ligne "+str(current_ligne)+" à "+str(len(pages[current_page].split('\n'))-1))
+            current_page += 1
+            current_ligne = 0
+
+        parcours_partie_de_page(current_page,pages[current_page],current_ligne,(liste_mot_cle[i+1].ligne-1))
+        #print("Traitement d'un paragraphe page "+str(current_page)+" de ligne "+str(current_ligne)+" à "+str(liste_mot_cle[i+1].ligne-1))
+
+
+    # a utiliser pour les colonnes
+    """try :
+        dico_infos_pages[i]
+    except KeyError as e :
+        print("pas de 3 colonnes pour i="+str(e))"""
+
+
+
 
 ##
 ## A rajouter: chercher aussi les mots "nombres de votants" etc
@@ -110,6 +127,32 @@ def parcours_fichier(fichier) :
 ## les textes "intrus". 
 ##
 ##
+
+def parcours_partie_de_page(num_page,contenu_page,ligne_debut,ligne_fin) :
+    print("Traitement d'un paragraphe page "+str(num_page)+" de ligne "+str(ligne_debut)+" à "+str(ligne_fin))
+    lignes = contenu_page.split('\n')
+    text = "\n".join(lignes[ligne_debut:ligne_fin+1])
+    parcours_paragraphe_membre(num_page, text)
+
+def parcours_paragraphe_membre(num_page, text) :
+    text = nettoie_text(text)
+
+    troiscolonnes = None
+    
+    try :
+        troiscolonnes = cherche_trois_colonnes_text(num_page,text,0,1.9)
+    except TroisColonnePasDistinctesError :
+        pass
+
+    if(troiscolonnes != None) :
+        print("TROIS COLONNES")
+        print("----- 0 = "+str(troiscolonnes[0])+" et 1 = "+str(troiscolonnes[1])+" et 2 = "+str(troiscolonnes[2]))
+    print(troiscolonnes == dico_infos_pages[num_page].get_colonnes())
+    print(text)
+
+
+
+
 
 #A COMPLETER POUR NUMERO, nbr de votants, etc...(date? impossible imho)
 def cherche_infos_globales(ligne) :
@@ -153,6 +196,11 @@ def cherche_vote(text) :
             plus_proche_mot_cle = retour
             
     retour = cherche_mot_cle_abstenu(text)
+    if(retour[0][0]) :
+        if(not plus_proche_mot_cle or plus_proche_mot_cle[0][1] > retour[0][1]) :
+            plus_proche_mot_cle = retour
+
+    retour = cherche_mot_cle_abstenu_singulier(text)
     if(retour[0][0]) :
         if(not plus_proche_mot_cle or plus_proche_mot_cle[0][1] > retour[0][1]) :
             plus_proche_mot_cle = retour
@@ -211,6 +259,11 @@ def cherche_mot_cle_abstenu(text):
     mot_cle_abstenu = "ABSTENU"
     return (valide_mot_cle(mot_cherche,text), mot_cle_abstenu)
 
+def cherche_mot_cle_abstenu_singulier(text):
+    mot_cherche = "S'est abstenu volontairement"
+    mot_cle_abstenu = "ABSTENU"
+    return (valide_mot_cle(mot_cherche,text), mot_cle_abstenu)
+
 def cherche_mot_cle_pas_pris_part(text):
     mot_cherche = "N'ont pas pris part au vote :"
     mot_cle_pas_pris_part = "PAS PRIS PART"
@@ -228,10 +281,9 @@ def cherche_mot_cle_delegue(text):
 
 
 
-def add_infos_page(num,milieu,sixcol):
+def add_infos_page(num,troiscol):
     global dico_infos_pages
-    dico_infos_pages[num] = InfosDePage(num,milieu,sixcol)
-    #dico_infos_pages[num] = (milieu,sixcol)
+    dico_infos_pages[num] = InfosDePage(num,troiscol)
 
 
 #cherche la colonne vide la plus à gauche de x. (souvent x en fait :-/)
@@ -249,16 +301,17 @@ def chercher_milieu_de_page(text_page,x):
         x = x-1
     return x+1
 
-def cherche_six_colonnes_page(numpage,text_page):
+
+def cherche_trois_colonnes_text(numpage,text,ecart,ratio):
     global helper
     dico_de_coord = {}
 
-    ecart_entre_six_et_sept_minimum = 10 #au moins X de + dans la 6em que 7em (utile pour les petites page)
-    difference_entre_six_et_sept = 2.5 #sixieme colonne > diff*7emcolonne. (pour 3, 6>7*3)
-    print("Cherche six colonnes pour page ="+str(numpage))
+    ecart_entre_trois_et_quatre_minimum = ecart #au moins X de + dans la 3em que 4em (utile pour les petites page)
+    difference_entre_trois_et_quatre = ratio #troisieme colonne > diff*4emcolonne. (pour 3, 3>4*3)
+    print("Cherche trois colonnes pour page ="+str(numpage))
     
-    text_page = nettoie_page(text_page);
-    lignes = text_page.split('\n');
+    text = nettoie_page(text);
+    lignes = text.split('\n');
     for y in range(0,len(lignes)) :
         for x in range(0,len(lignes[y])-1) :
             if( lignes[y][x+1] != " " and lignes[y][x] == " ") :
@@ -270,8 +323,8 @@ def cherche_six_colonnes_page(numpage,text_page):
 
     coords_triees = sorted(dico_de_coord.items(),key=itemgetter(1),reverse=True)
 
-    if(len(coords_triees) < 6) :
-        raise SixColonnePasDistinctesError(filename+" page "+str(numpage))
+    if(len(coords_triees) < 3) :
+        raise TroisColonnePasDistinctesError(filename+" page "+str(numpage))
 
         
     for i in range (0,len(coords_triees)) : #repasse les tuple en array (pour etre modifie)
@@ -281,7 +334,7 @@ def cherche_six_colonnes_page(numpage,text_page):
     # parcourir les coords_triees. et pour la 1, la 2, la 3...6, fusionner les voisines
     # ex, si la 1 est x = 94. et que dans la liste on a du x=93/95,
     # on additionne tout dans x=95 et supprime les autres.
-    for i in range (0,6) :
+    for i in range (0,3) :
         decalage = 0
         for j in range (0,len(coords_triees)) :
             if(coords_triees[j-decalage][0] == coords_triees[i][0]-1 or
@@ -296,139 +349,26 @@ def cherche_six_colonnes_page(numpage,text_page):
     if(numpage == 44) :
         helper.append(copy.deepcopy(coords_triees))
 
-        
-    #verifie qu'il y a bien 6 distinct. On propose la 7em colonne doit etre au moins
-    #deux 1.5 plus faible que la 6em.
-    if(coords_triees[5][1] <= difference_entre_six_et_sept * coords_triees[6][1] or coords_triees[5][1] <= ecart_entre_six_et_sept_minimum+coords_triees[6][1]) :
-        raise SixColonnePasDistinctesError(filename+" page "+str(numpage))
+
+    """print("y ="+str(coords_triees[0][0])+" num ="+str(coords_triees[0][1]))
+    print("y ="+str(coords_triees[1][0])+" num ="+str(coords_triees[1][1]))
+    print("y ="+str(coords_triees[2][0])+" num ="+str(coords_triees[2][1]))
+    print("y ="+str(coords_triees[3][0])+" num ="+str(coords_triees[3][1]))"""
+    
+    #verifie qu'il y a bien 3 distinct. On propose la 4em colonne doit etre au moins
+    #ratio plus faible que la 4em.
+    if(coords_triees[2][1] <= difference_entre_trois_et_quatre * coords_triees[3][1] or coords_triees[2][1] <= ecart_entre_trois_et_quatre_minimum+coords_triees[3][1]) :
+        raise TroisColonnePasDistinctesError(filename+" page "+str(numpage))
 
 
-    sixcolonnes = [coords_triees[0][0],coords_triees[1][0],coords_triees[2][0],coords_triees[3][0],coords_triees[4][0],coords_triees[5][0]]
-    sixcolonnes.sort()
+    troiscolonnes = [coords_triees[0][0],coords_triees[1][0],coords_triees[2][0]]
+    troiscolonnes.sort()
 
-    logger_info.info("SIX COLONNES TROUVEES: ")
+    logger_info.info("TROIS COLONNES TROUVEES: ")
     logger_info.info(coords_triees)
 
-    milieu = chercher_milieu_de_page(text_page,sixcolonnes[3])
-    add_infos_page(numpage,milieu,sixcolonnes)
+    return troiscolonnes
 
-
-
-
-"""
-##recupere la longueur de la ligne la plus longue.
-##divise par 2, et cherche la colonne vide la plus proche (à gauche ou à droite).
-## ici le "vide" est pas évident à determiner.
-## approche totalement à taton et random:
-## essai avec vide = 0 caractere.
-## on va conciderer que si ça depasse les 20% d'écart c'est inquiétant et on ne prend pas
-## ex: si une page fait 200carac max, alors on cherche le milieu entre 80 et 120
-## si on ne trouve pas, on tente avec vide = 1. et ainsi de suite jusqu'à en trouver une.
-"""
-def cherche_colonne_centrale_vide(numpage,text_page):
-    global helper
-    marge_erreur = 0.2 #droit à cette marge autour du centre.
-    marge_bas_haut_de_page = 0.2 #correspond aux pourcentages reprsentant le haut ou pas. (0.2 = haut 20% de page, bas à partir de 80%)
-    nombre_de_caractere_dans_centre_max = 8 #en estimant les petites phrases en debut/fin
-    y_max = 0
-    trouve = False
-    #print(text_page)
-    
-    text_page = nettoie_page(text_page);
-    lignes = text_page.split('\n');
-
-    #cherche la ligne la plus longue
-    for y in range(0,len(lignes)) :
-        if( len(lignes[y]) > y_max) :
-            y_max = len(lignes[y])
-
-
-
-    difference_centrale = 0 #cherche à partir de la colonne centrale.
-    nombre_de_caractere_autorise = 0
-    milieu = int(y_max/2)
-    print("milieu theorique = "+str(milieu))
-    while(not trouve) :
-
-        #colonne droite
-        colonne_blanche = True
-        compteur = nombre_de_caractere_autorise
-        for y in range(0,len(lignes)) : #parcours la page
-            if(len(lignes[y]) > milieu+difference_centrale) : #verifie si la ligne s'arrete pas avant
-                
-                if(not lignes[y][milieu+difference_centrale].isspace()) :
-                    if(compteur == 0 or ( y > len(lignes)*marge_bas_haut_de_page and y < len(lignes)-(len(lignes)*marge_bas_haut_de_page))) : #trop de caractere comptee. Ou caractere trouvé au milieu de page
-                        colonne_blanche = False
-                        break
-                    print(str(lignes[y][milieu+difference_centrale]))
-                    compteur-= 1
-
-                    
-        #TROUVE            
-        if(colonne_blanche) :
-            logger_info.info("COLONNE BLANCHE TROUVEE A DROITE: ")
-            logger_info.info("milieu ="+str(milieu+difference_centrale));
-            logger_info.info("nbr caractere dans colonne blanche ="+str(nombre_de_caractere_autorise))
-            add_infos_page(numpage,milieu+difference_centrale,[])
-            return milieu+difference_centrale
-
-
-        #colonne gauche
-        colonne_blanche = True
-        compteur = nombre_de_caractere_autorise
-        for y in range(0,len(lignes)) :
-            if(len(lignes[y]) > milieu-difference_centrale) :
-                if(not lignes[y][milieu-difference_centrale].isspace()) :
-                    if(compteur == 0 or ( y > len(lignes)*marge_bas_haut_de_page and y < len(lignes)-(len(lignes)*marge_bas_haut_de_page))) :
-                        colonne_blanche = False
-                        break
-                    compteur-= 1
-
-        #TROUVE         
-        if(colonne_blanche) :
-            logger_info.info("COLONNE BLANCHE TROUVEE A GAUCHE: ")
-            logger_info.info("milieu ="+str(milieu-difference_centrale));
-            logger_info.info("nbr caractere dans colonne blanche ="+str(nombre_de_caractere_autorise))
-            
-            add_infos_page(numpage,milieu-difference_centrale,[])
-            return milieu-difference_centrale
-
-        difference_centrale+= 1
-        #si marge d'erreur atteinte (plus de 20% eloigne du "milieu theorique"
-        if(difference_centrale > milieu*marge_erreur):
-            difference_centrale = 0
-            nombre_de_caractere_autorise+= 1
-
-            if(nombre_de_caractere_autorise > nombre_de_caractere_dans_centre_max) :
-                raise ImpossibleDeTrouverColonneCentraleError(filename+" page "+str(numpage))
-
-
-
-def reconstitue_page(i,text_page) :
-    global pages_reconstituees
-    milieu = dico_infos_pages[i].get_milieu()
-    text = ""
-
-    text_page = supprime_premiere_ligne_ecrite(text_page);
-    lignes = text_page.split('\n');
-    #print(text_page)
-    print("milieu = "+str(milieu));
-    #partie gauche
-    for y in range(0,len(lignes)) :
-        fin_tmp = min(milieu,len(lignes[y]))
-        text += lignes[y][0:fin_tmp]+"\n";
-    text += "\x0c";
-    text += "\n";
-    
-    #partie droite
-    for y in range(0,len(lignes)) :
-        fin = len(lignes[y])
-        if(milieu < fin):
-            text += lignes[y][milieu:fin]+"\n";
-
-    text += "\x0c";
-
-    pages_reconstituees += text
 
 
 def reinitialise_variables() :
@@ -479,20 +419,28 @@ helper = []
 current_legislature = "4"
 #logs
 logging
-logger = logging.getLogger('myapp')
-hdlr = logging.FileHandler('./logs/'+current_legislature+'_reconstitues.log')
-formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
-hdlr.setFormatter(formatter)
-logger.addHandler(hdlr) 
-logger.setLevel(logging.ERROR)
+logger_critic = logging.getLogger('myapp')
+hdlr_critic = logging.FileHandler('./logs/'+current_legislature+'_reconstitues_critic_error.log')
+formatter_critic = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
+hdlr_critic.setFormatter(formatter_critic)
+logger_critic.addHandler(hdlr_critic) 
+logger_critic.setLevel(logging.NOTSET)
+
+
+logger_grave = logging.getLogger('main')
+hdlr_grave = logging.FileHandler('./logs/'+current_legislature+'_reconstitues_grave_error.log')
+formatter_grave = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
+hdlr_grave.setFormatter(formatter_grave)
+logger_grave.addHandler(hdlr_grave) 
+logger_grave.setLevel(logging.NOTSET)
 
 
 logger_info = logging.getLogger('main')
-hdlr2 = logging.FileHandler('./logs/'+current_legislature+'_reconstitues_info.log')
-formatter2 = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
-hdlr2.setFormatter(formatter2)
-logger_info.addHandler(hdlr2) 
-logger_info.setLevel(logging.DEBUG)
+hdlr_info = logging.FileHandler('./logs/'+current_legislature+'_reconstitues_info.log')
+formatter_info = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
+hdlr_info.setFormatter(formatter_info)
+logger_info.addHandler(hdlr_info) 
+logger_info.setLevel(logging.NOTSET)
 
 """
 for root, subdirs, files in os.walk("4-reconstitues"):

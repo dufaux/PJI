@@ -7,8 +7,6 @@
 
 
 
-                               ANNEXE AU PROCÈS-VERBAL
-                                                                             DE
 
 
 
@@ -104,7 +102,20 @@
     Bayle.                 Bisson.                    Bou tard .               
 
 
- LA
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  Bozzi.                     Dronne .              Jenn.
  Bressolier.                Duboseq.              Jeanne.
  Brial.                     Ducray .              Jouffroy.
@@ -193,6 +204,7 @@
  Dominait,                 Janot (Pierre) .      Perrot.
  Donnadicu.                Jarrige.              Petit (Camille).
  Douzans.                  Jarrot .              Petit (Jean . Claude) .
+
  
 
 
@@ -251,7 +263,7 @@
                                                                                 
                     Excusés ou absents par congé (1):                           
                                                                                 
-          (Application de l ' article 162, alinéas 2 et 3, du règlement.)       
+                                                                                
                                                                                 
       MM . Boyer, Chédru, Collière, Schloesing, Toutain, Ziller.                
                                                                                 
@@ -264,7 +276,7 @@
                                                                                 
                                                                                 
                             Motifs des excuses :                                
-             (Application de l'article 162, alinéa 3, du règlement.)            
+                                                                                
                                                                                 
        MM . Boyer (cas de force majeure).                                       
             Chédru (maladie).                                                   
@@ -303,6 +315,12 @@
      Barbet (Raymond) .       Berthouin .               Boulloche .             
 
 
+
+
+
+
+
+
  Brettes.                Gaudin.                  Peugnet.
  Brugnon.                Germez.                  Philibert.
  Bustin.                 Gosnat.                  Plane)x,
@@ -315,6 +333,7 @@
  Dardé.                  Lamps.                   Rochet (Waldeck).
  Darras.                 Larue (Tong).            Roger.
  Defferre.               Lavielle.                Roucaute.
+
  Delelis.                Lebon.                   Saint-Paul
  Delorme.                Lejeune (Max).           Sauzedde.
  Denvers.                Leroy.                   Servan-Schreiber.
@@ -332,7 +351,11 @@
  Fiévez.                 Notebart.                Villon (Pierre),
  Gabas.                  Odru.                    Vina, ier.
  Garcin.                 Péronnet.
+
+
+
                           Ont voté contra :
+
                                                   Dominati,
         MM.              Broglie (de).
   Abdoulkader Moussa     Brugerolle.              Donnadieu.
@@ -400,6 +423,7 @@
   Bricout.               Deprez.                  Herzog.
   Briot.                 Destremau.                Ilinsberger.
   Brocard .              Dijoud .                 Hof fer.
+
  
 
 
@@ -497,7 +521,7 @@
 
                    Excusés ou absents par congé (1) :
                                                                               
-         (Application de l'article 162, alinéas 2 et 3, du règlement.)
+                                                                      
                                                                               
       MM . Boyer, Chédru, Collière, Schloesing, Toutain, Ziller .             
                                                                               
@@ -511,7 +535,7 @@
                                                                               
                           Motifs des excuses :                                
                                                                               
-           (Application de l 'article 162, alinéa 3, du règlement.)           
+                                                                              
                                                                               
       MM . Boyer (cas de force majeure) .                                     
            Chédru (maladie) .                                                 
@@ -526,7 +550,15 @@
                                                                               
 
 
+
+
+
+
+
+
+
                                SCRUTIN (N° 272)
+
  Sur l 'amendement n° 76 de M . Rousseau à l'article 9 du projet de
   loi de finances pour 1972 (Extension de la détaxation des carbu-
    rants agricoles aux C. U . M . A. et suppression du montant mini-
@@ -535,29 +567,41 @@
           Nombre des votants                                                        392
           Nombre des suffrages exprimés                                             359
           Majorité absolue . . . . . . . . . . . . . . . . . . . . . . . . . . . .. 180
+
                   Pour l' adoption                                       148
                   Contre                                                211
   L'Assemblée nationale n 'a pas adopté.
+
                                   Ont voté pour :
+
+
      MM.                     1 Couder(.                     Mathieu.
  Achille Fould .               Couveinhes.                  Mauger.
+
  Aillières (d9.                Cressard.                    Maujoüan du Gasset.
  Arnaud (Henri) .              Degraeve .                   Meunier.
+
  Arnould .                     Dehen.                       Miossec.
  Aubert                        Delachenal .                 Montesquiou (de).
                                Delatre .
  Mme Aymé de la                                             Morellon.
    Chevrelière.                Delong (Jacques) .           Murat.
+
  Barberot                      Deniau (Xavier) .            Ness.
  Barrot (Jacques) .            Denis (Bertrand) .           Nessier.
+
  Baudouin .                    Dijoud .                     011ivro.
  Beauguitte (André) .          Douzans.                     Ornano (d' ).
+
  Beauverger .                  Dronne .                     Paquet.
  Bécam .                       Ducray.                      Peizerat.
+
  Bennetot (de) .               Du pont-Fauville.            Petit (Jean-Claude).
  Berger.                       Durieux .                    Pianta.
+
  Beylot.                       Duval                        Pidjot.
  Bisson.                       Favre (Jean)                 Mme Ploux.
+
  Bizet .                       Fossé .                      Poncelet.
  Boisdé (Raymond).             Fouchier.                    Poudevigne.
  Bonne) (Pierre, .             Gerbet .                     Poulpiquet (de).
@@ -600,7 +644,10 @@
  Cormier .                     Lucas (Pierre) .             Voilquin.
                                Macquet.                     WestphaL
  Corrèze .
+
+
                                  Ont voté contre :
+
       MM .                     Boscher .                    Cornette (Maurice).
  Abdoulkader Moussa            Bouchacourt.                 Coumaros.
    Ali .                       Boudon .                     Cousté.
@@ -627,6 +674,7 @@
  Boinvilliers .                Colibeau .                   Flornoy
  Bob o.                        Conte (Arthur) .             Fontaine.
  Bonhomme .                    Cornet (Pierre) .            Fortuit .
+
  
 
 
@@ -751,35 +799,57 @@
                                                                               
                                                                               
                      Excusés ou absents par congé (1) :                       
-      (Application   de l 'article 162, alinéas 2 et 3, du         règlement.)
+                                                                              
                                                                               
       MM . Boyer, Chédru, Collière, Schloesing, Toutain, Ziller .             
 
 
+
+
+
+
+
+
+
                          N'ont pas pris part au vote :
+
      M. Achille Peretti, président de l 'Assemblée nationale, et M . Chie
    telle, qui présidait la séance.
+
+
                           Motifs des excuses :
-           (Application de l ' article 162, alinéa 3, du règlement.)
+                                                                    
+
     MM . Boyer (cas de force majeure).
          Chédru (maladie).
          Collière (maladie).
          Schloesing (assemblées internationales).
          Ziller (maladie).
+
      (1) Se reporter à la liste ci-après, des motifs des excuses.
+
+
+
                                   SCRUTIN (N°        273)
+
    Sur les paragraphes 1 et II de l'amendement n° 42 de la commis-
+
     sion de la production à l 'article 9 du projet de loi de finances
     pour 1972 (Détaxation des carburants agricoles : supprimer l 'exi-
     gence d'une surface cultivée maximum et d 'un montant minimum
     des attributions).
+
           Nombre des votants                                             469
           Nombre des suffrages exprimés                                  452
           Majorité absolue                                               227
                   Pour l 'adoption . . . . . . . . . . . . ..    280
                   Contre                                         172
+
     L'Assemblée nationale a adopté.
+
+
                                   Ont voté     pour :
+
         MM.                       Bustin.                       Faure (Maurice).
    Abelin .                       Caill (Antoine) .             Favre (Jean).
    Achille-Fould.                 Caillau (Georges) .           Feït (René).
@@ -835,6 +905,7 @@
                                   Delong (Jacques).
    Bordage.                       Delorme.                      Joanne.
    Borocco.                                                     Jouffroy.
+
                                   Deniau (Xavier).
    Boudet.                        Denvers.                      Krieg.
    Boudon.
@@ -860,6 +931,7 @@
    Buffet.                        Fajon .                       Lelong (Pierre).
    Buot.                          Faure (Edgar).                Lemaire.
    Buron (Pierre).                Faure (Gilbert) .             Lepage .
+
  
 
 
@@ -976,13 +1048,22 @@
     Flornoy.                 Narquin .                                     
 
 
+
+
+
+
+
+
+
                      Se sont abstenus volontairement :
+
      MM.                   Dijoud.                 Poniatowski.
  Arnould.                  Guichard (Claude).      Ribadeau Dumas.
  Boisdé (Raymond).         Ness.                   Sablé.
  Bonnet (Christian).       Ornano (d ').           Schnebelen,
  Cornette (Maurice).       Paquet.                 Tissandier.
  Denis (Bertrand) .        Petit (Jean-Claude).    Verpillière (de la).
+
                       N 'ont pas pris part au vote :
       MM.
  Bignon (Albert) .
@@ -990,30 +1071,53 @@
  Caillaud (Paul).           (Olivier) .            Rives-Henrÿs.
  Destremau .
                            Grandsart.
+
+
                 Excusés ou absents par congé (1) :
-     (Application de l ' article 162, alinéas 2 et 3, du règlement .)
+                                                                     
+
+
    MM. Boyer, Chédru, Collière, Schloesing, Toutain, Ziller.
+
+
                       N 'ont pas pris part au vote :
+
    M . Achille Peretti . président de l' Assemblée nationale, et M . Che-
  zelle, qui présidait la séance.
+
+
                          Motifs des excuses :
-       (Application de l 'article 162, alinéa 3, du règlement .)
+
+                                                                
+
    MM . Boyer (cas de force majeure).
         Chédru (maladie).
+
         Collière (maladie).
         Schloesing (assemblées internationales).
         Ziller (maladie).
+
    (1) Se reporter à la liste ci-après, des motifs des excuses.
+
+
+
                            SCRUTIN (N° 274)
+
        Sur l 'article 13 chu projet de loi de finances pour 1972
+
                       (Equilibre général du budget).
+
           Nombre des votants                                 470
           Nombre des suffrages exprimés                      451
           Majorité absolue                                   226
                  Pour l 'adoption                    361
                  Contre                               90
+
   L ' Assemblée nationale a adopté.
+
+
                              Ont voté pour:
+
       MM.                  Blary.                  Cerneau.
  Abdoulkader Moussa        Blas (René).            Chamoon.
    Ali                     Boinvilliers.           Chambrun (de).
@@ -1058,6 +1162,7 @@
  Billette.                 Catry                   Deniau (Xavier).
  Bisson.                   Catiin-Bazin.           Denis (Bertrand).
  Bizet.                    Cazenave .              Deprez.
+
  
 
 
@@ -1172,6 +1277,12 @@
     Boulloche.             Denvers.                Gaudin .              
 
 
+
+
+
+
+
+
  Gernez.                     Masse (Jean).            Roger.
  Gosnat.                     Massot.                  Roucaute.
  Guille.                     Mitterrand.              Saint-Paul.
@@ -1189,7 +1300,10 @@
  Longequeue.                 Rieubon                  Vignaux.
  Lucas (Henri).              Rocard (Michel).         Villon (Pierre).
  Madrelle.                   Rochet (Waldeck).        Vinatier.
+
+
                   Se sont abstenus volontairement :
+
                              Cormier.                 Leroy-Beaulieu.
      MM.
  Abelin.                     Delatre.                 Médecin.
@@ -1200,35 +1314,58 @@
  Cassabel.                   Faure (Edgar).
  Chazalon.                   Fossé.                   Tondut.
  Clavel.                     Ihuel.
+
+
                    N 'ont pas pris part au vote :
      MM.
  Donnadieu.                   Liogier.                Regaudie.
  Grandsart.              1   ' Rabreau.           I   Rives-Henrjis.
+
                  Excusés ou absents par congé (1 .:
-      (Application de l 'article 162 . alinéas 2 et 3, du règlement.)
+
+                                                                     
+
    MM . Boyer, Chédru, Collière, Scitloesing, Toutain, Ziller.
+
+
                    N ' ont pas pris part au vote :
+
    M. Achille Peretti, président de l'Assemblée nationale, et M . Che-
  zelle, qui présidait la séance.
+
+
                         Motifs des excuses :
-         (Application de l' article 162, alinéa 3, du règlement.)
+
+                                                                 
    MM . Boyer (cas de force majeure).
+
         Chédru (maladie).
         Collière (maladie).
         Schluesing (assemblées internationales).
         Ziller (maladie).
+
+
    (1) Se reporter à la liste ci-après, des motifs des excuses.
+
+
+
+
                              SCRUTIN (N° 275)
+
  Sur la demande de constitution d 'une commission spéciale, foi mutée
   par M . Ballanger, pour l'examen de sa proposition de résolution
   n" 1981, tendant à créer une commission chargée d ' examiner la
   situation des députés au regard des incompatibilités.
+
           Nombre des votants                                     470
           Nombre des suffrages exprimés                          459
           Majorité absolue                                       230
+
                   Pour l 'adoption                       96
                   Contre                                363
    L ' Assemblée nationale n ' a pas adopté.
+
+
                               Ont voté pour:
       MM.                     Mme Chonavel.           Gernez.
  Alduy.                       Dardé.                  Gosnat.
@@ -1252,6 +1389,7 @@
  Cerneau.                     Gabas.                  Masse (Jean).
  Chandernagor.                Larcin.                 Massot.
  Chapalain.                   Gaudin .                Mitterrand.
+
  
 
 
@@ -1366,16 +1504,13 @@
     Caillaud (Paul) .      Flornoy.                    nière .                
 
 
-                                         Ce numéro comporte le compte rendu in
-                                                        du jeudi 21 octobre 19
-
-                                                     séance : page 4 7 1 1 ; 2
-
-
-
-                                            Paris. — Imprimerie des Journaux o
-
 
+
+
+
+
+
+
  Lecat .                    Paquet.                Sallenave.
  Le Douarec .               Pasqua .               Sanford.
  Lehn .                     Peizerat.              Sanguinetti.
@@ -1410,50 +1545,78 @@
                                                    Valleix.
  Mirlin.                    Richard (Jacques).
  Missoffe .                 Richard (Lucien) .     Vandelanoitte.
+
  Modiano .                  Richoux .              Vendroux (Jac q ues).
  Mohamed (Ahmed).           Rickert.               Vendroux (Jacques-
+
  Montesquiou (de) .         Bitter .                 Philippe).
  Morellon .                 Rivière (Joseph) .     Verkindère.
+
  Morison.                   Rivière (Paul) .       Vernaudon.
  Moron .                    Rivierez .             Verpillière (de la).
+
  Moulin (Arthur).           Robert.                Vertadier.
  Mouret .                   Rocca Serra (de).      Vitter.
+
  Murat.                     Rochet (Hubert) .      Vitton (de).
  Narquin .                  Rolland.               Voilquin.
+
  Nass .                     Rossi .                Voisin (Alkan).
  Nessler.                   Rousset (David).       Voisin (André-
+
  Neuwirth .                 Roux (Claude) .          Georges).
  Nungesser.                 Roux (Jean-Pierre) .   Volumard.
+
  Offroy.                    Rouxel.                Wagner.
  011ivro .                  Ruais.                 Weber.
+
  Ornano (d ' ).             Sabatier.              Weinman.
  Palewski (Jean-Paul).      Sablé .                Westphal.
+
  Papon .                    Sallé (Louis).         Zimmermann.
+
+
                   Se sont abstenus volontairement :
+
      MM .                   Commenay .             Meunier.
+
  Aubert.                    Faure (Edgar) .        Sourdille.
  Bousseau .                 Luciani .              Stehlin.
+
  Charles (Arthur) .         Massoubre.             Vallon (Louis).
+
+
                       N'ont pas pris part au vote :
      MM.
  Bressolier .               Grandsart.             Rives-Henrys.
+
  Césaire .                  Liogier .              Sanglier.
+
+
                 Excusés ou absents par congé (1) :
-     (Application de l ' article 162, alinéas 2 et 3, du règlement.)
+                                                                    
+
    MM . Boyer, Chédru, Collière, Schloesing, Toutain, Ziller .
+
+
                       N 'ont pas pris part au vote :
+
    M . Achille Peretti, président de l' Assemblée nationale, et M. Cha-
+
  zelle, qui présidait la séance.
+
+
+
                          Motifs des excuses :
-        (Application de l 'article 162, alinéa 3, du règlement .)
+                                                                 
+
    MM . Boyer (cas de force majeure).
         Chédru (maladie).
         Collière (maladie).
         Schloesing (assemblées internationales).
         Ziller (maladie).
+
    (1) Se reporter à la liste ci-après, des motifs des excuses.
-tégral des deux séances
-71.
-' séance : page       4 7 3 7.
-fficiels, 26, rue Desaix.
+
+
 

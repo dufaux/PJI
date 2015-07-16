@@ -7,8 +7,6 @@
 
 
 
-                                     ANNEXES AU PROCÈS-VERBAL
-                                                                                                DE 
 
 
 
@@ -117,7 +115,20 @@
     Broglie (de) .                  Domineti    .          Hunault                                 
 
 
-LA
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  kart.                   Modiano .                Rolland.
  Jacquet (Marc) .        Mohamed (Ahmed) .        Rousset (David).
  Jacquet (Michel) .      Morellon .               Roux (Claude).
@@ -129,6 +140,7 @@ LA
  Jarrot .                Nass.                    Sablé.
  Jenn .                  Nessler.                 Sallé (Louis).
  Jouffroy .              Neuwirth .               Sanglier.
+
  Joxe.                   Nungesser.               Sangùinetti.
  Julia.                  Offroy .                 Santoni.
  Kédinger.               011ivro.                 Sarnez (de).
@@ -140,11 +152,15 @@ LA
  Laudrin .               Peizerat .               Sourdille.
  Lavergne.               Perrot.                  Stasi.
  Lebas.                  Petit (Camille) .        Stirn.
+
  Le Bault de la Mori .   Petit (Jean-Claude).     Taittinger (Jean).
    nière .               Peyrefitte .             Terrenoire (Main).
+
  Lecat.                  Peyret .                 Terrenoire (Louis).
+
  Le Douarec .            PIanta.                  Thillard.
  Lehn.                   Pidjot.                  Thorailler.
+
  Lelong (Pierre) .       Pierrebourg (de).        Tiberi.
  Lemaire .                                        Tissandier.
                          Plantier .
@@ -153,6 +169,7 @@ LA
                          Poirier.                 Tomasini.
  Leroy-Beaulieu.         Poncelet.                Tondut,
  Le Tac.                 Poniatowski.             Torre.
+
  Le Theule.              Poudevigne.              Toutain.
  Liogier.
                          Poujade (Robert).        Trémeau.
@@ -168,23 +185,34 @@ LA
  Marcenet .              Radius.                  Vancalster.
  Marcus .                Raynal .                 Vandelanoitte.
  Marette.                Renouard .               Vendroux (Jacques).
+
  Marie .                 Réthoré.                 Vendroux (Jacques-
  Marquet (Michel) .      Ribadeau Dumas .           Philippe(.
+
  Martin (Claude) .       Ribes .                  Verkindère.
  Martin (Hubert) .       Ribière (René) .         Vernaudon.
+
  Massoubre.              Richard (Jacques).       Verpillière (de la).
  Mathieu .               Richard (Lucien) .       Vertadier.
+
  Mauger .                Richoux.                 Vitter.
  Maujoüan du Gasset.     Bitter.                  Voisin (Alban).
+
  Mazeaud.                Rivain.                  Voisin (André-
  Menu .                  Rives Henrÿs.              Georges).
+
  Mercier .               Rivière (Joseph) .       Volumard.
  Messmer.                Rivière (Paul) .         Wagner.
+
  Meunier.                Rivierez.                Weber.
  Miossec.                Robert .                 Weinman.
+
  Mirtin .                Rocca-Serra (de) .       Westphal.
  Missoffe .              Rochet (Hubert) .        Zimmermann.
+
+
                           Ont voté contre :
+
      MM.                 Bustin .                 Dumortier.
  Alduy .                 Carpentier.              Dupuy.
  Andrieux.               Cermolacce.              Duraffour (Paul).
@@ -202,6 +230,7 @@ LA
  Boulloche .             Dronne .                 Gaudin.
  Brettes.                Ducoloné.                Gernez.
  Brugnon                 Ducos .                  Gosnat.
+
  
 
 
@@ -250,7 +279,7 @@ LA
                                                                                                 
                   Excusés ou absents par congé (1) :                                            
                                                                                                 
-         (Application de l' article 162, alinéas 2 et 3 du règlement .)                         
+                                                                                                
                                                                                                 
       MM. Abelin, Buffet, Charié, Collette et Voilquin.                                         
                                                                                                 
@@ -264,7 +293,7 @@ LA
                                                                                                 
                           Motifs des excuses :                                                  
                                                                                                 
-           (Application de l ' article 162, alinéa 3 du règlement.)                             
+                                                                                                
                                                                                                 
       MM. Abelin (maladie) .                                                                    
           Buffet (maladie) .                                                                    
@@ -316,6 +345,12 @@ LA
     Baudouin .                   Bignon. (Charles) .                        Bourgeois (Georges).
 
 
+
+
+
+
+
+
      Bousquet.                 Gissinger                Papon.
      Bousseau.                 Glon.                    Paquet.
      Boyer.                    Godefroy .               Pasqua.
@@ -422,6 +457,7 @@ LA
      Germain.                  011ivro.                 Weinman.
      Giscard d'Estaing         Ornano (d') .            Westphal.
         (Olivier).             Palewskl (Jean-Paul) .   Zimmermann .
+
  
 
 
@@ -501,7 +537,7 @@ LA
                                                                                   
                    Excusés ou absents par-congé (1) :                             
                                                                                   
-         (Application de l'article 162, alinéas 2 et 3, du règlement)             
+                                                                                  
                                                                                   
                                                                                   
       MM . Abelin, Buffet, Charié, Collette et Voilquin.                          
@@ -520,7 +556,7 @@ LA
                                                                                   
                                Motif des excuses :                                
                                                                                   
-            (Application de l'article 162, alinéa 3, du règlement.)
+                                                                   
                                                                                   
                                                                                   
                                                                                   
@@ -538,17 +574,36 @@ LA
                                                                                   
 
 
+
+
+
+
+
+
+
                            SCRUTIN      (N°   121)
+
    Sur l 'amendement n° 92 du Gouvernement à l' article 41 du projet
     de loi relatif à l ' indemnisation des Français rapatriés d'outre-mer.
-    (Limites des déductions operées sur t 'indemnité .)
+
+                                                       
+
+
            Nombre des votants                                  473
            Nombre des suffrages exprimés                       441
            Majorité absolue                                    221
+
+
                    Pour l ' adoption                   343
+
                    Contre                               98
+
      L'Assemblée nationale a adopté.
+
+
                               Ont voté pour :
+
+
        MM.                  Charbonnel.               Guilbert.
    Abdoulkader Moussa       Charles (Arthur) .        Guillermm.
                             Charret (Edouard).        Habib-Deloncle.
@@ -609,6 +664,7 @@ LA
    Briot.                   Foyer.                    Mainguy.
    Brocard .                Fraudeau .                Malène (de la).
    Broglie (de) .           Frys.                      Marcenet.
+
    Buot.                    Gardeil.                   Marcus.
    Buron (Pierre).          Carets (des) .             Marette.
    Caill (Antoine) .        Gastines (de).             Marie.
@@ -616,6 +672,7 @@ LA
    Caillaud (Paul).         Gerbaud.                   Martin (Claude).
    Caille (René).           Germain.                   Martin (Hubert).
    Caldaguès.               Giscard d'Estaing          Massoubre.
+
    Calméjane.                 (Olivier).               Mauger.
    Capelle .                Gissinger.                 Maujoüan du Gasset,
    Carrier.                 Glon.                      Mazeaud.
@@ -631,6 +688,7 @@ LA
    Chambon .                Grondeau .                 Mohamed (Ahmed).
    Chambrun (de).           Grussenmeyer.              Morellon.
    Chapelain.               Guichard (Claude).         Morison.
+
  
 
 
@@ -744,33 +802,63 @@ LA
                                                                                 
                                                                                 
                    Excusés ou absents par congé (1) :                           
-         (Application de l'article 162, alinéas 2 et 3 du règlement .)          
+                                                                                
                                                                                 
       MM. Abelin, Buffet, Charié, Collette et Voilquin .                        
 
 
+
+
+
+
+
+
+
+
                       N'ont pas    pris   part au      vote :
+
      M. Achille Peretti, président de l ' Assemblée nationale, et M. Clau-
    dius-Petit, qui présidait la séance.
+
+
+
                           Motifs des excuses :
-          (Application de l ' article 162, alinéa 3 du règlement.)
+
+                                                                  
+
      MM . Abelin (maladie).
           Buffet (maladie).
           Charié (maladie).
+
           Collette (événement familial grave).
           Voilquin (maladie).
+
      (1) Se reporter à la liste ci-après, des motifs des excuses.
+
+
+
+
+
                             SCRUTIN       (N°   122)
+
    Sur l 'article 41 du projet de loi relatif à l' indemnisation des Français
      rapatriés d' outre-mer. (Déductions, opérées sur l 'indemnité, de
+
      certaines prestations.)
+
            Nombre des votants                                       474
+
            Nombre des suffrages exprimés                            452
            Majorité absolue                                         227
+
                     Pour l 'adoption                      320
                     Contre                                132
      L 'Assemblée nationale a adopté.
+
+
                               Ont voté pour :
+
+
         MM .                Caill (Antoine).            Dumas.
    Abdoulkader Moussa       Caille (René) .             Dupont-Fauville.
      Ali.                   Caldaguès.                  Dusseaulx.
@@ -805,6 +893,7 @@ LA
                                                         Gerbaud.
    Beucler.                 Chedru.                     Germain.
    Beylot.                  Cointat.                    Giscard d'Estaing
+
    Bichat.                  Coliheau.                     (Olivier).
    Bignon (Albert) .        Conte (Arthur) .
                                                         Gissinger.
@@ -834,6 +923,7 @@ LA
    Broglie (de) .           Dominati.                   Hinsberger
    Buot .                   Donnadieu .                 Hoffer.
    Buron (Pierre) .         Duboscq.                    Hoguet.
+
  
 
 
@@ -955,6 +1045,12 @@ LA
     Delelis.                Lavielle.              Saint-Paul,               
 
 
+
+
+
+
+
+
 Sallenave.               Sudreau.                 Vals (Francis).
 Santons.                 Mme Thome-Pate•          Védrines.
                                                   Ver (Antonin).
@@ -963,7 +1059,10 @@ Sch loesin g.            Tissandier               Vignaux.
 Spénale.                 Mme Vaillant.            Villon (Pierre).
                            Couturier.             Vitton (de).
 Stehlin.
+
+
                  Se sont abstenus volontairement :
+
                                                   Hersant.
     MM.                  Caillau (Georges).
 Achille-Fould.           Césaire.                 Montesquiou (de).
@@ -975,33 +1074,64 @@ Routard.
 Boye r                   Douzans.                 Volumard.
                          Garets (des).
 Brocard.
+
+
                     N 'ont pas pris part au vote :
+
   MM . Moron, Rocard (Michel) et Ziller.
+
+
               Excusés ou absents par congé il):
-    (Application de l 'article 162, alinéas 2 et 3, du règlement .)
+                                                                   
+
   MM. Abelin, Buffet, Charié, Collette et Voilquin.
+
+
                    N'ont pas pris pat au vote :
+
+
   M . Achille Peretti, président de l ' Assemblée nationale, et M . Clau-
 dius-Petit, qui présidait la séance.
+
+
+
+
                         Motifs ses excuses :
          &Application de l 'article 162, alinéa 3, du règlement
+
+
   MM . Abelin (maladie).
+
        Buffet (maladie)
+
        Charié (maladie).
+
        Collette (événement familial grave).
        Voilquin (maladie)
                 se_
+
   (1) Se reporter à la liste ci-après, des motifs des excuses
+
+
+
+
                          SCRUTIN (N° 123)
+
 Sur l 'ensemble du projet de Lot relatif à t' indenn(isotion des Français
                         rapatriés d ' outre-mer.
+
           Nombre des votants                                    475
           Nombre des suffrages exprimés                         443
           Majorité absolue                                      222
                   Pour l'adoption                    333
+
                   Contre                             110
+
    L' Assemblée nationale a adopté.
+
+
                             Ont voté pour :
+
      MM.                  Bisson.                  Carter
  Abdoulkader Moussa       Bizet.                   Cassabel.
   AIL                     Blary.                   Catalifaud.
@@ -1034,6 +1164,7 @@ Sur l 'ensemble du projet de Lot relatif à t' indenn(isotion des Français
  Bignon (Albert).         Caldaguès.               Cressard
  Bignon (Charles).        Calméjane.               Damette
  Billette.                Carrier.                 Dânilo.
+
  
 
 
@@ -1136,19 +1267,16 @@ Sur l 'ensemble du projet de Lot relatif à t' indenn(isotion des Français
 
 
 
-                                       Ce numéro comporte le compte rendu I
-                                                        du vendredi 12 juin
-
-                                l'° séance : page 256 5 . — 2' séance : pag
-                                                                4' séance :
-
-
-
-
-                                            Paris. — Imprimerie des Journau
-
 
+
+
+
+
+
+
+
                                Ont voté contre :
+
       MM.                     Dumortier.              Montalat.
  Alduy.                       Dupuy.                  Montesquiou (de).
  Andrieux.                    Duraffour (Paul).       Moron.
@@ -1184,15 +1312,21 @@ Sur l 'ensemble du projet de Lot relatif à t' indenn(isotion des Français
  Delorme.                     Madrelle.               Vals (Francis).
  Denvers.                     Masse (Jean).           Védrines.
  Didier (Emile).              Massot.                 Ver (Antonin).
+
  Dronne.                      Médecin.                Vignaux.
  Ducoloné.                    Mitterrand.             Villon (Pierre).
+
  Ducos .                      Mollet (Guy) .
+
+
                  Se    sont     abstenus volontairement :
+
                                                       Janet (Pierre).
      MM.                      Césaire.
  Barberot.                    Collière.               Lainé.
  Beylot.                      Commenay.               Leroy-Beaulieu.
  Bonhomme.                    Cormier.                Lucas (Pierre).
+
  Boudet.                      Dassié.                 Mercier.
  Boutard.                     Douzans.                Rickert.
  Brugerolle.                  Duboscq.                Rouxel.
@@ -1201,25 +1335,39 @@ Sur l 'ensemble du projet de Lot relatif à t' indenn(isotion des Français
  Caillaud (Paul).             Halbout.                Sanford.
  Capelle.                     Hersant.                Stehlin.
  Cazenave .                   Ihuel.                  Volumard.
+
+
                    N'ont pas pris part au vote :
+
+
    MM. Rocard (Michel) et Ziller.
+
+
                 Excusés ou absents par congé (1):
-      (Application de l 'article 162, alinéas 2 et 3, du règlement.)
+                                                                    
+
    MM. Abelin, Buffet, Charié, Collette et Voilquin.
+
                       N ' ont pas pris part au vote :
+
+
    M . Achille Peretti, président de l'Assemblée nationale, et M . Clau-
  dius-Petit, qui présidait la séance.
+
+
+
                        Motifs des excuses :
-        (Application de l'article 162, alinéa 3, du règlement .)
+                                                                
+
    MM . Abelin (maladie).
         Buffet (maladie).
         Charié (maladie).
         Collette (événement familial grave).
         Voilquin (maladie).
+
    (1) Se reporter à la liste ci-après, des motifs des excuses.
-ntégral des quatre séances
- 1970.
-e 2 5 6 9 . — 3' séance : page 257 4 .
- 259 7 .
-x officiels, 26, rue Desaix.
+
+
+
+
 

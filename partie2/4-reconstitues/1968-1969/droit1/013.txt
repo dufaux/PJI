@@ -7,8 +7,6 @@
 
 
 
-                                 ANNEXE AU PROCÈS-VERBAL
-                                                                          DE
 
 
                           2e Séance du Lundi 22 Juillet 1968.
@@ -101,7 +99,18 @@
     BaumeL               Blllotte.                     Bout                 
 
 
- I .A
+
+
+
+
+
+
+
+
+
+
+
+
    Bressolier.                  Germain.               Michelet.
    Brial.                       Giscard d 'Estaing     M iossec.
    Bricout.                         (Olivier!.         Mirtin.
@@ -134,6 +143,7 @@
    Clavel.                      Icart.                 Poirier.
    Clostermann.                 Jacquet (Marc).        Pompidou.
    Cointat.                     Jacquet (Michel).      Poncelet.
+
    Collette.                    Jacquinot.             Poniatowski.
    Collière.                    Jacson.                Pons.
    Conte (Arthur).              Jalu.                  Poujade (Robert).
@@ -151,6 +161,7 @@
    Danel.                       Krieg.                 Ribadeau Dumas.
    Danilo.                      Labbé.                 Ribière (René).
    Dassié.                      i .acagne.             Richard (Jacques).
+
    Degraeve.                    Lafay.                 Richard (Lucien).
    Delachenal.                  Lainé.                 Bitter.
    Delahaye.                    1 .assourd.            Rivain.
@@ -187,6 +198,7 @@
    Castines (de).               Menu.                  Thillard.
    Gerbaud.                     Mercier.               Thorailler.
    Gerbet.                      Meunier.               Tissandier.
+
  
 
 
@@ -249,7 +261,7 @@
                                                                                        
                    Excusés ou absents par congé (2):                                   
                                                                                        
-         (Application de l'article 159, alinéas 2 et 3, du règlement.)                 
+                                                                                       
                                                                                        
        MM . Bizet, Giacomi et Vittel                                                   
 
@@ -261,7 +273,7 @@
                                                                                        
                                                                                        
                      Ont délégué leur droit de vote :                                  
-        (Application de l'ordonnance n" 58 . 1066 du 7 novembre 1958 .)                
+                                                                                       
                                                                                        
        MM . Berthelot à M . Miles (maladie).                                           
             Billecocq à M . Caldaguès (maladie).                                       
@@ -272,7 +284,7 @@
                                                                                        
                                                                                        
                              Motifs des excuses :                                      
-            (Application de l 'article 159, alinéa 3, du règlement .)                  
+                                                                                       
                                                                                        
        MM . Bizet (assemblées internationales).                                        
             Giacomi (maladie).                                                         
@@ -298,19 +310,36 @@
                                                                                        
 
 
+
+
+
+
+
+
+
                                        SCRUTIN (N" 4)
+
     Sur les amendements n" 60 de M . Darchicourt et n" 106 de M . Dupuy
       au projet de loi portant ratification des ordonna ,ces relatives
+
       à la sécurité sociale . (L 'article premicrde l ' ordonnance n" 67.706
       sur l'organisation rie la sécurité sociale est abrogé) . (Organismes
       composant l 'organisation générale rie la sécurité sociale).
+
              Nombre des votants                                           447
              Nombre des suffrages exprimés                                447
              Majorité absolue                                             224
+
+
                          Pour l ' adoption                         91
                          Contre                                   356
+
       L ' Assemblée nationale n 'a pas adopté.
+
+
+
                                     Ont voté pour       (1) :
+
          MM.
     Alduy.                          Dumortier.                  Mollet (Guy).
     Andrieux.                       Dupuy.                      Montalat.
@@ -333,6 +362,7 @@
     Cassagne.                       Lacavé.                     Roucaute.
     Cermolacce.                     Lagorce (Pierre).           Saint-Paul.
     Chandernagor.                   Lamps.                      Sauzedde.
+
     Chazelle.                       Larue (Tong).               Schloesing.
     Darchicourt.                    Lavielle.                   Spénale.
                                                                 Mme Thome-Pate-
@@ -345,7 +375,10 @@
     Didier (Emile).                 Masse (Jean).               Ver (Antonin).
     Ducoloné.                       Massot.                     Vignaux.
     Ducos.                          Mitterrand.                 Villon (Pierre).
+
+
                                   Ont voté contre       (1) :
+
          MM.                        Boinvilliers.               Cerneau.
     Abdoulkader Moussa              Boisdé (Raymond).           Chambon.
       Ali.                          Bonhomme.                   Chambrun (de).
@@ -386,6 +419,7 @@
     Billotte.                       Catry.                      Dellaune.
     Bisson.                         Cattin-Bazin.               Delmas (Louis-Alexis).
     Blary .                         Cazenave .                  Delong (Jacques).
+
  
 
 
@@ -458,7 +492,7 @@
     Hinsberger.               Perret.                 Vandelanoitte.       
     Hoffer.                   Petit (Camille).        Vendroux (Jacques).
     Hoguet.                   Petit (Jean-Claude).    Vendroux (Jacques-   
-    Hunault.                  Peyrefitte.               Philippe(.         
+    Hunault.                  Peyrefitte.               Philippe           
     Icart.                    Peyret.                 Verpillière (de La). 
     Muet.                     Planta.                 Vertadier.
     Jacquet (Marc).           Pidjot.                 Vitton (de).
@@ -493,54 +527,93 @@
     Bourges.                Chirac.                   Dechartre.           
 
 
+
+
+
+
+
+
   Mlle r Dienesch.            Guéna.                    Malaud.
   Dumas.                      Guichard (Olivier).       Marcellin.
   Duviltard.                  Inchauspé.                Messmer.
   Faure (Edgar).              Jeanneney.                Ortoli.
   Frey.                       Le Theule,                Schumann (Maurice(.
   Galley .                    Lipkowsky (de).           Trorial.
+
+
                  Excusés ou absents par congé (2) :
-       (Application de l ' article 159, alinéas 2 et 3, du règlement .)
+                                                                       
+
     MM . Bizet, Giacomi, Vitter.
+
                         N'ont pas pris part au vote :
+
      M . Jacques Chaban-Delmas, président de l ' Assemblée nationale,
   et M. Peretti, qui présidait la séance.
+
+
+
                  Ont délégué leur droit de vote :
-     (Application de l'ordonnance n" 58-1066 du 7 'novembre 1958 .)
+                                                                   
+
     MM . Berthelot à M . Niles (maladie).
          Billecocq à M . Caldaguès (maladie).
          Boulay à M . Bayou (Raoul) (maladie).
          Planeix à M . Faure (Gilbert) (maladie).
          Ramette à M . Lamps (maladie).
          Sauzedde à M . Vignaux (événement familial grave).
+
+
                            Motifs des excuses :
-          (Application de l ' article 159, alinéa 3, du règlement .)
+
+                                                                    
+
     MM . Bizet (assemblées internationales).
          Giacomi (maladie).
          Vilter (assemblées internationales),
+
+
     Les nombres annoncés en séance avaient été de:
+
          Nombre des votants                                       450
          Nombre des suffrages exprimés                            450
          Majorité absolue                                         226
+
                      Pour l 'adoption                     91
                      Contre                              359
+
    Mais, après vérification, ces nombres ont été rectifiés confor-
   mément à la liste de scrutin ci-dessus.
+
+
     (1) Se reporter à Ig liste ci-après des députés ayant délégué
   leur vote.
     (2) Se reporter à la liste ci-après des motifs des excuses.
+
+
+
+
                                SCRUTIN (N° 5)
+
   Sur les amendements n" 61 de M . Darchicourt et n" 107 de M . Dupuy
     au projet de loi portant ratification des ordonnances relatives à
+
     la sécurité sociale (l 'article 4 de l 'ordonnance n " 67-706 sur l ' orga-
-    nisation de la sécurité sociale est abrogé) (conseil d'administration
+                                                (conseil d'administration
     de la caisse nationale de l'assurance maladie).
+
+
            Nombre des votants                                     403
            Nombre des suffrages exprimés                          400
            Majorité absolue                                       201
+
                      Pour l 'adoption                     91
+
                      Contre                              309
+
     L'Assemblée nationale n'a pas adopté.
+
+
                              Ont voté pour (1) :
        MM.
   Alduy.                     Carpentier.               Dupuy.
@@ -559,6 +632,7 @@
   Brettes.                   Ducoloné.                 Gosnat.
   Brugnon.                   Ducos.                    Guille.
   Bustin.                    Dumortier.                HouëL
+
  
 
 
@@ -669,6 +743,12 @@
     Collette.                  Jacquinot.                  Pompidou.
 
 
+
+
+
+
+
+
     Poniatowski.              Roux (Claude).            Torre.
     Tons.                     Roux (Jean-Pierre).       Tremeau.
     Poujade (Robert).         Royer.                    Triboulet.
@@ -695,9 +775,14 @@
     Rocca Serra (de).         Tissandier.               Westphal.
     Rolland.                  Tomasini.                 Ziller.
     Roussel (David) .         Tondut.                   Zimmermann.
+
+
                    Se sont abstenus volontairement (1) :
+
       MM. duo(, Marcenet et Stasi.
+
                           N'ont pas pris part au vote :
+
            MM.                 Cormier.                 Kédinger.
       Abelin.                  Coumaros.                Médecin.
     - Achille-Fould.           Cousté.                  Montesquiou (de).
@@ -717,9 +802,12 @@
       Chazalon.                Hersant.                 Sudreau.
       Claudius-Petit.          Hinsberger.              Tisserand.
       Commenay .               Ihuel .                  Vitton (de).
+
+
                        :l 'ont pas pris part au vote :
             (Application de l' article 1^' de l ' ordonnance n " 58. 1099
                              du 17 novembre 1958 .)
+
         MM.
     Bettencourt.              ' Debré.                   Inchauspé.
     Bord.                       Dechartre.               Jeanneney.
@@ -731,25 +819,39 @@
     Chirac.                     Galley.                  Ortoli.
     Comiti.                     Guéna.                   Schumann (Maurice).
     Couve de Murville.          Guichard (Olivier) .     Trorial .
+
                   Excusés ou absents par congé (2) :
-         (Application de l' article , 159, alinéas 2 et 3, du règlement.)
+
+                                                                         
+
        MM . Bizet, Giacomi et Vitter.
+
                           N 'ont pas pris part au vote :
+
       M. Jacques Chaban-Delmas, président de l'Assemblée nationale,
     et M . Peretti, qui présidait la séance.
+
+
+
                      Ont délégué leur droit de vote :
-        (Application de l'ordonnance n" 58-1066 du 7 novembre 1958 .)
+                                                                     
+
        MM . Berthelot à M. Nilès (maladie).
             Billecocq à M . Caldaguès (maladie).
             Boulay à M . Bayou (Raoul) (maladie).
             Planeix à M . Faure (Gilbert) (maladie).
             Ramette à M . Lampa (maladie).
             Sauzedde à M . Vignaux (événement familial grave).
+
                             Motifs des excuses :
-            (Application de l'article 159, alinéa 3, du règlement.)
+
+                                                                   
+
        MM . Bizet (assemblées internationales).
             Giacomi (maladie).
             Vitter (assemblées internationales).
+
+
  
 
 
@@ -870,6 +972,12 @@
     Aymsr.                    Bénard (Mario).           Bignon (Charles) .       
 
 
+
+
+
+
+
+
     Billecocq.                     Ga rdeil.               Nungesser.
     Billette.                      Gastines (de).         Off roy.
     Bisson.                        Georges.               Ornano (d ' ).
@@ -977,9 +1085,12 @@
     Fouchet.                       Narquin.               Westphal.
    'Foyer.                         Nessler.               Ziller.
     Frys .                         Neuwirth .             Zimmermann.
+
                     Se sont abstenus volontairement (1) :
+
      Mme Aymé de la Chevrelière, MM . Chaumont, Lepage, Peyret et
     Vertadier.
+
  
 
 
@@ -1013,7 +1124,7 @@
                                                                                     
                                                                                     
                    Excusés ou absents par congé (2) :                               
-      (Application de l ' article 159, alinéas 2 et 3, du            règlement.)    
+                                                                                    
                                                                                     
       MM . Bizet, Giacomi et Vitter .                                               
                                                                                     
@@ -1026,7 +1137,7 @@
                                                                                     
                     Ont délégué leur droit de vote :                                
                                                                                     
-        (Application de l 'ordonnance n° 58-1066 du 7 novembre 1958 .)              
+                                                                                    
                                                                                     
       MM. Berthelot à M . Nilès (maladie).                                          
           Billecocq à M . Caldaguès (maladie) .                                     
@@ -1037,7 +1148,7 @@
                                                                                     
                             Motifs des excuses :                                    
                                                                                     
-           (Application de l 'article 159 . alinéa 3, du règlement .)               
+                                                                                    
                                                                                     
       MM. Bizet (assemblées internationales) .                                      
           Giacomi (maladie) .                                                       
@@ -1091,6 +1202,12 @@
     Arnould .                  Baudis.                      Bénard (Mario).         
 
 
+
+
+
+
+
+
        Bennetot (de) .                    Feït (René) .          Nungesser.
        Bérard .                           Feuillard .            Offroy.
        Beraud .                           Fontaine.              Ornano (d').
@@ -1113,6 +1230,7 @@
                                             (Valéry) .           Poirier.
        Bordage.                           Gissinger.             Pompidou.
        Borocco .                          Godefroy .             Poncelet.
+
        Boscary-Monsservin.                Godon .                Pons.
        Boscher.                           Gorse .                Poudevigne.
        Bouchacourt .                      Grailly (del .         Pou jade (Robert).
@@ -1193,6 +1311,7 @@
        Falala .                           Narquin .              Westphal.
        Fanton .                           Nessler.               Ziller.
        Favre (Jean) .                     Neuwirth .             Zimmermann .
+
  
 
 
@@ -1263,21 +1382,18 @@
 
 
 
-                                          Ce numéro comporte le compte ren
-                                                                  du lundi
-
-
-                                                  1" séance : page 239 9 .
-
-
-
-
-                                              Paris . — Imprimerie der Jou
-
 
+
+
+
+
+
+
+
                        N'ont pas pris part au vote :
             (Application de l'article 1°' de l'ordonnance n° 58.1099
                             du 17 novembre 1958 .)
+
           MM.
       Bettencourt.           Debré.                  Inchauspé.
       Bord.                  Dechartre.              Jeanneney.
@@ -1289,30 +1405,52 @@
       Chirac.                Galley.                 Ortoli.
       Comiti.                Guéna.                  Schumann (Maurice).
       Couve de Murville .    Guichard (Olivier).     Trorial.
+
+
                      Excusés ou absents par congé (2) :
-           (Application de l 'article 159, alinéas 2 et 3, du règlement .)
+
+                                                                          
+
+
         MM . Bizet, Giacomi et Vitter.
+
+
                          N'ont pas pris part au vote :
+
          M. Jacques Chaban-Delmas, président de l 'Assemblée nationale,
        et M . Peretti qui présidait la séance.
+
+
+
+
                       Ont délégué leur droit de vote:
-          (Application de l'ordonnance n" 58-1066 du 7 novembre 1958 .)
+                                                                       
+
         MM. Berthelot à M . Nilès (maladie).
+
             Billecocq à M. Caldaguès (maladie).
             Boulay à M . Bayou (Raoul) (maladie).
+
             Planeix à M . Faure (Gilbert) (maladie).
             Ramette à M . Lamps (maladie).
+
             Sauzedde à M. Vignaux (événement familial grave).
+
+
+
                              Motifs des excuses:
-             (Application de l' article 159, alinéa 3, du règlement .)
+                                                                      
         MM . Bizet (assemblées internationales).
+
              Giacomi (maladie).
              Vitter (assemblées internationales).
+
+
          (1) Se reporter à la liste ci-après, des députés ayant délégué
        leur vote.
          (2) Se reporter à la liste ci-après, des motifs des excuses.
-du intégral des deux séances
- 22 juillet 1968.
- — 2' séance : page 2 4 1 1 .
-rnaux officiels, 26, rue Desaix.
+
+
+
+
 
