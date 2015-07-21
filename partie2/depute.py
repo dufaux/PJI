@@ -1,10 +1,65 @@
+from Levenshtein import distance
+
+####################################################
+#################### EXCEPTIONS ####################
+####################################################
+class DeputeIntrouvableError(Exception) :
+
+    def __init__(self, nom) :
+        self.nom = nom
+
+    def get_nom(self) :
+        return self.nom
+
+
+    
+
+
+
+class Depute :
+
+    def __init__(self, param_nom, param_prenom, param_parti, param_vote) :
+        self.nom = param_nom
+        self.prenom = param_prenom
+        self.parti = param_parti
+        self.vote = param_vote
+
+
+
+
+class Depute_modele :
+
+    def __init__(self, param_nom, param_prenom, param_parti, param_departement) :
+        self.nom = param_nom
+        self.prenom = param_prenom
+        self.parti = param_parti
+        self.departement = param_departement
+
+    # retourne "nom" et "nom (prenom)" et si nom commence par du/de "nom (de/du)" avec nom sans le de/du
+    def get_liste_exemples_de_nom(self) :
+        les_mots = []
+        les_mots.append(self.nom)
+        les_mots.append(self.nom+" ("+self.prenom+")")
+        if(self.nom.split()[0].lower() == "du" or self.nom.split()[0].lower() == "de") :
+            les_mots.append(" ".join(self.nom.split()[1:len(self.nom)])+" ("+self.nom.split()[0].lower()+")")
+        if(self.nom.split()[0].lower()[0:2] == "d'") :
+            les_mots.append(self.nom[2:]+ " (d')")
+        if(self.nom.lower()[0:5] == "de la") :
+            les_mots.append(self.nom[5:]+ " (de la)")
+        
+        return les_mots
+
+
+
+
+
 
 
 class Liste_deputes :
 
     def __init__(self) :
         self.liste = []
-        self.partis_cherches = ["UDR","RI","FGDS","S","C","PDM","RI"]
+        self.partis_cherches = ["UDR","RI","FGDS","S","C","PDM","NI"]
 
     #chaque ligne: nom_parfois_plusieurs_mots prenom groupe departement_parfois_plusieurs_mots
     def init_from_file(self, name_file) :
@@ -27,39 +82,14 @@ class Liste_deputes :
         for i in range(len(self.liste)) :
             modeles = self.liste[i].get_liste_exemples_de_nom()
             for j in range(len(modeles)) :
-                dist = distance(modele,text)
-                if(not distance_minim or dist < distance_minim) :
+                dist = distance(modeles[j],text)
+                if(distance_minim == None or dist < distance_minim) :
                     distance_minim = dist
                     depute_minim = self.liste[i]
-            
 
-
+        if(len(text)*ratio < distance_minim) :
+            raise DeputeIntrouvableError(text)
         
-
-class Depute_modele :
-
-    def __init__(self, param_nom, param_prenom, param_parti, param_departement) :
-        self.nom = param_nom
-        self.prenom = param_prenom
-        self.parti = param_parti
-        self.departement = param_departement
-
-    # retourne "nom" et "nom (prenom)" et si nom commence par du/de "nom (de/du)" avec nom sans le de/du
-    def get_liste_exemples_de_nom() :
-        les_mots = []
-        les_mots.append(self.nom)
-        les_mots.append(self.nom+" ("+self.prenom+")")
-        if(self.nom.split()[0].lower() == "du" or self.nom.split()[0].lower() == "de") :
-            les_mots.append(" ".join(self.nom.split()[1:len(nom)])+" ("+self.nom.split()[0].lower()+")")
-
-        return les_mots
-
-class Depute :
-
-    def __init__(self) :
-        self.nom = None
-        self.prenom = None
-        self.parti = None
-        self.vote = None
+        return (distance_minim,depute_minim)
 
 

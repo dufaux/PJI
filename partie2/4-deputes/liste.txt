@@ -1,4 +1,4 @@
-Moussa Ali Abdoulkader UDR Territoire français des Afars et des Issas
+Prenom Abdoulkader Moussa Ali UDR Territoire français des Afars et des Issas
 
 Pierre Abelin PDM Vienne
 
@@ -16,13 +16,13 @@ Vincent Ansquer UDR Vendée
 
 Marcel Anthonioz RI Ain
 
-Léon Arnould Léon RI Moselle
+Léon Arnould RI Moselle
 
 Emmanuel Aubert  UDR Alpes-Maritimes
 
 Robert Aymar UDR Isère
 
-Marie-Magdeleine Aymé de la Chevrelière App. UDR Deux-Sèvres
+Marie-Magdeleine Aymé de la Chevrelière UDR Deux-Sèvres
 
 Jean Bailly UDR Territoire de Belfort
 
@@ -38,11 +38,11 @@ Jacques Barrot PDM Haute-Loire
 
 Pierre Bas UDR Paris
 
-Pierre Baudis App. RI Haute-Garonne
+Pierre Baudis RI Haute-Garonne
 
-Henri Baudouin App. UDR Manche
+Henri Baudouin UDR Manche
 
-Jacques Baumel  UDR Hauts-de-Seine
+Jacques Baumel UDR Hauts-de-Seine
 
 Marcel Bayle UDR Var
 
@@ -94,7 +94,7 @@ François Billoux C Bouches-du-Rhône
 
 Robert Bisson UDR Calvados
 
-Émile Bizet App. UDR Manche
+Émile Bizet UDR Manche
 
 Henri Blary UDR Nord
 
@@ -102,7 +102,7 @@ Jean Boinvilliers UDR Cher
 
 Raymond Boisdé RI Cher
 
-Jean Bonhomme App. UDR Tarn-et-Garonne
+Jean Bonhomme UDR Tarn-et-Garonne
 
 Pierre Bonnel RI Pas-de-Calais
 
@@ -116,7 +116,7 @@ Edmond Borocco UDR Haut-Rhin
 
 Roland Boscary-Monsservin RI Aveyron
 
-Michel Boscher App. UDR Essonne
+Michel Boscher UDR Essonne
 
 Jacques Bouchacourt UDR Nièvre
 
@@ -138,7 +138,7 @@ Pierre Bourgoin UDR Paris
 
 Marcel Bousseau UDR Vendée
 
-Jacques Boutard App. PDM Haute-Vienne
+Jacques Boutard PDM Haute-Vienne
 
 Jean Boyer RI Isère
 
@@ -180,7 +180,7 @@ Michel Caldaguès UDR Paris
 
 Robert Calméjane UDR Seine-Saint-Denis
 
-Jean Capelle App. UDR Dordogne
+Jean Capelle UDR Dordogne
 
 René Capitant UDR Paris
 
@@ -214,7 +214,7 @@ Jean Chamant  RI Yonne
 
 Jean Chambon UDR Pas-de-Calais
 
-Charles de Chambrun App. UDR Lozère
+Charles de Chambrun UDR Lozère
 
 André Chandernagor FGDS Creuse
 
@@ -262,13 +262,13 @@ Pierre Cornet UDR Ardèche
 
 Maurice Cornette UDR Nord
 
-Roger Corrèze App. UDR Loir-et-Cher
+Roger Corrèze UDR Loir-et-Cher
 
 Pierre Couderc RI Lozère
 
 Jean Coumaros UDR Moselle
 
-Pierre-Bernard Cousté App. UDR Rhône
+Pierre-Bernard Cousté UDR Rhône
 
 Maurice Couve de Murville UDR Paris
 
@@ -316,7 +316,7 @@ Jacques Delong UDR Haute-Marne
 
 Claude Delorme FGDS Basses-Alpes
 
-Xavier Deniau  App. UDR Loiret
+Xavier Deniau UDR Loiret
 
 Bertrand Denis RI Mayenne
 
@@ -334,7 +334,7 @@ Paul Dijoud RI Hautes-Alpes
 
 Jacques Dominati RI Paris
 
-Jacques Douzans App. PDM Haute-Garonne
+Jacques Douzans PDM Haute-Garonne
 
 Raymond Dronne PDM Sarthe
 
@@ -378,9 +378,9 @@ Etienne Fajon C Seine-Saint-Denis
 
 Jean Falala UDR Marne
 
-André Fanton App. UDR Paris
+André Fanton UDR Paris
 
-Edgar Faure App. UDR Doubs
+Edgar Faure UDR Doubs
 
 Gilbert Faure FGDS Ariège
 
@@ -414,7 +414,7 @@ Jean Foyer UDR Maine-et-Loire
 
 Roger Frey UDR Paris
 
-Joseph Frys App. UDR Nord
+Joseph Frys UDR Nord
 
 Félix Gaillard FGDS Charente
 
@@ -492,7 +492,7 @@ Léopold Hélène UDR Guadeloupe
 
 Pierre Herman UDR Nord
 
-Robert Hersant App. PDM Oise
+Robert Hersant PDM Oise
 
 Maurice Herzog UDR Haute-Savoie
 
@@ -500,7 +500,7 @@ Etienne Hinsberger UDR Moselle
 
 Marcel Hoffer UDR Vosges
 
-Michel Hoguet App. UDR Eure-et-Loir
+Michel Hoguet UDR Eure-et-Loir
 
 Marcel Houël C Rhône
 
@@ -548,15 +548,15 @@ Claude Labbé UDR Hauts-de-Seine
 
 Henri Lacagne UDR Saône-et-Loire
 
-Paul Lacavé App. C Guadeloupe
+Paul Lacavé C Guadeloupe
 
 René La Combe UDR Maine-et-Loire
 
-Bernard Lafay App. UDR Paris
+Bernard Lafay UDR Paris
 
 Pierre Lagorce FGDS Gironde
 
-Jean Lainé App. RI Eure
+Jean Lainé RI Eure
 
 René Lamps C Somme
 
@@ -578,7 +578,7 @@ Jean-Philippe Lecat UDR Côte-d'Or
 
 François Le Douarec UDR Ille-et-Vilaine
 
-Gérard Lehn App. UDR Bas-Rhin
+Gérard Lehn UDR Bas-Rhin
 
 Max Lejeune FGDS Somme
 
@@ -640,7 +640,7 @@ Marcel Massot FGDS Basses-Alpes
 
 Jean-Louis Massoubre UDR Somme
 
-Gilbert Mathieu App. RI Côte-d'Or
+Gilbert Mathieu RI Côte-d'Or
 
 Pierre Mauger UDR Vendée
 
@@ -656,7 +656,7 @@ Jacques Mercier UDR Essonne
 
 Pierre Messmer UDR Moselle
 
-Lucien Meunier App. UDR Ardennes
+Lucien Meunier UDR Ardennes
 
 Edmond Michelet UDR Finistère
 
@@ -742,7 +742,7 @@ Maurice Pic FGDS Drôme
 
 Roch Pidjot PDM Nouvelle-Calédonie
 
-Olivier de Pierrebourg App. UDR Creuse
+Olivier de Pierrebourg UDR Creuse
 
 Joseph Planeix FGDS Puy-de-Dôme
 
@@ -810,7 +810,7 @@ Philippe Rivain UDR Maine-et-Loire
 
 André Rives-Henrÿs UDR Paris
 
-Joseph Rivière App. UDR Rhône
+Joseph Rivière UDR Rhône
 
 Paul Rivière UDR Loire
 
@@ -840,7 +840,7 @@ Pierre Ruais UDR Paris
 
 Guy Sabatier UDR Aisne
 
-Victor Sablé App. RI Martinique
+Victor Sablé RI Martinique
 
 Adeham Saïd Ibrahim UDR Comores
 
@@ -902,7 +902,7 @@ Edmond Thorailler UDR Eure-et-Loir
 
 Maurice Tissandier RI Indre
 
-André Tisserand App. UDR Territoire de Belfort
+André Tisserand UDR Territoire de Belfort
 
 René Tomasini UDR Eure
 
@@ -958,7 +958,7 @@ Albert Voilquin RI Vosges
 
 Alban Voisin UDR Nord
 
-André-Georges Voisin App. UDR Indre-et-Loire
+André-Georges Voisin UDR Indre-et-Loire
 
 Robert Wagner UDR Yvelines
 

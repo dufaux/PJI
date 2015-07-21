@@ -2,6 +2,24 @@
 Johan Dufaux
 
 
+TO DO:
+
+-algo pour split un nom si il ne passe pas
+-verifier le doublon etc. (stratégie dessous)
+-pas mal de log info/error
+
+
+REMARQUES:
+
+-Dans la liste des noms (4-deputes/liste.txt) un traitement spécial a été effectué pour :
+ Moussa Ali Abdoulkader
+ Car dans les résumé de scrutins, il écrivent l'intégralité du nom/prénom. J'ai donc remis en ordre le   nom/prenom et ajouter un prénom "fictif" pour ne pas en tenir compte.
+
+- "Ollivro" est presque toujours lus "011ivro" (011 (chiffres) au lieu de oll (lettres)). Le code integre donc une fonction dédié exclusivement à remplacer les eventuels "0" par "o" et "1" par "l"
+
+
+
+
 
 Peut-être plusieurs fichiers de logs:
 - pour les erreurs "totales" (le fichier ne sera pas traité, ou un scrutin dans un fichier n'est pas traité)

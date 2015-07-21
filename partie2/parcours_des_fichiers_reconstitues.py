@@ -11,8 +11,14 @@ import glob
 import logging
 from operator import itemgetter
 from Levenshtein import distance
-
+import re
 import copy
+
+from depute import DeputeIntrouvableError
+from depute import Liste_deputes
+from depute import Depute_modele
+from depute import Depute
+
 
 ####################################################
 #################### EXCEPTIONS ####################
@@ -20,6 +26,8 @@ import copy
 class TroisColonnePasDistinctesError(Exception) :
     pass
 
+class PasDeScrutinDansLaLigneError(Exception) :
+    pass
 
 ####################################################
 ###################### OBJETS ######################
@@ -48,23 +56,31 @@ class InfoMotCle :
 ####################################################
 #################### FONCTIONS #####################
 ####################################################
+def enregistre_depute(nom, prenom, parti) :
+    global Liste_de_deputes_a_enregistrer
+    depute = Depute(nom,prenom,parti,current_vote)
+    Liste_de_deputes_a_enregistrer.append(depute)
+    
 def nettoie_text(text) :
     text = text.replace("MM.","   ")
     text = text.replace("M.","  ")
     text = text.replace("MM .","    ")
     text = text.replace("M.","  ")
     text = text.replace("Mme ","    ")
+    text = text.replace("Mlle ","     ")
     return text
     
 def parcours_fichier(fichier) :
     global logger
     global filename
-
+    global current_vote
+    
     fichier = fichier.replace('\r','');
     fichier = fichier.replace('\t',' '); #replace tab par un espace!
     pages = fichier.split("\x0c");
 
     liste_mot_cle = []
+    liste_scrutin = []
     
     #parcours page par page
     for i in range(0,len(pages)) :
@@ -81,26 +97,44 @@ def parcours_fichier(fichier) :
             #parcours ligne par ligne
             for y in range(0,len(lignes)) :
                 if(lignes[y]) :
-                    cherche_infos_globales(lignes[y])
+                    try :
+                        numero_scrutin = cherche_scrutin(lignes[y])
+                        le_scrutin = InfoMotCle(i,y,numero_scrutin)
+                        liste_scrutin.append(le_scrutin)
+                        
+                    except PasDeScrutinDansLaLigneError :
+                        pass
+                    
                     #last_current_vote = current_vote pareil que new_vote
                     new_vote = cherche_vote(lignes[y])
                     
                     if(new_vote) :
                         mot = InfoMotCle(i,y,current_vote)
                         liste_mot_cle.append(mot)
-                        print("Nouveau vote page =  "+str(i)+", y = "+str(y)+"et vote = "+str(current_vote))
+                        #print("Nouveau vote page =  "+str(i)+", y = "+str(y)+"et vote = "+str(current_vote))
 
                     #si on a un vote courant et pas de new vote alors c'est un nom.
                     #if(current_vote and not new_vote) :
                         #print("lit nom page =  "+str(i)+", y = "+str(y))
 
+    current_scrutin = 0
+    changement_de_scrutin(liste_scrutin[current_scrutin].mot)
     for i in range(len(liste_mot_cle)-1) :
         #print("Mot clé "+liste_mot_cle[i].mot+" et page = "+str(liste_mot_cle[i].page)+" et ligne = "+str(liste_mot_cle[i].ligne))
 
-        print("Traitement du mot clé : "+liste_mot_cle[i].mot)
-
+        current_vote = liste_mot_cle[i].mot
         current_page = liste_mot_cle[i].page
         current_ligne = liste_mot_cle[i].ligne+1
+
+        if(len(liste_scrutin) > current_scrutin+1) :
+            if( (current_page > liste_scrutin[current_scrutin+1].page) or (current_page == liste_scrutin[current_scrutin+1].page and current_ligne >= liste_scrutin[current_scrutin+1].ligne)) :
+                current_scrutin += 1
+                changement_de_scrutin(liste_scrutin[current_scrutin].mot)
+                current_vote = liste_mot_cle[i].mot #comme ça a été remi à zéro
+
+
+        print("Traitement du mot clé : "+liste_mot_cle[i].mot)
+        
         
         while(current_page < liste_mot_cle[i+1].page) :
             parcours_partie_de_page(current_page,pages[current_page],current_ligne,(len(pages[current_page].split('\n'))-1))
@@ -129,7 +163,7 @@ def parcours_fichier(fichier) :
 ##
 
 def parcours_partie_de_page(num_page,contenu_page,ligne_debut,ligne_fin) :
-    print("Traitement d'un paragraphe page "+str(num_page)+" de ligne "+str(ligne_debut)+" à "+str(ligne_fin))
+    #print("Traitement d'un paragraphe page "+str(num_page)+" de ligne "+str(ligne_debut)+" à "+str(ligne_fin))
     lignes = contenu_page.split('\n')
     text = "\n".join(lignes[ligne_debut:ligne_fin+1])
     parcours_paragraphe_membre(num_page, text)
@@ -137,33 +171,96 @@ def parcours_partie_de_page(num_page,contenu_page,ligne_debut,ligne_fin) :
 def parcours_paragraphe_membre(num_page, text) :
     text = nettoie_text(text)
 
+    """print("TEXTTTTTTTTTTTTTTTTTTTTTTTTTTT")
+    print(text)"""
     troiscolonnes = None
     
     try :
         troiscolonnes = cherche_trois_colonnes_text(num_page,text,0,1.9)
+
+        #print("TROIS COLONNES")
+        #print("----- 0 = "+str(troiscolonnes[0])+" et 1 = "+str(troiscolonnes[1])+" et 2 = "+str(troiscolonnes[2]))
+   
+        if not(troiscolonnes == dico_infos_pages[num_page].get_colonnes()) :
+            ## on a trois colonnes mais pas les même.
+            ## log info?
+            logger_info.info("["+str(filename)+"]-"+str(num_page)+" trois colonnes differentes")
+
+        col1 = ""
+        col2 = ""
+        col3 = ""
+        lignes = text.split('\n')
+        ##on doit de toute manière reconstituer le text en lisant colonnes par colonnes
+        for i in range (len(lignes)) :
+            col1 = col1+lignes[i][0:troiscolonnes[1]]
+            col2 = col2+lignes[i][troiscolonnes[1]:troiscolonnes[2]]
+            col3 = col3+lignes[i][troiscolonnes[2]:]
+
+        text = col1+" "+col2+" "+col3
+
+
+
+        
     except TroisColonnePasDistinctesError :
+        text = text.replace(" et "," . ")
+        ##pas trois colonnes
+        ##test d'une liste normal? ne rien faire?
+        ##eventuellement remplacer un " et " par un " . "?
         pass
 
-    if(troiscolonnes != None) :
-        print("TROIS COLONNES")
-        print("----- 0 = "+str(troiscolonnes[0])+" et 1 = "+str(troiscolonnes[1])+" et 2 = "+str(troiscolonnes[2]))
-    print(troiscolonnes == dico_infos_pages[num_page].get_colonnes())
-    print(text)
+
+    """print(troiscolonnes == dico_infos_pages[num_page].get_colonnes())
+    print(text)"""
+
+    liste_deputes = re.split(',|\.',text)
+    liste_modeles = Liste_deputes()
+    liste_modeles.init_from_file("./4-deputes/liste.txt")
+
+    for i in range(len(liste_deputes)) :
+        depute_a_trouver = " ".join(liste_deputes[i].split())
+        
+        try :
+            trouvaille =  liste_modeles.cherche_depute(depute_a_trouver,0.3)
+            #print("TROUVE -"+str(trouvaille[0])+" "+depute_a_trouver+" => "+trouvaille[1].nom+"["+trouvaille[1].parti+"]")
+            enregistre_depute(trouvaille[1].nom,trouvaille[1].prenom,trouvaille[1].parti)
+            
+        except DeputeIntrouvableError as e:
+            ##replace les eventuels chiffres
+            depute_a_trouver = depute_a_trouver.replace("0","o").replace("1","l")
+            try :
+                trouvaille =  liste_modeles.cherche_depute(depute_a_trouver,0.3)
+                #print("TROUVE2 -"+str(trouvaille[0])+" "+depute_a_trouver+" => "+trouvaille[1].nom+"["+trouvaille[1].parti+"]")
+                enregistre_depute(trouvaille[1].nom,trouvaille[1].prenom,trouvaille[1].parti)
+            except DeputeIntrouvableError as e:
+                #split le nom en toute les possibilités et essayes pour chacune
+
+                pass
+                #print("NON-TROUVE "+str(e.get_nom()))
 
 
 
 
+def cherche_scrutin(ligne) :
+    if("SCRUTIN" in ligne):
+        try :
+            return re.findall(r'\d+',ligne)[0]
+        except :
+            return "UNKNOW"
+    else :
+        raise PasDeScrutinDansLaLigneError()
 
 #A COMPLETER POUR NUMERO, nbr de votants, etc...(date? impossible imho)
 def cherche_infos_globales(ligne) :
     if("SCRUTIN" in ligne) :
-        changement_de_scrutin()
+        changement_de_scrutin(ligne)
 
 ##a completer pour réinitialiser les variables. verifier le scrutin precedent etc.
-def changement_de_scrutin() :
-    pass
-
-
+def changement_de_scrutin(numero_scrutin) :
+    global current_num_scrutin
+    print("changement de scrutin ancien = "+str(current_num_scrutin)+" et nouveau ="+str(numero_scrutin))
+    sauvegarde_liste_deputes()
+    reinitialise_variables_de_scrutin()
+    current_num_scrutin = numero_scrutin
 
 def contient_mot_cle(text_page):
     lignes = text_page.split('\n');
@@ -308,9 +405,9 @@ def cherche_trois_colonnes_text(numpage,text,ecart,ratio):
 
     ecart_entre_trois_et_quatre_minimum = ecart #au moins X de + dans la 3em que 4em (utile pour les petites page)
     difference_entre_trois_et_quatre = ratio #troisieme colonne > diff*4emcolonne. (pour 3, 3>4*3)
-    print("Cherche trois colonnes pour page ="+str(numpage))
+    #print("Cherche trois colonnes pour page ="+str(numpage))
     
-    text = nettoie_page(text);
+    #text = nettoie_page(text);
     lignes = text.split('\n');
     for y in range(0,len(lignes)) :
         for x in range(0,len(lignes[y])-1) :
@@ -354,6 +451,9 @@ def cherche_trois_colonnes_text(numpage,text,ecart,ratio):
     print("y ="+str(coords_triees[1][0])+" num ="+str(coords_triees[1][1]))
     print("y ="+str(coords_triees[2][0])+" num ="+str(coords_triees[2][1]))
     print("y ="+str(coords_triees[3][0])+" num ="+str(coords_triees[3][1]))"""
+    if(len(coords_triees) < 4) :
+        raise TroisColonnePasDistinctesError(filename+" page "+str(numpage))
+
     
     #verifie qu'il y a bien 3 distinct. On propose la 4em colonne doit etre au moins
     #ratio plus faible que la 4em.
@@ -371,28 +471,44 @@ def cherche_trois_colonnes_text(numpage,text,ecart,ratio):
 
 
 
-def reinitialise_variables() :
+
+def sauvegarde_liste_deputes() :
+    global Liste_de_deputes_a_enregistrer
+    for i in range (len(Liste_de_deputes_a_enregistrer)) :
+        #spamwriter.writerow([str(current_legislature), i]);
+        spamwriter.writerow([filepath,str(current_legislature), "Date à ajouter",str(current_num_scrutin), "Nom à ajouter",Liste_de_deputes_a_enregistrer[i].parti, Liste_de_deputes_a_enregistrer[i].nom, Liste_de_deputes_a_enregistrer[i].prenom, Liste_de_deputes_a_enregistrer[i].vote]);
+        #print("Enregistrement de "+str(current_legislature)+"-- Date à ajouter --"+str(current_num_scrutin)+"--Nom à ajouter--"+Liste_de_deputes_a_enregistrer[i].parti+"--"+Liste_de_deputes_a_enregistrer[i].nom+"--"+Liste_de_deputes_a_enregistrer[i].prenom+"--"+Liste_de_deputes_a_enregistrer[i].vote)
+    print("Enregistrement de "+str(len(Liste_de_deputes_a_enregistrer))+" députés pour le scrutin "+str(current_num_scrutin))
+
+def reinitialise_variables_de_scrutin() :
     global current_num_scrutin
     global current_nom_scrutin
     global current_vote
     global current_nb_votant
-    global filename
-    global infos_page
-    global pages_reconstituees
-    global dico_infos_pages
     global helper
+    global Liste_de_deputes_a_enregistrer
 
     current_legislature = None
     current_num_scrutin = None
     current_nom_scrutin = None
     current_vote = None
     current_nb_votant = None
-    filename = None
-    infos_page = None
-    pages_reconstituees = ""
-    dico_infos_pages = {}
+    Liste_de_deputes_a_enregistrer = []
     helper = []
 
+
+
+
+def reinitialise_variables_de_document() :
+    global infos_page
+    global dico_infos_pages
+    global filename
+    
+    reinitialise_variables_de_scrutin()
+    filename = None
+    infos_page = None
+    dico_infos_pages = {}
+    
 
 #######################################################################
 ###############__######__#######__#######__####___####__###############
@@ -412,7 +528,7 @@ current_nb_votant = None
 filename = None
 
 infos_page = None
-pages_reconstituees = ""
+Liste_de_deputes_a_enregistrer = []
 dico_infos_pages = {}
 helper = []
 
@@ -442,7 +558,11 @@ hdlr_info.setFormatter(formatter_info)
 logger_info.addHandler(hdlr_info) 
 logger_info.setLevel(logging.NOTSET)
 
-"""
+nom_fichier_csv = 'votes'+current_legislature+'.csv'
+fichier_csv = open(nom_fichier_csv, 'a', newline='')
+spamwriter = csv.writer(fichier_csv, delimiter=',')
+
+
 for root, subdirs, files in os.walk("4-reconstitues"):
 
     for nomfichier in files :
@@ -452,31 +572,22 @@ for root, subdirs, files in os.walk("4-reconstitues"):
         fichierlayout = open(filepath).read()
         
         filename = nomfichier
-        try :
-            parcours_fichier(fichierlayout)
-            
-            dest = "legislature4.csv"
-            fichiertxt = open(dest,"w") # a pour ecrire à la fin, w pour remplacer
-            fichiertxt.write(pages_reconstituees)
-            fichiertxt.close()
-            print("Fichier cree: "+dest)
         
-        except PasDePageScrutinTrouvee as e :
-            logger.error("["+str(filepath)+"]EXCEPT: PasDePageScrutinTrouvee ")
-        except ImpossibleDeTrouverColonneCentraleError :
-            logger.error("["+str(filepath)+"]EXCEPT: ImpossibleDeTrouverColonneCentraleError ")
+        parcours_fichier(fichierlayout)
 
 
-        reinitialise_variables()
+        sauvegarde_liste_deputes()
+        reinitialise_variables_de_document()
         logger_info.info("\n\n\n")
-"""
 
+"""
 filename = "007.txt";
 fichier = open(filename).read()
-
 parcours_fichier(fichier)
+"""
 
-
+sauvegarde_liste_deputes()
+fichier_csv.close()
 """
 pagetest = pages[37];
 pagetest= pagetest.replace('\n','')
