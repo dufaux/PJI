@@ -2,12 +2,34 @@
 Johan Dufaux
 
 
+QUESTION:
+-robert richoux est UDR et NI en même temps.
+http://www.assemblee-nationale.fr/sycomore/fiche.asp?num_dept=6749
+-gabriel vancalster aussi 
+http://www.assemblee-nationale.fr/sycomore/fiche.asp?num_dept=7328
+
+PROBLEME:
+
+Liste de députés récupéré ici:
+http://www2.assemblee-nationale.fr/decouvrir-l-assemblee/histoire/la-ve-republique/tous-les-deputes-depuis-1958#node_6457
+(ou ici: http://www.assemblee-nationale.fr/4/deputes4.asp)
+hors il manque certains députés! (ex: henri arnaud)
+
+==> CORRECTION MANUELLE ET VERIFICATIONS DE TOUS LES DEPUTES (comparaison ac cette liste: 
+http://www.assemblee-nationale.fr/sycomore/result.asp?radio_dept=tous_departements&regle_nom=est&Nom=&departement=&choixdate=intervalle&D%C3%A9butMin=&FinMin=&Dateau=&legislature=51&choixordre=alpha&Rechercher=Lancer+la+recherche
+)
+mais doit corriger manuellement leur groupe politique
+
+Union démocratique pour la V° République = udr?
+
+
 TO DO:
 
 -algo pour split un nom si il ne passe pas
 -verifier le doublon etc. (stratégie dessous)
 -pas mal de log info/error
 
+-"des" (avec "de/du/d'"...)
 
 REMARQUES:
 
@@ -58,11 +80,6 @@ On cherche le mot clé suivant puis on traite ce qui ce trouve entre ces deux mo
 		   cependant si le nom trouvé est déjà occupé ou est inferieur à celui trouvé juste avant (alphabetiquement), alors EXCEPTION générée. (peut-être amélioré apres?)		   On ne traite plus la liste donnée. (à voir comment améliorer ça).
 		
 		-> Si un nom ne passe toujours pas levenstein après les différents splits, générer une erreur, ne pas enregistrer le nom mais continuer les autres noms.
-
-
-
-
-
 
 
 

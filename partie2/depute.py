@@ -40,7 +40,7 @@ class Depute_modele :
         les_mots = []
         les_mots.append(self.nom)
         les_mots.append(self.nom+" ("+self.prenom+")")
-        if(self.nom.split()[0].lower() == "du" or self.nom.split()[0].lower() == "de") :
+        if(self.nom.split()[0].lower() == "du" or self.nom.split()[0].lower() == "de" or self.nom.split()[0].lower() == "des") :
             les_mots.append(" ".join(self.nom.split()[1:len(self.nom)])+" ("+self.nom.split()[0].lower()+")")
         if(self.nom.split()[0].lower()[0:2] == "d'") :
             les_mots.append(self.nom[2:]+ " (d')")

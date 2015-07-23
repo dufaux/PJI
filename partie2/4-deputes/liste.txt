@@ -6,6 +6,8 @@ Aymar Achille-Fould PDM Gironde
 
 Michel d'Aillières RI Sarthe
 
+Henri Arnaud UDR Bouches-du-Rhône
+
 Paul Alduy FGDS Pyrénées-Orientales
 
 Michel Alloncle UDR Charente
@@ -34,6 +36,8 @@ Raymond Barbet C Hauts-de-Seine
 
 Virgile Barel C Alpes-Maritimes
 
+Georges Barillon RI Yonne
+
 Jacques Barrot PDM Haute-Loire
 
 Pierre Bas UDR Paris
@@ -50,7 +54,13 @@ Raoul Bayou FGDS Hérault
 
 André Beauguitte RI Meuse
 
+Angustin Beauverger UDR Ille-et-Vilaine
+
+Marc Bécam UDR Finistère
+
 Guy Bégué UDR Lot-et-Garonne
+
+Henri Belcourt UDR Corrèze
 
 François Bénard UDR Oise
 
@@ -60,11 +70,15 @@ Michel de Bennetot UDR Finistère
 
 Daniel Benoist FGDS Nièvre
 
+Pierre de Bénouville UDR Paris
+
 Jacques Bérard UDR Vaucluse
 
 Marcel Beraud UDR Pas-de-Calais
 
 Henry Berger UDR Côte-d'Or
+
+Pierre Bernard-Reymond PDM Hautes-Alpes
 
 Jean Bernasconi UDR Paris
 
@@ -98,9 +112,15 @@ Robert Bisson UDR Calvados
 
 Henri Blary UDR Nord
 
+René Blas UDR Côte-d'Or
+
+André Boileau UDR Vosges
+
 Jean Boinvilliers UDR Cher
 
 Raymond Boisdé RI Cher
+
+Alexandre Bolo UDR Loire-Atlantique
 
 Jean Bonhomme UDR Tarn-et-Garonne
 
@@ -122,6 +142,8 @@ Jacques Bouchacourt UDR Nièvre
 
 Roland Boudet PDM Orne
 
+Paul Boudon UDR Maine-et-Loire
+
 Arsène Boulay FGDS Puy-de-Dôme
 
 Robert Boulin UDR Gironde
@@ -135,6 +157,8 @@ Georges Bourgeois UDR Haut-Rhin
 Yvon Bourges UDR Ille-et-Vilaine
 
 Pierre Bourgoin UDR Paris
+
+Raymond Bousquet UDR Paris
 
 Marcel Bousseau UDR Vendée
 
@@ -150,6 +174,8 @@ Robert Brettes FGDS Gironde
 
 Benjamin Brial UDR Wallis-et-Futuna
 
+Jean Briane NI Aveyron
+
 Edmond Bricout UDR Aisne
 
 Louis Briot UDR Aube
@@ -161,6 +187,8 @@ Jean de Broglie RI Eure
 André Brugerolle PDM Charente-Maritime
 
 Maurice Brugnon FGDS Aisne
+
+Romain Buffet RI Saône-et-Loire
 
 Henri-François Buot UDR Calvados
 
@@ -186,6 +214,8 @@ René Capitant UDR Paris
 
 Georges Carpentier FGDS Loire-Atlantique
 
+Michel Carrier Ain RI
+
 Roland Carter UDR Paris
 
 Jean-Pierre Cassabel UDR Aude
@@ -206,9 +236,15 @@ Marcel Cerneau NI La Réunion
 
 Aimé Césaire NI Martinique
 
+Charles Ceyrac UDR Corrèze
+
 Jacques Chaban-Delmas UDR Gironde
 
+Jacques Chabrat UDR Gironde
+
 Albin Chalandon UDR Hauts-de-Seine
+
+Jean Chalopin UDR Maine-et-Loire
 
 Jean Chamant  RI Yonne
 
@@ -228,6 +264,8 @@ Arthur Charles NI Côtes-du-Nord
 
 Edouard Charret UDR Rhône
 
+Jean-Baptiste Chassagne UDR Loiret
+
 Jacques Chaumont UDR Sarthe
 
 Augustin Chauvet UDR Cantal
@@ -236,7 +274,11 @@ André Chazalon PDM Loire
 
 René Chazelle FGDS Haute-Loire
 
+Georges Chedru RI Seine-Maritime
+
 Jacques Chirac UDR Corrèze
+
+Jacqueline Chonavel C Seine-St-Denis
 
 Eugène Claudius-Petit PDM Loire
 
@@ -245,6 +287,8 @@ Georges Clavel UDR Hérault
 Pierre Clostermann UDR Yvelines
 
 Michel Cointat UDR Ille-et-Vilaine
+
+Raymond Colibeau UDR Paris
 
 Henri Collette UDR Pas-de-Calais
 
@@ -274,7 +318,11 @@ Maurice Couve de Murville UDR Paris
 
 René Couveinhes UDR Hérault
 
+Roger Crespin UDR Marne
+
 Jacques Cressard UDR Ille-et-Vilaine
+
+Mohamed Dahalani UDR Comores
 
 Auguste Damette UDR Nord
 
@@ -300,6 +348,8 @@ Gaston Defferre FGDS Bouches-du-Rhône
 
 Jean Degraeve UDR Marne
 
+Albert Dehen UDR Charente-Maritime
+
 Jean Delachenal RI Savoie
 
 André Delahaye UDR Eure
@@ -307,6 +357,8 @@ André Delahaye UDR Eure
 Georges Delatre UDR Seine-Maritime
 
 André Delelis FGDS Pas-de-Calais
+
+Jacques Delhalle UDR Aube
 
 Gérard Deliaune UDR Gironde
 
@@ -324,6 +376,8 @@ Albert Denvers FGDS Nord
 
 Charles Deprez RI Hauts-de-Seine
 
+Jean Desanlis PDM Loir-et-Cher
+
 Bernard Destremau RI Yvelines
 
 Emile Didier FGDS Hautes-Alpes
@@ -334,9 +388,13 @@ Paul Dijoud RI Hautes-Alpes
 
 Jacques Dominati RI Paris
 
+Louis Donnadieu UDR Tarn
+
 Jacques Douzans PDM Haute-Garonne
 
 Raymond Dronne PDM Sarthe
+
+Franz Duboscq UDR Pyrénées-Atlantiques
 
 Guy Ducoloné C Hauts-de-Seine
 
@@ -357,6 +415,8 @@ Fernand Dupuy C Val-de-Marne
 Paul Duraffour FGDS Saône-et-Loire
 
 Michel Durafour PDM Loire
+
+Léopold Durbet UDR Savoie
 
 Jean Durieux RI Nord
 
@@ -396,6 +456,8 @@ Gaston Feuillard UDR Guadeloupe
 
 Henri Fiévez C Nord
 
+Robert Figeat UDR Loiret
+
 Bertrand Flornoy UDR Seine-et-Marne
 
 Jean Fontaine UDR La Réunion
@@ -412,9 +474,15 @@ Jacques Fouchier PDM Deux-Sèvres
 
 Jean Foyer UDR Maine-et-Loire
 
+Maurice Fraudeau UDR Essonne
+
 Roger Frey UDR Paris
 
 Joseph Frys UDR Nord
+
+François Gabas FGDS Haute-Garonne
+
+Jean Gabriac UDR Aveyron
 
 Félix Gaillard FGDS Charente
 
@@ -424,9 +492,13 @@ Edmond Garcin C Bouches-du-Rhône
 
 Robert Gardeil RI Bouches-du-Rhône
 
+Bertrand des Garets UDR Gironde
+
 Henri de Gastines  UDR Mayenne
 
 Pierre Gaudin FGDS Var
+
+Christian Genevard UDR Doubs
 
 Maurice Georges UDR Seine-Maritime
 
@@ -446,6 +518,8 @@ Valéry Giscard d'Estaing RI Puy-de-Dôme
 
 Antoine Gissinger UDR Haut-Rhin
 
+André Glon UDR Côtes-du-Nord
+
 Pierre Godefroy UDR Manche
 
 Gérard Godon UDR Yvelines
@@ -456,7 +530,11 @@ Georges Gosnat C Val-de-Marne
 
 Michel de Grailly UDR Paris
 
+Raymond Grandsart UDR Charente-Maritime
+
 Paul Granet UDR Aube
+
+Jean Grimaud RI Morbihan
 
 Alain Griotteray RI Val-de-Marne
 
@@ -480,7 +558,11 @@ Emile Halbout PDM Orne
 
 Yves du Halgouët RI Morbihan
 
+Jean Hamelin UDR Ille-et-Vilaine
+
 Léo Hamon UDR Essonne
+
+Olivier de Pierrebourg UDR Creuse
 
 Robert Hauret UDR Maine-et-Loire
 
@@ -526,6 +608,8 @@ Michel Jamot UDR Yvelines
 
 Pierre Janot UDR Dordogne
 
+Maurice Jarrige UDR Moselle
+
 André Jarrot UDR Saône-et-Loire
 
 Jean-Marcel Jeanneney UDR Isère
@@ -533,6 +617,10 @@ Jean-Marcel Jeanneney UDR Isère
 Alphonse Jenn UDR Haut-Rhin
 
 Louis Joanne RI Charente-Maritime
+
+Henri Jouffroy PDM Jura
+
+Claude Jousseaume UDR Charente-Maritime
 
 Louis Joxe UDR Rhône
 
@@ -554,6 +642,8 @@ René La Combe UDR Maine-et-Loire
 
 Bernard Lafay UDR Paris
 
+Jean Lafon NI Charente
+
 Pierre Lagorce FGDS Gironde
 
 Jean Lainé RI Eure
@@ -565,6 +655,8 @@ Tony Larue FGDS Seine-Maritime
 Henri Lassourd UDR Ille-et-Vilaine
 
 Hervé Laudrin UDR Morbihan
+
+Robert Lavergne UDR Hauts-de-Seine
 
 Henri Lavielle FGDS Landes
 
@@ -585,6 +677,8 @@ Max Lejeune FGDS Somme
 Pierre Lelong UDR Finistère
 
 Maurice Lemaire UDR Vosges
+
+Alain Le Marc'Hadour UDR Nord
 
 Pierre Lepage UDR Indre-et-Loire
 
@@ -614,6 +708,10 @@ Emile Luciani UDR Somme
 
 Benoît Macquet UDR Loire-Atlantique
 
+Philippe Madrelle FGDS Gironde
+
+Charles Magaud UDR Paris
+
 Paul Mainguy UDR Hauts-de-Seine
 
 Philippe Malaud RI Saône-et-Loire
@@ -629,6 +727,8 @@ Claude-Gérard Marcus UDR Paris
 Jacques Marette UDR Paris
 
 Bernard Marie UDR Pyrénées-Atlantiques
+
+Michel Marquet UDR Paris
 
 Claude Martin UDR Paris
 
@@ -658,6 +758,8 @@ Pierre Messmer UDR Moselle
 
 Lucien Meunier UDR Ardennes
 
+Henri Michel FGDS Drôme
+
 Edmond Michelet UDR Finistère
 
 Gabriel Miossec UDR Finistère
@@ -672,6 +774,8 @@ Henri Modiano UDR Paris
 
 Ahmed Mohamed UDR Comores
 
+Henri Moine UDR Côte-d'Or
+
 Guy Mollet FGDS Pas-de-Calais
 
 Raymond Mondon RI Moselle
@@ -679,6 +783,8 @@ Raymond Mondon RI Moselle
 Jean Montalat FGDS Corrèze
 
 Pierre de Montesquiou PDM Gers
+
+Jean Morellon RI Puy-de-Dôme
 
 Pierre Morison RI Rhône
 
@@ -688,15 +794,21 @@ Arthur Moulin UDR Nord
 
 Jean-Paul Mourot UDR Indre
 
+Guy Murat UDR Lot
+
 Arthur Musmeaux C Nord
 
 Jean Narquin UDR Maine-et-Loire
+
+Armand Nass RI Moselle
 
 Edmond Nessler UDR Oise
 
 Lucien Neuwirth UDR Loire
 
 Maurice Nilès C Seine-Saint-Denis
+
+Louis Noilou UDR Alpes-Maritimes
 
 Arthur Notebart FGDS Nord
 
@@ -712,6 +824,8 @@ Michel d'Ornano RI Calvados
 
 François Ortoli UDR Nord
 
+René Pailler UDR Sarthe
+
 Jean-Paul Palewski UDR Yvelines
 
 Maurice Papon UDR Cher
@@ -719,6 +833,8 @@ Maurice Papon UDR Cher
 Aimé Paquet RI Isère
 
 Charles Pasqua UDR Hauts-de-Seine
+
+Georges Peizerat PDM Savoie
 
 Achille Peretti UDR Hauts-de-Seine
 
@@ -729,6 +845,8 @@ Gaston Perrot UDR Yonne
 Camille Petit UDR Martinique
 
 Jean-Claude Petit RI Finistère
+
+Alfred Peugnet FGDS Pas-de-Calais
 
 Alain Peyrefitte UDR Seine-et-Marne
 
@@ -766,7 +884,7 @@ Jean Poudevigne PDM Gard
 
 Robert Poujade UDR Côte-d'Or
 
-Gabriel de Poulpiquet de Brescanvel UDR Finistère
+Gabriel de Poulpiquet UDR Finistère
 
 Pierre Pouyade UDR Var
 
@@ -780,9 +898,13 @@ René Quentier UDR Oise
 
 Guy Rabourdin UDR Seine-et-Marne
 
+Michel Rabreau UDR Loire-Atlantique
+
 René Radius UDR Bas-Rhin
 
 Arthur Ramette C Nord
+
+Pierre Raynal UDR Cantal
 
 René Regaudie FGDS Haute-Vienne
 
@@ -802,6 +924,10 @@ Jacques Richard UDR Val-d'Oise
 
 Lucien Richard UDR Loire-Atlantique
 
+Robert Richoux UDR Meurthe-et-Moselle
+
+Ernest Rickert UDR Bas-Rhin
+
 René Rieubon C Bouches-du-Rhône
 
 Georges Ritter UDR Bas-Rhin
@@ -815,6 +941,10 @@ Joseph Rivière UDR Rhône
 Paul Rivière UDR Loire
 
 Hector Riviérez UDR Guyane
+
+Paul Robert UDR Territoire-de-Belfort
+
+Michel Rocard NI Yvelines
 
 Jean-Paul de Rocca Serra UDR Corse-du-Sud
 
@@ -834,6 +964,8 @@ Claude Roux UDR Paris
 
 Jean-Pierre Roux NI Vaucluse
 
+Ernest Rouxel PDM Côtes-du-Nord
+
 Jean Royer NI Indre-et-Loire
 
 Pierre Ruais UDR Paris
@@ -852,6 +984,8 @@ Pierre Sallenave PDM Basses-Pyrénées
 
 Francis Sanford PDM Polynésie Française
 
+Jacques Sanglier UDR Seine
+
 Alexandre Sanguinetti UDR Haute-Garonne
 
 Georges Santoni UDR Vaucluse
@@ -860,13 +994,17 @@ Olivier de Sarnez UDR Seine-Maritime
 
 Fernand Sauzedde FGDS Puy-de-Dôme
 
-Edouard Schlœsing FGDS Lot-et-Garonne
+Edouard Schloesing FGDS Lot-et-Garonne
 
 Maurice Schnebelen RI Moselle
 
 Maurice Schumann UDR Nord
 
 Julien Schvartz UDR Moselle
+
+Henry Sers UDR La Réunion
+
+Jean-Jacques Servan-Schreiber NI Meurthe-et-Moselle
 
 Gérard Sibeud UDR Drôme
 
@@ -884,6 +1022,8 @@ Bernard Stasi NI Marne
 
 Paul Stehlin PDM Paris
 
+Yvonne Stephan RI Morbihan
+
 Olivier Stirn UDR Calvados
 
 Pierre Sudreau PDM Loir-et-Cher
@@ -900,6 +1040,8 @@ Jacqueline Thome-Patenôtre FGDS Yvelines
 
 Edmond Thorailler UDR Eure-et-Loir
 
+Jean Tiberi UDR Paris
+
 Maurice Tissandier RI Indre
 
 André Tisserand UDR Territoire de Belfort
@@ -909,6 +1051,8 @@ René Tomasini UDR Eure
 Paul Tondut UDR Gard
 
 Henri Torre UDR Ardèche
+
+Jean Toutain UDR Hauts-de-Seine
 
 Bernard Tremeau UDR Saône-et-Loire
 
@@ -920,6 +1064,8 @@ Solange Troisier UDR Val-d'Oise
 
 Jacques Trorial UDR Meurthe-et-Moselle
 
+Jean Turco UDR Paris
+
 Marie-Claude Vaillant-Couturier C Val-de-Marne
 
 Raymond Valenet UDR Seine-Saint-Denis
@@ -929,6 +1075,8 @@ Jean Valleix  UDR Gironde
 Louis Vallon UDR Paris
 
 Francis Vals FGDS Aude
+
+Gabriel Vancalster UDR Nord
 
 Robert Vandelanoitte UDR Nord
 
@@ -940,13 +1088,19 @@ Jacques-Philippe Vendroux UDR Saint-Pierre-et-Miquelon
 
 Antonin Ver FGDS Tarn-et-Garonne
 
+Adrien Verkindere UDR Nord
+
 Guy de la Verpillière RI Ain
+
+Roland Vernaudon UDR Val-de-Marne
 
 Pierre Vertadier UDR Vienne
 
 Paul Vignaux FGDS Gers
 
 Pierre Villon C Allier
+
+Jean Vinatier FGDS Corrèze
 
 Pierre Vitter RI Haute-Saône
 
@@ -959,6 +1113,8 @@ Albert Voilquin RI Vosges
 Alban Voisin UDR Nord
 
 André-Georges Voisin UDR Indre-et-Loire
+
+Pierre Volumard UDR Isère
 
 Robert Wagner UDR Yvelines
 

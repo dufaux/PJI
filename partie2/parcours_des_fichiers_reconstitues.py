@@ -56,6 +56,44 @@ class InfoMotCle :
 ####################################################
 #################### FONCTIONS #####################
 ####################################################
+
+def redecoupage_nom(nom) :
+    mots = nom.split()
+    decoupages = trouver_decoupage(len(mots))
+    les_phrases = []
+    for decoupe in decoupages :
+        phrase = []
+        for i in range (len(decoupe)-1) :
+            phrase.append(" ".join(mots[decoupe[i]:decoupe[i+1]]))
+        phrase.append(" ".join(mots[decoupe[len(decoupe)-1]:len(mots)]))
+        les_phrases.append(phrase)
+
+    return les_phrases
+
+
+
+##en attendant mieux...
+liste_de_decoupage = []
+def trouver_decoupage(taille) :
+    global liste_de_decoupage
+    liste_de_decoupage = []
+    if(taille > 6) :
+        return [list(range(0,taille))]
+    decoupage_recursif(0,taille,[])
+    return liste_de_decoupage
+
+                          
+def decoupage_recursif(debut, fin, array) :
+	global liste_de_decoupage
+	
+	array = array + [debut]
+	if not array in liste_de_decoupage :
+	    liste_de_decoupage.append(array)
+	for i in range (debut+1, fin) :
+		#print(array)
+		decoupage_recursif(i,fin,array)
+
+
 def enregistre_depute(nom, prenom, parti) :
     global Liste_de_deputes_a_enregistrer
     depute = Depute(nom,prenom,parti,current_vote)
@@ -119,13 +157,18 @@ def parcours_fichier(fichier) :
 
     current_scrutin = 0
     changement_de_scrutin(liste_scrutin[current_scrutin].mot)
+
+    #parcours chaque mot clé
     for i in range(len(liste_mot_cle)-1) :
+        logger_grave.error("--- mot clé --- "+str(liste_mot_cle[i].mot))
         #print("Mot clé "+liste_mot_cle[i].mot+" et page = "+str(liste_mot_cle[i].page)+" et ligne = "+str(liste_mot_cle[i].ligne))
 
         current_vote = liste_mot_cle[i].mot
         current_page = liste_mot_cle[i].page
         current_ligne = liste_mot_cle[i].ligne+1
 
+
+        #si le mot clé est après un new scrutin, on change de scrutin.        
         if(len(liste_scrutin) > current_scrutin+1) :
             if( (current_page > liste_scrutin[current_scrutin+1].page) or (current_page == liste_scrutin[current_scrutin+1].page and current_ligne >= liste_scrutin[current_scrutin+1].ligne)) :
                 current_scrutin += 1
@@ -133,16 +176,28 @@ def parcours_fichier(fichier) :
                 current_vote = liste_mot_cle[i].mot #comme ça a été remi à zéro
 
 
+
+        #defini l'arret de la lecture du paragraphe. (prochain mot clé ou le mot scrutin si avant prochain mot clé)
+        stop_page = liste_mot_cle[i+1].page
+        stop_ligne = liste_mot_cle[i+1].ligne-1
+        if(len(liste_scrutin) > current_scrutin+1) : 
+            if( (stop_page > liste_scrutin[current_scrutin+1].page) or (stop_page == liste_scrutin[current_scrutin+1].page and stop_ligne >= liste_scrutin[current_scrutin+1].ligne)) :
+                stop_page = liste_scrutin[current_scrutin+1].page
+                stop_ligne = liste_scrutin[current_scrutin+1].ligne-1
+
+
+
+
+
         print("Traitement du mot clé : "+liste_mot_cle[i].mot)
-        
-        
-        while(current_page < liste_mot_cle[i+1].page) :
+        while(current_page < stop_page) :
+            
             parcours_partie_de_page(current_page,pages[current_page],current_ligne,(len(pages[current_page].split('\n'))-1))
             #print("Traitement d'un paragraphe page "+str(current_page)+" de ligne "+str(current_ligne)+" à "+str(len(pages[current_page].split('\n'))-1))
             current_page += 1
             current_ligne = 0
 
-        parcours_partie_de_page(current_page,pages[current_page],current_ligne,(liste_mot_cle[i+1].ligne-1))
+        parcours_partie_de_page(current_page,pages[current_page],current_ligne,(stop_ligne))
         #print("Traitement d'un paragraphe page "+str(current_page)+" de ligne "+str(current_ligne)+" à "+str(liste_mot_cle[i+1].ligne-1))
 
 
@@ -213,7 +268,7 @@ def parcours_paragraphe_membre(num_page, text) :
     print(text)"""
 
     liste_deputes = re.split(',|\.',text)
-    liste_modeles = Liste_deputes()
+    liste_modeles = Liste_deputes() #peut etre passé en globale fixe
     liste_modeles.init_from_file("./4-deputes/liste.txt")
 
     for i in range(len(liste_deputes)) :
@@ -231,20 +286,45 @@ def parcours_paragraphe_membre(num_page, text) :
                 trouvaille =  liste_modeles.cherche_depute(depute_a_trouver,0.3)
                 #print("TROUVE2 -"+str(trouvaille[0])+" "+depute_a_trouver+" => "+trouvaille[1].nom+"["+trouvaille[1].parti+"]")
                 enregistre_depute(trouvaille[1].nom,trouvaille[1].prenom,trouvaille[1].parti)
-            except DeputeIntrouvableError as e:
+            except DeputeIntrouvableError as e1:
                 #split le nom en toute les possibilités et essayes pour chacune
+                #on garde la combinaison où on a le plus de match
+                liste_nouveaux_noms = redecoupage_nom(e1.get_nom())
+                compteur_max = None
+                i_max = None
+                compteur = 0
+                for i in range(len(liste_nouveaux_noms)) :
+                    compteur = 0
+                    nouveaux_noms = liste_nouveaux_noms[i]
+                    for nom in nouveaux_noms :
+                        try :
+                            trouvaille =  liste_modeles.cherche_depute(nom,0.3)
+                            compteur = compteur +1
+                        except DeputeIntrouvableError as e2:
+                            #print info ?
+                            pass
+                    if(not compteur_max or compteur_max < compteur) :
+                        compteur_max = compteur
+                        i_max = i
 
-                pass
-                #print("NON-TROUVE "+str(e.get_nom()))
-
+                #meilleur trouve
+                for bons_noms in liste_nouveaux_noms[i_max] :
+                    try :
+                        trouvaille =  liste_modeles.cherche_depute(nom,0.3)
+                        enregistre_depute(trouvaille[1].nom,trouvaille[1].prenom,trouvaille[1].parti)
+                    except DeputeIntrouvableError as e3:
+                        logger_grave.error("PAS RECONNU : "+str(e3.get_nom()))
+                        #print("NOM PAS PASSE : "+str(e3.get_nom()))
+                        pass
 
 
 
 def cherche_scrutin(ligne) :
     if("SCRUTIN" in ligne):
         try :
-            return re.findall(r'\d+',ligne)[0]
-        except :
+            nombres = re.findall(r'\d+',ligne)
+            return nombres[len(nombres)-1]
+        except Exception as e:
             return "UNKNOW"
     else :
         raise PasDeScrutinDansLaLigneError()
@@ -258,6 +338,7 @@ def cherche_infos_globales(ligne) :
 def changement_de_scrutin(numero_scrutin) :
     global current_num_scrutin
     print("changement de scrutin ancien = "+str(current_num_scrutin)+" et nouveau ="+str(numero_scrutin))
+    logger_grave.error("--- new scrutin --- "+str(numero_scrutin))
     sauvegarde_liste_deputes()
     reinitialise_variables_de_scrutin()
     current_num_scrutin = numero_scrutin
@@ -572,7 +653,8 @@ for root, subdirs, files in os.walk("4-reconstitues"):
         fichierlayout = open(filepath).read()
         
         filename = nomfichier
-        
+
+        logger_grave.error("--- new fichier --- "+str(filepath))
         parcours_fichier(fichierlayout)
 
 
