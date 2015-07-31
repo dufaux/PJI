@@ -2,36 +2,37 @@
 Johan Dufaux
 
 
-QUESTION:
--robert richoux est UDR et NI en même temps.
-http://www.assemblee-nationale.fr/sycomore/fiche.asp?num_dept=6749
--gabriel vancalster aussi 
-http://www.assemblee-nationale.fr/sycomore/fiche.asp?num_dept=7328
-
-PROBLEME:
-
-Liste de députés récupéré ici:
-http://www2.assemblee-nationale.fr/decouvrir-l-assemblee/histoire/la-ve-republique/tous-les-deputes-depuis-1958#node_6457
-(ou ici: http://www.assemblee-nationale.fr/4/deputes4.asp)
-hors il manque certains députés! (ex: henri arnaud)
-
-==> CORRECTION MANUELLE ET VERIFICATIONS DE TOUS LES DEPUTES (comparaison ac cette liste: 
-http://www.assemblee-nationale.fr/sycomore/result.asp?radio_dept=tous_departements&regle_nom=est&Nom=&departement=&choixdate=intervalle&D%C3%A9butMin=&FinMin=&Dateau=&legislature=51&choixordre=alpha&Rechercher=Lancer+la+recherche
-)
-mais doit corriger manuellement leur groupe politique
-
-Union démocratique pour la V° République = udr?
-
-
-TO DO:
-
--algo pour split un nom si il ne passe pas
--verifier le doublon etc. (stratégie dessous)
--pas mal de log info/error
-
--"des" (avec "de/du/d'"...)
-
 REMARQUES:
+
+Liste des fichiers modifiés manuellements car numéro de scrutin pas sur la même ligne que le mot "SCRUTIN" :
+4-layout/1968-1969/ordinaire1/086.txt x
+4-layout/1969-1970/ordinaire1/073.txt x
+4-layout/1969-1970/ordinaire2/045.txt x
+4-layout/1969-1970/ordinaire2/046.txt x
+4-layout/1970-1971/ordinaire1/010.txt x
+4-layout/1970-1971/ordinaire1/015.txt x
+4-layout/1970-1971/ordinaire1/093.txt x
+4-layout/1970-1971/ordinaire2/035.txt x
+4-layout/1970-1971/ordinaire2/044.txt x
+4-layout/1970-1971/ordinaire2/067.txt x
+4-layout/1972-1973/ordinaire1/012.txt x
+4-layout/1972-1973/ordinaire1/017.txt x
+4-layout/1972-1973/ordinaire1/080.txt x
+
+
+4-layout/1969-1970/ordinaire1/018.txt ==> le  "58" a été lu  "56".  corrigé.
+4-layout/1969-1970/ordinaire2/051.txt ==> le "118" a été lu "11$".  corrigé.
+4-layout/1970-1971/ordinaire1/069.txt ==> le "165" a été lu "166".  corrigé.
+4-layout/1970-1971/ordinaire1/080.txt ==> le "170" a été lu "1701". corrigé.
+4-layout/1970-1971/ordinaire2/035.txt ==> le "218" a été lu "216".  corrigé.
+
+
+
+Scrutins non trouvés:
+49 50 51 52 53 252 253 254 255 256 257 279 280 281 282 283 284
+
+Fichier 4-reconstitues/1972-1973/ordinaire1/004.txt = format incorrect. Scrutin 331 non pris en compte.
+
 
 -Dans la liste des noms (4-deputes/liste.txt) un traitement spécial a été effectué pour :
  Moussa Ali Abdoulkader
@@ -42,46 +43,11 @@ REMARQUES:
 
 
 
+TO DO (A améliorer):
 
-Peut-être plusieurs fichiers de logs:
-- pour les erreurs "totales" (le fichier ne sera pas traité, ou un scrutin dans un fichier n'est pas traité)
-- pour les erreurs "graves" (des noms/groupes ne sont pas traités)
-- pour les infos, et erreurs "moyennes"
-
-Algo en cours:
-
-Commencer par traiter que les "pour" "contre" et "abstentions" :
-- Pour chaque page: Recherche de 3 colonnes majoritaire. Si on en trouve, on les enregistre.
-
--Rechercher les "mots clés" correspondant aux votes.
-  -> Chaque ligne est soumise à levenstein pour chaque mot clé. Si suffisament proche (suivant un ratio) on prend le plus proche.
-
-	### faire attention aux singuliers (ex: s'est abstenu)
-
-On cherche le mot clé suivant puis on traite ce qui ce trouve entre ces deux mots clés.
-  (si sur deux pages, on traite les 2 blocs (fin de page et début de page suivante) séparément, mais enregistré ensemble.)
-
-  -Nettoyer les "MM." et compagnie.
-  -Cherche 3 colonnes, et compare avec ceux de la page. (moyennant peut-être un écart de 1? Comme dans la reconstitution).
-    -Si 3 colonnes, alors on reconstitue "l'ordre" de lecture (la string) a partir de ces trois colonnes. 
-
-  -Après on split la string sur "." et "," (et sur "et" si pas 3 colonnes)
-	### Comment régler le probleme des "." non lu par le logiciel? 
-		-> On peut gérer ceux ac parentheses (si présente = prénom donc obligatoirement un . après).
-		-> Tous les noms sont sensé passé levenstein. Si un qui passe pas on peut tenter le split et passer chaque élement à levenstein.
-			-> pour le split, on sait que c'est ordonné alphabetiquement. Si on doit split un nom qui ne passe pas (et qui a plusieurs mots ofc), on peut
-			   chercher les mots qui sont entre le premier mot et le nom suivant alphabetiquement, et spliter dessus. 
-		
-		-> certaines parentheses peuvent mal passer, proposition: le levenstein va comparer le mot trouvé dans le document, donc soit "nom", ou "nom (prenom)" avec les eventuelles fautes, à deux mots, le vrai nom suivi du vrai prénom entre parenthese "nom (prénom)" et le vrai nom "nom".
-		   Un troisieme mot est rajouté pour les noms commençant par "du" ou "de" => "nom (du/de)"
-
-		
-		-> quand on cherche un nom dans levenstein, on prend celui ayant la plus faible distance (si ex-aequo le plus petit nom).
-		   cependant si le nom trouvé est déjà occupé ou est inferieur à celui trouvé juste avant (alphabetiquement), alors EXCEPTION générée. (peut-être amélioré apres?)		   On ne traite plus la liste donnée. (à voir comment améliorer ça).
-		
-		-> Si un nom ne passe toujours pas levenstein après les différents splits, générer une erreur, ne pas enregistrer le nom mais continuer les autres noms.
-
-
+Verifications:
+-pas de doublon dans le même scrutin. (algo si doublon on regarde si on est avant chronologiquement etc).
+-Plus de log, et mieux préciser...? 
 
 
 

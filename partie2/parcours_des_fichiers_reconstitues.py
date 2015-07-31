@@ -348,9 +348,9 @@ def contient_mot_cle(text_page):
 
     #Peut-etre inutile de faire sur chaque ligne faire sur le text direct?
     for i in range(0,len(lignes)) :
-        if (cherche_mot_cle_pour(lignes[i])[0] or cherche_mot_cle_contre(lignes[i])[0]
-        or cherche_mot_cle_abstenu(lignes[i])[0] or cherche_mot_cle_pas_pris_part(lignes[i])[0]
-        or cherche_mot_cle_absent(lignes[i])[0] or cherche_mot_cle_delegue(lignes[i])[0]):
+        if (cherche_mot_cle_pour(lignes[i])[0][0] or cherche_mot_cle_contre(lignes[i])[0][0]
+        or cherche_mot_cle_abstenu(lignes[i])[0][0] or cherche_mot_cle_pas_pris_part(lignes[i])[0][0]
+        or cherche_mot_cle_absent(lignes[i])[0][0] or cherche_mot_cle_delegue(lignes[i])[0][0]):
             return True
         
     return False

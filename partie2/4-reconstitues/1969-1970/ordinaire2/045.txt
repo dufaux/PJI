@@ -1105,8 +1105,8 @@
 
                                                                             
                                                                             
- 112)
-   SCRUTIN M n                                                              
+     
+   SCRUTIN M n    112)                                                      
                                                                             
     Sur l 'amendement n° 53 de M. Garcin à l'article 18 du proj e t de loi  
                                                                             
@@ -1395,6 +1395,11 @@
                                         
 
 
+
+
+
+
+
 
 
 

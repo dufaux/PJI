@@ -170,6 +170,7 @@ def valide_mot_cle(mot_cle,text,marge_erreur) :
     return (False,dist)
 
 
+
 #################### PARCOURS #####################
 
 def parcours_fichier(fichier) :
@@ -214,35 +215,36 @@ def contient_scrutin(text_page):
 def contient_mot_cle(text_page):
     lignes = text_page.split('\n');
 
-    #Peut-etre inutile de faire sur chaque ligne faire sur le text direct?
+    #Pour et contre suffit (car sinon ça inclu certains document comprenant une correction (69-70/ordinaire2/005.txt).
     for i in range(0,len(lignes)) :
-        if (mot_cle_pour(lignes[i]) or mot_cle_contre(lignes[i])
-        or mot_cle_abstenu(lignes[i]) or mot_cle_pas_pris_part(lignes[i])
-        or mot_cle_absent(lignes[i]) or mot_cle_delegue(lignes[i])):
-            return True
+        mots_a_chercher = list(filter(None, lignes[i].split("  ")))
+        for mot in mots_a_chercher :
+            if (cherche_mot_cle_pour(mot)[0][0] or cherche_mot_cle_contre(mot)[0][0]
+                or contient_mots_de_scrutins(lignes[i])):
+                return True
         
     return False
 
+def nettoie_mot_cle_a_chercher(text):
+    return " ".join(text.split()) #remove multiple space
 
-## a retravailler
-def mot_cle_pour(text):
-    return ("Nombre des votants" in text)
 
-def mot_cle_contre(text):
-    return False
+#Return tuple of tuple and string
+# return : ((Boolean,Int),String)
+def cherche_mot_cle_pour(text):
+    mot_cherche = "Ont voté pour (1) :"
+    mot_cle_pour = "POUR"
+    return (valide_mot_cle(mot_cherche,text,0.3),mot_cle_pour)
 
-def mot_cle_abstenu(text):
-    return False
+def cherche_mot_cle_contre(text):
+    mot_cherche = "Ont voté contre (1) :"
+    mot_cle_contre = "CONTRE"
+    return (valide_mot_cle(mot_cherche,text,0.3), mot_cle_contre)
 
-def mot_cle_pas_pris_part(text):
-    return False
+def contient_mots_de_scrutins(text):
+    return "Nombre des votants" in text or "Nombre des suffrages exprimés" in text or "Majorité absolue" in text
 
-def mot_cle_absent(text):
-    return False
-
-def mot_cle_delegue(text):
-    return False
-
+    
 
 def add_infos_page(num,milieu,sixcol):
     global dico_infos_pages
@@ -352,6 +354,10 @@ def cherche_colonne_centrale_vide(numpage,text_page):
     #text_page = nettoie_page(text_page);
     lignes = text_page.split('\n');
 
+
+    if(len(lignes) < 60) : #si petite page on annule la marge bas/haut car pied de page parfois trop grand
+        marge_bas_haut_de_page = 1
+
     #cherche la ligne la plus longue
     for y in range(0,len(lignes)) :
         if( len(lignes[y]) > y_max) :
@@ -373,6 +379,7 @@ def cherche_colonne_centrale_vide(numpage,text_page):
                 
                 if(not lignes[y][milieu+difference_centrale].isspace()) :
                     if(compteur == 0 or ( y > len(lignes)*marge_bas_haut_de_page and y < len(lignes)-(len(lignes)*marge_bas_haut_de_page))) : #trop de caractere comptee. Ou caractere trouvé au milieu de page
+                        #print("colonne x = "+str(milieu+difference_centrale)+" comprend + de "+str(nombre_de_caractere_autorise)+" caracteres")
                         colonne_blanche = False
                         break
                     #print(str(lignes[y][milieu+difference_centrale]))
@@ -395,6 +402,7 @@ def cherche_colonne_centrale_vide(numpage,text_page):
             if(len(lignes[y]) > milieu-difference_centrale) :
                 if(not lignes[y][milieu-difference_centrale].isspace()) :
                     if(compteur == 0 or ( y > len(lignes)*marge_bas_haut_de_page and y < len(lignes)-(len(lignes)*marge_bas_haut_de_page))) :
+                        #print("colonne x = "+str(milieu-difference_centrale)+" comprend + de "+str(nombre_de_caractere_autorise)+" caracteres")
                         colonne_blanche = False
                         break
                     compteur-= 1
@@ -550,7 +558,7 @@ for root, subdirs, files in os.walk("4-layout"):
         reinitialise_variables()
 
 """
-filename = "086.txt";
+filename = "004.txt";
 fichier = open(filename).read()
 
 parcours_fichier(fichier)
@@ -558,12 +566,11 @@ parcours_fichier(fichier)
 fich = open(filename+"-reconstitue.txt","w")
 fich.write(pages_reconstituees)
 fich.close()
+
 """
-
-
 """
 pagetest = pages[37];
 pagetest= pagetest.replace('\n','')
-lignes = pagetest.split('\n');"""
-
+lignes = pagetest.split('\n');
+"""
 
