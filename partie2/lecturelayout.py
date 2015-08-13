@@ -191,7 +191,12 @@ def parcours_fichier(fichier) :
         raise PasDePageScrutinTrouvee(filename)
 
     for i in range(debut,len(pages)) :
+
+        
         if(pages[i]) :
+            if(page_n_est_plus_un_scrutin(pages[i])) :
+               break
+
             try :
                 cherche_six_colonnes_page(i,pages[i])
             except SixColonnePasDistinctesError :
@@ -204,8 +209,17 @@ def parcours_fichier(fichier) :
 
 
 
+def page_n_est_plus_un_scrutin(text_page) :
+    lignes = text_page.split('\n');
+    for i in range(0,len(lignes)) :
+        if(valide_mot_cle("REMISES A LA PRESIDENCE DE L'ASSEMBLEE NATIONALE",lignes[i],0.2)[0]) :
+            return True
+        if(valide_mot_cle("RÉPONSES DES MINISTRES AUX QUESTIONS ÉCRITES",lignes[i],0.2)[0]) :
+            return True
+    return False
+
 def page_comprend_scrutin(text_page) :
-    return contient_scrutin(text_page) and contient_mot_cle(text_page)
+    return (contient_scrutin(text_page) and contient_mot_cle(text_page))
 
 
 def contient_scrutin(text_page):
@@ -505,7 +519,7 @@ pages_reconstituees = ""
 dico_infos_pages = {}
 helper = []
 
-current_legislature = "4"
+current_legislature = "5"
 #logs
 logging
 logger = logging.getLogger('myapp')
@@ -524,8 +538,8 @@ logger_info.addHandler(hdlr2)
 logger_info.setLevel(logging.DEBUG)
 
 
-for root, subdirs, files in os.walk("4-layout"):
-    newpath = "4-reconstitues/"+"/".join(root.split("/")[1:])
+for root, subdirs, files in os.walk(str(current_legislature)+"-layout"):
+    newpath = str(current_legislature)+"-reconstitues/"+"/".join(root.split("/")[1:])
     if not os.path.exists(newpath):
         os.makedirs(newpath)
 
@@ -541,7 +555,7 @@ for root, subdirs, files in os.walk("4-layout"):
             parcours_fichier(fichierlayout)
             
             dest = newpath+"/"+".".join(nomfichier.split(".")[:-1])
-            #dest = "all_in_one"
+            #dest = "all_in_one_"+current_legislature
             fichiertxt = open(dest+".txt","a") # a pour ecrire à la fin, w pour remplacer
             fichiertxt.write(pages_reconstituees)
             fichiertxt.close()

@@ -59,7 +59,9 @@ class Liste_deputes :
 
     def __init__(self) :
         self.liste = []
-        self.partis_cherches = ["UDR","RI","FGDS","S","C","PDM","NI"]
+        self.partis_cherches = ["UDR","RI","FGDS","S","C","PDM","NI","PSRG","RDS","UC"]
+        #comprend les partis de la 4em et la 5em.
+
 
     #chaque ligne: nom_parfois_plusieurs_mots prenom groupe departement_parfois_plusieurs_mots
     def init_from_file(self, name_file) :

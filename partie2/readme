@@ -2,6 +2,23 @@
 Johan Dufaux
 
 
+Question:
+Younoussa BAMANA = quel parti?
+Jacques, Guy GUINEBRETIÈRE = quel parti?
+Raoul HONNET = que parti? (PDM mais pdm n'est pas un parti de la 5em legislature)
+Hégésippe IBÉNÉ = quel parti?
+Jean-Claude ROHEL = quel parti?
+
+
+
+Remarques spéciale assemblée:
+François abadie ou Edouard abadie?
+http://www.assemblee-nationale.fr/histoire/trombinoscope/Vrepublique/Legis06/abadie-francois-19061930.asp
+http://www.assemblee-nationale.fr/sycomore/fiche.asp?num_dept=5
+
+page HS = http://www.assemblee-nationale.fr/sycomore/fiche.asp?num_dept=360
+
+
 REMARQUES:
 
 Liste des fichiers modifiés manuellements car numéro de scrutin pas sur la même ligne que le mot "SCRUTIN" :
@@ -28,6 +45,49 @@ Liste des fichiers modifiés manuellements car numéro de scrutin pas sur la mê
 
 
 
+
+
+
+
+5-layout/1977-1978/ordinaire1/007.txt = retirer texte à la fin
+5-layout/1972-1973/ordinaire2/031.txt = retirer texte au milieu
+5-layout/1972-1973/ordinaire1/085.txt = retirer texte au milieu
+
+
+
+5-layout/1975-1976/ordinaire1/101.txt ==> le "284/285" a été lu "2114/215". corrigé
+5-layout/1977-1978/ordinaire1/007.txt ==> le "475" a été lu "175". corrigé
+
+
+5-layout/1972-1973/ordinaire2/055.txt x
+5-layout/1974-1975/extraordinaire1/004.txt x
+5-layout/1974-1975/ordinaire1/013.txt x
+5-layout/1974-1975/ordinaire1/065.txt x
+5-layout/1974-1975/ordinaire2/047.txt x
+5-layout/1974-1975/ordinaire2/053.txt x
+5-layout/1974-1975/ordinaire2/091.txt x
+5-layout/1975-1976/ordinaire1/009.txt x
+5-layout/1975-1976/ordinaire2/013.txt x
+5-layout/1976-1977/ordinaire2/066.txt x
+5-layout/1976-1977/ordinaire2/078.txt x
+5-layout/1976-1977/ordinaire2/080.txt x
+5-layout/1977-1978/ordinaire1/014.txt x
+5-layout/1977-1978/ordinaire1/075.txt x
+5-layout/1977-1978/ordinaire1/086.txt x
+5-layout/1977-1978/ordinaire1/090.txt x
+5-layout/1977-1978/ordinaire1/093.txt x
+
+
+
+
+
+
+
+
+
+
+
+
 Scrutins non trouvés:
 49 50 51 52 53 252 253 254 255 256 257 279 280 281 282 283 284
 
@@ -49,6 +109,10 @@ Verifications:
 -pas de doublon dans le même scrutin. (algo si doublon on regarde si on est avant chronologiquement etc).
 -Plus de log, et mieux préciser...? 
 
+
+SI ON VEUT TESTER UNE NOUVELE LEGISLATURE :
+-ne pas oublier d'ajouter dans depute.py les partis à chercher
+-verifie la liste des députés (il en manque souvent une centaine :()
 
 
 info:

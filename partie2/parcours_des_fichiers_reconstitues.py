@@ -269,7 +269,7 @@ def parcours_paragraphe_membre(num_page, text) :
 
     liste_deputes = re.split(',|\.',text)
     liste_modeles = Liste_deputes() #peut etre passé en globale fixe
-    liste_modeles.init_from_file("./4-deputes/liste.txt")
+    liste_modeles.init_from_file("./"+current_legislature+"-deputes/liste.txt")
 
     for i in range(len(liste_deputes)) :
         depute_a_trouver = " ".join(liste_deputes[i].split())
@@ -501,6 +501,7 @@ def cherche_trois_colonnes_text(numpage,text,ecart,ratio):
 
     coords_triees = sorted(dico_de_coord.items(),key=itemgetter(1),reverse=True)
 
+
     if(len(coords_triees) < 3) :
         raise TroisColonnePasDistinctesError(filename+" page "+str(numpage))
 
@@ -520,13 +521,14 @@ def cherche_trois_colonnes_text(numpage,text,ecart,ratio):
                 coords_triees[i][1] += coords_triees[j-decalage][1]
                 del coords_triees[j-decalage]
                 decalage +=1
+                if(len(coords_triees) < 3) :
+                    raise TroisColonnePasDistinctesError(filename+" page "+str(numpage))
 
     coords_triees = sorted(coords_triees,key=itemgetter(1),reverse=True)
 
-    #debug perso parceque j'sais pas utiliser un debuggeur
-    if(numpage == 44) :
-        helper.append(copy.deepcopy(coords_triees))
 
+    #debug perso parceque j'sais pas utiliser un debuggeur
+    helper = coords_triees
 
     """print("y ="+str(coords_triees[0][0])+" num ="+str(coords_triees[0][1]))
     print("y ="+str(coords_triees[1][0])+" num ="+str(coords_triees[1][1]))
@@ -613,7 +615,7 @@ Liste_de_deputes_a_enregistrer = []
 dico_infos_pages = {}
 helper = []
 
-current_legislature = "4"
+current_legislature = "5"
 #logs
 logging
 logger_critic = logging.getLogger('myapp')
@@ -644,7 +646,7 @@ fichier_csv = open(nom_fichier_csv, 'a', newline='')
 spamwriter = csv.writer(fichier_csv, delimiter=',')
 
 
-for root, subdirs, files in os.walk("4-reconstitues"):
+for root, subdirs, files in os.walk(str(current_legislature)+"-reconstitues"):
 
     for nomfichier in files :
         filepath = root+"/"+nomfichier
@@ -663,13 +665,14 @@ for root, subdirs, files in os.walk("4-reconstitues"):
         logger_info.info("\n\n\n")
 
 """
-filename = "007.txt";
+filename = "062.txt";
 fichier = open(filename).read()
 parcours_fichier(fichier)
 """
 
 sauvegarde_liste_deputes()
 fichier_csv.close()
+
 """
 pagetest = pages[37];
 pagetest= pagetest.replace('\n','')
