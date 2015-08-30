@@ -6,15 +6,20 @@ from depute import Depute
 
 
 liste_incomplete = Liste_deputes() #peut etre passé en globale fixe
-liste_incomplete.init_from_file("./5-deputes/liste.txt")
+liste_incomplete.init_from_file("./6-deputes/liste.txt")
 
-liste_complete = open("./5-deputes/liste_complete.txt").read()
+liste_complete = open("./6-deputes/liste_complete.txt").read()
 
 liste_complete = ''.join(i for i in liste_complete if not i.isdigit())
 liste_complete = liste_complete.replace("/","")
 
 lignes = liste_complete.split("\n")
 
+
+"""for depute in liste_incomplete.liste :
+    print("PRENOM = "+depute.prenom)
+    print("NOM = "+depute.nom)
+"""
 for ligne in lignes :
     le_nom = ligne.split()[-1]
     le_nom = le_nom.lower()

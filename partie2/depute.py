@@ -12,11 +12,19 @@ class DeputeIntrouvableError(Exception) :
         return self.nom
 
 
+
+class DeputeDejaEnregistreError(Exception) :
+
+    def __init__(self,depute) :
+        self.depute = depute
+
+    def get_infos(self) :
+        return self.depute.nom+" "+self.depute.prenom
     
 
 
-
-class Depute :
+    
+class Depute():
 
     def __init__(self, param_nom, param_prenom, param_parti, param_vote) :
         self.nom = param_nom
@@ -24,8 +32,21 @@ class Depute :
         self.parti = param_parti
         self.vote = param_vote
 
+    def __eq__(self, other) :
+        if other == None :
+            return False
+        if (self.nom != other.nom or self.prenom != other.prenom) :
+            return False
+        return True
+
+    def __ne__(self, other):
+        return not self.__eq__(other)
+    
+    def __hash__(self) :
+        return hash(self.nom+self.prenom)
 
 
+    
 
 class Depute_modele :
 
@@ -59,7 +80,10 @@ class Liste_deputes :
 
     def __init__(self) :
         self.liste = []
-        self.partis_cherches = ["UDR","RI","FGDS","S","C","PDM","NI","PSRG","RDS","UC"]
+        self.partis_cherches = ["C","CD","EAS","FGDS","I.",
+                                "IPAS","NI","PDM","PSRG","RPCD",
+                                "RD","RDS","RI","RPR","S",
+                                "UC","UDF","UDR","UDVeR","UNR","UNR-UDT"]
         #comprend les partis de la 4em et la 5em.
 
 
@@ -80,6 +104,8 @@ class Liste_deputes :
         
         distance_minim = None
         depute_minim = None
+
+        text = text.replace("œ","oe")
         
         for i in range(len(self.liste)) :
             modeles = self.liste[i].get_liste_exemples_de_nom()
@@ -95,3 +121,5 @@ class Liste_deputes :
         return (distance_minim,depute_minim)
 
 
+    def remove(self, depute) :
+        self.liste.remove(depute)

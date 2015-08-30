@@ -15,6 +15,7 @@ import re
 import copy
 
 from depute import DeputeIntrouvableError
+from depute import DeputeDejaEnregistreError
 from depute import Liste_deputes
 from depute import Depute_modele
 from depute import Depute
@@ -96,7 +97,12 @@ def decoupage_recursif(debut, fin, array) :
 
 def enregistre_depute(nom, prenom, parti) :
     global Liste_de_deputes_a_enregistrer
+    global liste_modeles
     depute = Depute(nom,prenom,parti,current_vote)
+
+    #if depute in Liste_de_deputes_a_enregistrer :
+        #raise DeputeDejaEnregistreError(depute)
+    liste_modeles.remove(depute)
     Liste_de_deputes_a_enregistrer.append(depute)
     
 def nettoie_text(text) :
@@ -112,6 +118,7 @@ def parcours_fichier(fichier) :
     global logger
     global filename
     global current_vote
+    global liste_modeles
     
     fichier = fichier.replace('\r','');
     fichier = fichier.replace('\t',' '); #replace tab par un espace!
@@ -119,7 +126,9 @@ def parcours_fichier(fichier) :
 
     liste_mot_cle = []
     liste_scrutin = []
-    
+
+    liste_modeles = Liste_deputes() #peut etre passé en globale fixe
+    liste_modeles.init_from_file("./"+current_legislature+"-deputes/liste.txt")
     #parcours page par page
     for i in range(0,len(pages)) :
         if(pages[i]) :
@@ -161,6 +170,7 @@ def parcours_fichier(fichier) :
     #parcours chaque mot clé
     for i in range(len(liste_mot_cle)-1) :
         logger_grave.error("--- mot clé --- "+str(liste_mot_cle[i].mot))
+        logger_info.error("--- mot clé --- "+str(liste_mot_cle[i].mot))
         #print("Mot clé "+liste_mot_cle[i].mot+" et page = "+str(liste_mot_cle[i].page)+" et ligne = "+str(liste_mot_cle[i].ligne))
 
         current_vote = liste_mot_cle[i].mot
@@ -268,8 +278,6 @@ def parcours_paragraphe_membre(num_page, text) :
     print(text)"""
 
     liste_deputes = re.split(',|\.',text)
-    liste_modeles = Liste_deputes() #peut etre passé en globale fixe
-    liste_modeles.init_from_file("./"+current_legislature+"-deputes/liste.txt")
 
     for i in range(len(liste_deputes)) :
         depute_a_trouver = " ".join(liste_deputes[i].split())
@@ -277,15 +285,20 @@ def parcours_paragraphe_membre(num_page, text) :
         try :
             trouvaille =  liste_modeles.cherche_depute(depute_a_trouver,0.3)
             #print("TROUVE -"+str(trouvaille[0])+" "+depute_a_trouver+" => "+trouvaille[1].nom+"["+trouvaille[1].parti+"]")
+            #try :
             enregistre_depute(trouvaille[1].nom,trouvaille[1].prenom,trouvaille[1].parti)
-            
+            #except DeputeDejaEnregistreError as error_depute_deja_present:
+            #logger_grave.error("NOM EN DOUBLE : "+str(error_depute_deja_present.get_infos()))
         except DeputeIntrouvableError as e:
             ##replace les eventuels chiffres
             depute_a_trouver = depute_a_trouver.replace("0","o").replace("1","l")
             try :
                 trouvaille =  liste_modeles.cherche_depute(depute_a_trouver,0.3)
                 #print("TROUVE2 -"+str(trouvaille[0])+" "+depute_a_trouver+" => "+trouvaille[1].nom+"["+trouvaille[1].parti+"]")
+                #try :
                 enregistre_depute(trouvaille[1].nom,trouvaille[1].prenom,trouvaille[1].parti)
+                #except DeputeDejaEnregistreError as error_depute_deja_present:
+                #logger_grave.error("NOM EN DOUBLE : "+str(error_depute_deja_present.get_infos()))
             except DeputeIntrouvableError as e1:
                 #split le nom en toute les possibilités et essayes pour chacune
                 #on garde la combinaison où on a le plus de match
@@ -311,9 +324,12 @@ def parcours_paragraphe_membre(num_page, text) :
                 for bons_noms in liste_nouveaux_noms[i_max] :
                     try :
                         trouvaille =  liste_modeles.cherche_depute(nom,0.3)
+                        #try :
                         enregistre_depute(trouvaille[1].nom,trouvaille[1].prenom,trouvaille[1].parti)
+                        #except DeputeDejaEnregistreError as error_depute_deja_present:
+                        #logger_grave.error("NOM EN DOUBLE : "+str(error_depute_deja_present.get_infos()))
                     except DeputeIntrouvableError as e3:
-                        logger_grave.error("PAS RECONNU : "+str(e3.get_nom()))
+                        logger_info.error("PAS RECONNU : "+str(e3.get_nom()))
                         #print("NOM PAS PASSE : "+str(e3.get_nom()))
                         pass
 
@@ -339,6 +355,7 @@ def changement_de_scrutin(numero_scrutin) :
     global current_num_scrutin
     print("changement de scrutin ancien = "+str(current_num_scrutin)+" et nouveau ="+str(numero_scrutin))
     logger_grave.error("--- new scrutin --- "+str(numero_scrutin))
+    logger_info.error("--- new scrutin --- "+str(numero_scrutin))
     sauvegarde_liste_deputes()
     reinitialise_variables_de_scrutin()
     current_num_scrutin = numero_scrutin
@@ -505,7 +522,6 @@ def cherche_trois_colonnes_text(numpage,text,ecart,ratio):
     if(len(coords_triees) < 3) :
         raise TroisColonnePasDistinctesError(filename+" page "+str(numpage))
 
-        
     for i in range (0,len(coords_triees)) : #repasse les tuple en array (pour etre modifie)
         coords_triees[i] = list(coords_triees[i])
     
@@ -547,8 +563,8 @@ def cherche_trois_colonnes_text(numpage,text,ecart,ratio):
     troiscolonnes = [coords_triees[0][0],coords_triees[1][0],coords_triees[2][0]]
     troiscolonnes.sort()
 
-    logger_info.info("TROIS COLONNES TROUVEES: ")
-    logger_info.info(coords_triees)
+    """logger_info.info("TROIS COLONNES TROUVEES: ")
+    logger_info.info(coords_triees)"""
 
     return troiscolonnes
 
@@ -570,8 +586,9 @@ def reinitialise_variables_de_scrutin() :
     global current_nb_votant
     global helper
     global Liste_de_deputes_a_enregistrer
+    global liste_modeles
 
-    current_legislature = None
+    
     current_num_scrutin = None
     current_nom_scrutin = None
     current_vote = None
@@ -579,7 +596,8 @@ def reinitialise_variables_de_scrutin() :
     Liste_de_deputes_a_enregistrer = []
     helper = []
 
-
+    liste_modeles = Liste_deputes() #peut etre passé en globale fixe
+    liste_modeles.init_from_file("./"+current_legislature+"-deputes/liste.txt")
 
 
 def reinitialise_variables_de_document() :
@@ -614,6 +632,8 @@ infos_page = None
 Liste_de_deputes_a_enregistrer = []
 dico_infos_pages = {}
 helper = []
+liste_modeles = []
+
 
 current_legislature = "5"
 #logs
@@ -634,7 +654,7 @@ logger_grave.addHandler(hdlr_grave)
 logger_grave.setLevel(logging.NOTSET)
 
 
-logger_info = logging.getLogger('main')
+logger_info = logging.getLogger('info')
 hdlr_info = logging.FileHandler('./logs/'+current_legislature+'_reconstitues_info.log')
 formatter_info = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
 hdlr_info.setFormatter(formatter_info)

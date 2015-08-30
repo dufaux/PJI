@@ -305,7 +305,9 @@ def cherche_six_colonnes_page(numpage,text_page):
     if(len(coords_triees) < 6) :
         raise SixColonnePasDistinctesError(filename+" page "+str(numpage))
 
-        
+
+
+    #print(coords_triees)
     for i in range (0,len(coords_triees)) : #repasse les tuple en array (pour etre modifie)
         coords_triees[i] = list(coords_triees[i])
     
@@ -554,9 +556,12 @@ for root, subdirs, files in os.walk(str(current_legislature)+"-layout"):
         try :
             parcours_fichier(fichierlayout)
             
-            dest = newpath+"/"+".".join(nomfichier.split(".")[:-1])
-            #dest = "all_in_one_"+current_legislature
+            #dest = newpath+"/"+".".join(nomfichier.split(".")[:-1])
+            dest = "all_in_one_"+current_legislature
             fichiertxt = open(dest+".txt","a") # a pour ecrire à la fin, w pour remplacer
+            fichiertxt.write("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n")
+            fichiertxt.write(filepath+"\n")
+            fichiertxt.write("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n")
             fichiertxt.write(pages_reconstituees)
             fichiertxt.close()
             print("Fichier cree: "+dest)
