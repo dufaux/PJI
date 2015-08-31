@@ -177,6 +177,7 @@ def parcours_fichier(fichier) :
     global logger
     global filename
 
+    print("parcours_fichier")
     fichier = fichier.replace('\r','');
     fichier = fichier.replace('\t',' '); #replace tab par un espace!
     pages = fichier.split("\x0c");
@@ -194,7 +195,7 @@ def parcours_fichier(fichier) :
 
         
         if(pages[i]) :
-            if(page_n_est_plus_un_scrutin(pages[i])) :
+            if(page_n_est_plus_un_scrutin(pages[i]) and i > debut) :
                break
 
             try :
@@ -204,7 +205,8 @@ def parcours_fichier(fichier) :
                 logger_info.info("["+str(filename)+"]["+str(i)+"]EXCEPT: SixColonnePasDistinctesError ")
                 logger.info("["+str(filename)+"]["+str(i)+"]EXCEPT: SixColonnePasDistinctesError ")
                 cherche_colonne_centrale_vide(i,pages[i])
-    
+
+            print("reconstitue page")
             reconstitue_page(i,pages[i])
 
 
@@ -521,7 +523,8 @@ pages_reconstituees = ""
 dico_infos_pages = {}
 helper = []
 
-current_legislature = "5"
+current_legislature = "1"
+all_in_one = False
 #logs
 logging
 logger = logging.getLogger('myapp')
@@ -556,12 +559,17 @@ for root, subdirs, files in os.walk(str(current_legislature)+"-layout"):
         try :
             parcours_fichier(fichierlayout)
             
-            #dest = newpath+"/"+".".join(nomfichier.split(".")[:-1])
-            dest = "all_in_one_"+current_legislature
+            dest = newpath+"/"+".".join(nomfichier.split(".")[:-1])
+            if all_in_one :
+                dest = "all_in_one_"+current_legislature
+                
             fichiertxt = open(dest+".txt","a") # a pour ecrire à la fin, w pour remplacer
-            fichiertxt.write("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n")
-            fichiertxt.write(filepath+"\n")
-            fichiertxt.write("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n")
+            
+            if all_in_one :
+                fichiertxt.write("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n")
+                fichiertxt.write(filepath+"\n")
+                fichiertxt.write("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n")
+
             fichiertxt.write(pages_reconstituees)
             fichiertxt.close()
             print("Fichier cree: "+dest)
@@ -577,7 +585,7 @@ for root, subdirs, files in os.walk(str(current_legislature)+"-layout"):
         reinitialise_variables()
 
 """
-filename = "004.txt";
+filename = "080.txt";
 fichier = open(filename).read()
 
 parcours_fichier(fichier)
@@ -585,11 +593,5 @@ parcours_fichier(fichier)
 fich = open(filename+"-reconstitue.txt","w")
 fich.write(pages_reconstituees)
 fich.close()
-
-"""
-"""
-pagetest = pages[37];
-pagetest= pagetest.replace('\n','')
-lignes = pagetest.split('\n');
 """
 

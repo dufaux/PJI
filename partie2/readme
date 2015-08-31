@@ -8,7 +8,9 @@ François, Charles, Joseph VALENTIN DIT FRANÇOIS-VALENTIN
 présent en françois-valentit sur les scrutins.
 
 
-
+En réalité, deux étapes nécessite un travail manuel:
+verifier la liste des députés
+verifier les all_in_one pour supprimer les texte en trop eventuellement
 
 
 Question:
@@ -44,12 +46,83 @@ http://www2.assemblee-nationale.fr/decouvrir-l-assemblee/histoire/la-ve-republiq
 => indépendante pour l'instant
 
 
+1-layout/1959-1960/ordinaire1/018.txt = retirer texte à la fin
+1-layout/1959-1960/ordinaire1/052.txt = retirer texte à la fin
+1-layout/1959-1960/ordinaire1/070.txt = retirer texte au début
+1-layout/1961-1962/ordinaire1/045.txt = retirer texte à la fin
+1-layout/1958-1959/ordinaire1/041.txt = retirer texte à la fin
+
+
+Liste des fichiers modifiés manuellements car numéro de scrutin pas sur la même ligne que le mot "SCRUTIN" :
+1-reconstitues/1959-1960/ordinaire2/021.txt
+1-reconstitues/1959-1960/ordinaire2/058.txt
+1-reconstitues/1959-1960/ordinaire2/064.txt
+1-reconstitues/1959-1960/ordinaire1/074.txt
+1-reconstitues/1959-1960/ordinaire1/020.txt
+1-reconstitues/1959-1960/ordinaire1/058.txt
+1-reconstitues/1960-1961/droit/042.tx
+1-reconstitues/1960-1961/ordinaire1/065.txt
+1-reconstitues/1960-1961/ordinaire1/041.txt
+1-reconstitues/1961-1962/ordinaire2/005.txt
+1-reconstitues/1961-1962/ordinaire1/079.txt
+1-reconstitues/1958-1959/extraordinaire1/004.txt
+1-reconstitues/1958-1959/ordinaire1/017.txt
+1-reconstitues/1958-1959/ordinaire1/039.txt
+
+
+1-reconstitues/1959-1960/ordinaire1/065.txt ===> le "60" a été lu "80". corrigé.
+1-reconstitues/1959-1960/ordinaire2/049.txt ===> 91 a été lu "1". corrigé.
+1-reconstitues/1959-1960/ordinaire2/067.txt ===> 106 a été lu "1". corrigé. 107 a été lu "187". corrigé.
+1-reconstitues/1959-1960/ordinaire2/067.txt ===> 187 a été lu "1". corrigé.
+1-reconstitues/1958-1959/ordinaire1/002.txt ===> 9 a été lu "1". corrigé.
+1-reconstitues/1959-1960/ordinaire1/054.txt ===> 56 a été lu "66". corrigé. 
+1-reconstitues/1959-1960/ordinaire1/071.txt ===> 65 a été lu "66". corrigé. 
+1-reconstitues/1959-1960/ordinaire1/074.txt ===> 68 a été lu "4". corrigé. 
+1-reconstitues/1959-1960/ordinaire1/052.txt ===> 54 a été lu "4". corrigé.
+1-reconstitues/1959-1960/ordinaire1/070.txt ===> 64 a été lu "84". corrigé. 
+1-reconstitues/1960-1961/droit/042.txt ===> 146 a été lu "148". corrigé.
+1-reconstitues/1961-1962/ordinaire1/064.txt ===> 169 a été lu "189". corrigé. 
+1-reconstitues/1961-1962/ordinaire1/079.txt ===> 178 a été lu "179". corrigé.
+1-reconstitues/1958-1959/ordinaire1/011.txt ===> 15 a été lu "16". corrigé.
+1-reconstitues/1958-1959/ordinaire1/013.txt ===> 19 a été lu "18". corrigé.
+1-reconstitues/1958-1959/ordinaire1/013.txt ===> 20 a été lu "28". corrigé.
+1-reconstitues/1959-1960/ordinaire2/024.txt ===> 86 a été lu "9". corrigé.
+1-reconstitues/1959-1960/ordinaire1/073.txt ===> 66 a été lu "68" corrigé.
+1-reconstitues/1961-1962/ordinaire1/071.txt ===> 176 a été lu "178". corrigé.
+1-reconstitues/1959-1960/ordinaire2/021.txt ===> 85 a été lu "86". corrigé.
+
+
+--------------------------------------------------------------------------------
+--------------------          Deuxieme législature:         --------------------
+--------------------------------------------------------------------------------
+
+2-layout/1962-1963/ordinaire2/014.txt = retirer texte au milieu
+
+
+
+Liste des fichiers modifiés manuellements car numéro de scrutin pas sur la même ligne que le mot "SCRUTIN" :
+
+
+
+1-reconstitues/1959-1960/ordinaire1/065.txt ===> le "60" a été lu "80". corrigé.
+
 
 --------------------------------------------------------------------------------
 --------------------         Troisieme législature:         --------------------
 --------------------------------------------------------------------------------
 
 Christian COUMEL
+Jean RIGAL
+Jacques TAILLEUR
+
+
+
+
+
+
+--------------------------------------------------------------------------------
+--------------------          Quatrieme législature:        --------------------
+--------------------------------------------------------------------------------
 
 
 
@@ -77,9 +150,17 @@ Liste des fichiers modifiés manuellements car numéro de scrutin pas sur la mê
 4-layout/1970-1971/ordinaire2/035.txt ==> le "218" a été lu "216".  corrigé.
 
 
+Scrutins non trouvés:
+49 50 51 52 53 252 253 254 255 256 257 279 280 281 282 283 284
+
+
+Fichier 4-reconstitues/1972-1973/ordinaire1/004.txt = format incorrect. Scrutin 331 non pris en compte.
 
 
 
+--------------------------------------------------------------------------------
+--------------------          Cinquieme législature:        --------------------
+--------------------------------------------------------------------------------
 
 
 5-layout/1977-1978/ordinaire1/007.txt = retirer texte à la fin
@@ -113,21 +194,17 @@ Liste des fichiers modifiés manuellements car numéro de scrutin pas sur la mê
 
 
 
+--------------------------------------------------------------------------------
+--------------------          Sixième législature:         --------------------
+--------------------------------------------------------------------------------
+
+6-layout/1979-1980/ordinaire2/012.txt = retirer texte à la fin
+6-layout/1978-1979/ordinaire2/061.txt = retirer texte à la fin
 
 
 
 
-
-
-
-
-Scrutins non trouvés:
-49 50 51 52 53 252 253 254 255 256 257 279 280 281 282 283 284
-
-Fichier 4-reconstitues/1972-1973/ordinaire1/004.txt = format incorrect. Scrutin 331 non pris en compte.
-
-
--Dans la liste des noms (4-deputes/liste.txt) un traitement spécial a été effectué pour :
+Un traitement spécial a été effectué pour :
  Moussa Ali Abdoulkader
  Car dans les résumé de scrutins, il écrivent l'intégralité du nom/prénom. J'ai donc remis en ordre le   nom/prenom et ajouter un prénom "fictif" pour ne pas en tenir compte.
 

@@ -56,8 +56,10 @@ class Depute_modele :
         self.parti = param_parti
         self.departement = param_departement
 
+
     # retourne "nom" et "nom (prenom)" et si nom commence par du/de "nom (de/du)" avec nom sans le de/du
     def get_liste_exemples_de_nom(self) :
+        #print(self.prenom)   
         les_mots = []
         les_mots.append(self.nom)
         les_mots.append(self.nom+" ("+self.prenom+")")

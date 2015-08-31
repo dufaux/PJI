@@ -34,6 +34,46 @@ class PasDeScrutinDansLaLigneError(Exception) :
 ###################### OBJETS ######################
 ####################################################
 
+
+class InfoDeScrutin:
+
+    def __init__(self,p_numero,p_nom,p_fichier) :
+        self.numero = p_numero
+        self.nom = p_nom
+        self.fichier = p_fichier
+
+    def get_numero(self):
+        return self.numero
+
+    def get_nom(self):
+        return self.nom
+
+    def get_fichier(self):
+        return self.fichier
+
+class ListeDesScrutinsTrouves:
+
+    def __init__(self,legislature):
+        self.legislature = legislature
+        self.liste = []
+
+    def append(self, infoscrutin):
+        self.liste.append(infoscrutin)
+
+    def get_doublons(self):
+        liste_scrutin = list(self.liste)
+        doublons = []
+        for i in range(len(liste_scrutin)):
+            for j in range(i+1,len(liste_scrutin)) :
+                if(liste_scrutin[i].get_numero() == liste_scrutin[j].get_numero()) :
+                    if(liste_scrutin[i] not in doublons) :
+                        doublons.append(liste_scrutin[i])
+                    if(liste_scrutin[j] not in doublons) :
+                        doublons.append(liste_scrutin[j])
+
+        return doublons
+
+
 class InfosDePage:
 
     def __init__(self,p_numero,p_colonnes):
@@ -353,12 +393,17 @@ def cherche_infos_globales(ligne) :
 ##a completer pour réinitialiser les variables. verifier le scrutin precedent etc.
 def changement_de_scrutin(numero_scrutin) :
     global current_num_scrutin
+    global liste_des_scrutins_enregistres
+    
     print("changement de scrutin ancien = "+str(current_num_scrutin)+" et nouveau ="+str(numero_scrutin))
     logger_grave.error("--- new scrutin --- "+str(numero_scrutin))
     logger_info.error("--- new scrutin --- "+str(numero_scrutin))
     sauvegarde_liste_deputes()
     reinitialise_variables_de_scrutin()
     current_num_scrutin = numero_scrutin
+
+    scrut = InfoDeScrutin(current_num_scrutin,"inconnu",filepath)
+    liste_des_scrutins_enregistres.append(scrut)
 
 def contient_mot_cle(text_page):
     lignes = text_page.split('\n');
@@ -627,7 +672,6 @@ current_nom_scrutin = None
 current_vote = None
 current_nb_votant = None
 filename = None
-
 infos_page = None
 Liste_de_deputes_a_enregistrer = []
 dico_infos_pages = {}
@@ -635,7 +679,11 @@ helper = []
 liste_modeles = []
 
 
-current_legislature = "5"
+current_legislature = "1"
+liste_des_scrutins_enregistres = ListeDesScrutinsTrouves(current_legislature)
+
+
+
 #logs
 logging
 logger_critic = logging.getLogger('myapp')
@@ -689,8 +737,18 @@ filename = "062.txt";
 fichier = open(filename).read()
 parcours_fichier(fichier)
 """
-
 sauvegarde_liste_deputes()
+
+doublons = liste_des_scrutins_enregistres.get_doublons()
+
+logger_grave.error("--- LISTE DES SCRUTINS AYANT UN NUMERO COMMUN AVEC UN AUTRE --- ")
+logger_critic.error("--- LISTE DES SCRUTINS AYANT UN NUMERO COMMUN AVEC UN AUTRE --- ")
+for doublon in doublons :
+    print("num = "+doublon.get_numero()+" | "+doublon.get_nom()+" | "+doublon.get_fichier())
+    logger_grave.error("DOUBLON num = "+doublon.get_numero()+" | "+doublon.get_nom()+" | "+doublon.get_fichier())
+    logger_critic.error("DOUBLON num = "+doublon.get_numero()+" | "+doublon.get_nom()+" | "+doublon.get_fichier())
+
+
 fichier_csv.close()
 
 """
