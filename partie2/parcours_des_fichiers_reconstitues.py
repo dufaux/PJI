@@ -679,14 +679,14 @@ helper = []
 liste_modeles = []
 
 
-current_legislature = "1"
+current_legislature = "6"
 liste_des_scrutins_enregistres = ListeDesScrutinsTrouves(current_legislature)
 
 
 
 #logs
 logging
-logger_critic = logging.getLogger('myapp')
+logger_critic = logging.getLogger('myapp'+str(current_legislature))
 hdlr_critic = logging.FileHandler('./logs/'+current_legislature+'_reconstitues_critic_error.log')
 formatter_critic = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
 hdlr_critic.setFormatter(formatter_critic)
@@ -694,7 +694,7 @@ logger_critic.addHandler(hdlr_critic)
 logger_critic.setLevel(logging.NOTSET)
 
 
-logger_grave = logging.getLogger('main')
+logger_grave = logging.getLogger('main'+str(current_legislature))
 hdlr_grave = logging.FileHandler('./logs/'+current_legislature+'_reconstitues_grave_error.log')
 formatter_grave = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
 hdlr_grave.setFormatter(formatter_grave)
@@ -702,7 +702,7 @@ logger_grave.addHandler(hdlr_grave)
 logger_grave.setLevel(logging.NOTSET)
 
 
-logger_info = logging.getLogger('info')
+logger_info = logging.getLogger('info'+str(current_legislature))
 hdlr_info = logging.FileHandler('./logs/'+current_legislature+'_reconstitues_info.log')
 formatter_info = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
 hdlr_info.setFormatter(formatter_info)

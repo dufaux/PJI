@@ -523,7 +523,7 @@ pages_reconstituees = ""
 dico_infos_pages = {}
 helper = []
 
-current_legislature = "1"
+current_legislature = "6"
 all_in_one = False
 #logs
 logging
